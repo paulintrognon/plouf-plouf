@@ -1,0 +1,17 @@
+.main-footer {
+  background-color: #33a9ff;
+  bottom: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.main-footer a {
+  color: #fff;
+  text-decoration: none;
+}
