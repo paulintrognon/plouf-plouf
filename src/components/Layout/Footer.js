@@ -9,7 +9,7 @@ export default function () {
         Paulin Trognon
       </a>
       &nbsp;-&nbsp;
-      <a href="https://github.com/paulintrognon/music-genres.com" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/paulintrognon/plouf-plouf" target="_blank" rel="noopener noreferrer">
         <i className="fa fa-github" aria-hidden="true"></i>
         &nbsp;Code source
       </a>
