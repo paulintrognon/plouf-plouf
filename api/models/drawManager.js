@@ -6,6 +6,7 @@ const Draw = require('../models/Draw');
 
 module.exports = {
   create,
+  get,
 };
 
 function create(data) {
@@ -14,6 +15,10 @@ function create(data) {
     values: JSON.stringify(data.values),
     drawnValue: _.sample(data.values),
   });
+}
+
+function get(slug) {
+  return Draw.findOne({ where: { slug }});
 }
 
 function generateSlug() {

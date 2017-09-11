@@ -5,6 +5,7 @@ const drawManager = require('./models/drawManager');
 
 module.exports = {
   create,
+  get,
 };
 
 function create(req, res) {
@@ -32,6 +33,15 @@ function create(req, res) {
   }
 
   drawManager.create({ values })
+    .then(draw => {
+      res.send({ draw });
+    });
+}
+
+function get(req, res) {
+  const slug = req.params.slug;
+
+  drawManager.get(slug)
     .then(draw => {
       res.send({ draw });
     });
