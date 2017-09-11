@@ -38,7 +38,12 @@ export default class Home extends React.Component {
           et clique sur "go" pour en sélectionner un au hasard !
         </p>
         <p className="input-container">
-          <input type="text" onChange={this.handleChange.bind(this)} value={this.state.text} onKeyPress={this.handleKeyPress.bind(this)}/>
+          <input type="text"
+            placeholder="Ex: Pomme, Poire"
+            onChange={this.handleChange.bind(this)}
+            onKeyPress={this.handleKeyPress.bind(this)}
+            value={this.state.text}
+            />
         </p>
       </div>
     );
