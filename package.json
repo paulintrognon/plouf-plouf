@@ -1,7 +1,6 @@
 {
   "name": "plouf-plouf",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "bluebird": "^3.5.0",
     "body-parser": "^1.18.0",
