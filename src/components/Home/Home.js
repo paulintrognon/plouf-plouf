@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addValue } from '../../actions/valuesActions';
 
 import './home.css';
 
-export default class Home extends React.Component {
+function mapStoreToProps(store) {
+  return {
+    values: store.values,
+  };
+}
+
+class Home extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -16,7 +24,7 @@ export default class Home extends React.Component {
 
     const i = value.indexOf(',');
     if(i !== -1) {
-      console.log(value.slice(0, i))
+      this.props.dispatch(addValue(value.slice(0, i)));
       newValue = '';
     }
 
@@ -25,12 +33,13 @@ export default class Home extends React.Component {
 
   handleKeyPress(event) {
     if (event.key === 'Enter') {
-      console.log(event.target.value);
+      this.props.dispatch(addValue(event.target.value));
       this.setState({ text: '' });
     }
   }
 
   render() {
+    const values = this.props.values;
     return (
       <div className="create-draw">
         <p className="explanations">
@@ -45,7 +54,11 @@ export default class Home extends React.Component {
             value={this.state.text}
             />
         </p>
+        <ul>
+          {values.map((value, index) => <li key={index}>{value}</li>)}
+        </ul>
       </div>
     );
   }
 }
+export default connect(mapStoreToProps)(Home);
