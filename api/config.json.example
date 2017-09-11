@@ -1,0 +1,13 @@
+{
+  "database": {
+    "host": "localhost",
+    "database": "plouf-plouf",
+    "user": "plouf-plouf",
+    "password": "change-me"
+  },
+  "logger": {
+    "console": {
+      "level": "debug"
+    }
+  }
+}
