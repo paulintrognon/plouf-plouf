@@ -5,7 +5,7 @@ import './footer.css';
 export default function () {
   return (
     <footer className="main-footer">
-      <a href="https://github.com/paulintrognon/" target="_blank" rel="noopener noreferrer">
+      <a href="https://paulintrognon.fr" target="_blank" rel="noopener noreferrer">
         Paulin Trognon
       </a>
       &nbsp;-&nbsp;
