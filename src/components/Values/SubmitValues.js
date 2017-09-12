@@ -20,7 +20,7 @@ class SubmitValues extends React.Component {
     return (
       <p className="submit-container">
         <button className="submit-button" type="button" disabled={values.length < 2} onClick={this.handleSubmit.bind(this)}>
-          Valider
+          Valider !
         </button>
       </p>
     );
