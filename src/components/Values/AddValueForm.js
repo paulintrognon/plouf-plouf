@@ -4,12 +4,6 @@ import { addValue } from '../../actions/valuesActions';
 
 import './addValueForm.css';
 
-function mapStoreToProps(store) {
-  return {
-    values: store.values,
-  };
-}
-
 class AddValueForm extends React.Component {
   constructor() {
     super();
@@ -39,7 +33,6 @@ class AddValueForm extends React.Component {
   }
 
   render() {
-    const values = this.props.values;
     return (
       <div className="create-draw">
         <p className="explanations">
@@ -58,4 +51,4 @@ class AddValueForm extends React.Component {
     );
   }
 }
-export default connect(mapStoreToProps)(AddValueForm);
+export default connect()(AddValueForm);
