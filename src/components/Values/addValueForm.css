@@ -1,5 +1,5 @@
 .create-draw {
-  margin: 20px 15%;
+  margin: 50px 15% 20px 15%;
   text-align: center;
 }
 
@@ -13,7 +13,6 @@
 
 .create-draw .input-container input {
   border: 1px solid #AAA;
-  border-radius: 2px;
   box-sizing: border-box;
   height: 30px;
   padding: 5px 10px;

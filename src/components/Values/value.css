@@ -1,6 +1,5 @@
 .value {
   border: 1px #AAA solid;
-  border-radius: 5px;
   display: inline-block;
   font-size: 1.3rem;
   margin: 10px;
@@ -15,4 +14,6 @@
 .value .cross {
   color: #E33;
   cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.3rem;
 }
