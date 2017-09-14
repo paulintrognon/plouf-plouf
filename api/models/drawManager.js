@@ -18,7 +18,11 @@ function create(data) {
 }
 
 function get(slug) {
-  return Draw.findOne({ where: { slug }});
+  return Draw.findOne({ where: { slug }})
+    .then(draw => {
+      draw.values = JSON.parse(draw.values);
+      return draw;
+    });
 }
 
 function generateSlug() {

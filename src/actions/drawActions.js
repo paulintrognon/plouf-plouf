@@ -1,10 +1,14 @@
-export function draw(values) {
-  dispatch({type: 'DRAW_START'});
+import axios from "axios";
 
-  axios.get('localhost:3001/api/draw/cVSrzW6')
-    .then(res => {
-      dispatch({type: 'DRAW_FULFILLED', payload: res.data.draw});
-    }, err => {
-      dispatch({type: 'DRAW_REJECTED', payload: err});
-    });
+export function fetch(slug) {
+  return (dispatch) => {
+    dispatch({type: 'DRAW_FETCH'});
+
+    axios.get('http://localhost:3001/api/draw/'+slug)
+      .then(res => {
+        dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
+      }, err => {
+        dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
+      });
+  }
 }

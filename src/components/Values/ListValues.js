@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeValue } from '../../actions/valuesActions';
 
@@ -12,7 +12,7 @@ function mapStoreToProps(store) {
   };
 }
 
-class ListValues extends React.Component {
+class ListValues extends Component {
 
   handleRemove(i) {
     this.props.dispatch(removeValue(i));

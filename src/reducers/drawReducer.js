@@ -13,15 +13,16 @@ const defaultState = {
 
 function reducer(state=defaultState, action) {
   switch (action.type) {
-    case 'DRAW_START': {
+    case 'DRAW_FETCH': {
       return {...state, fetching: true, fetched: false, error: null};
     }
-    case 'DRAW_REJECTED': {
+    case 'DRAW_FETCH_REJECTED': {
       return {...state, fetching: false, fetched: false, error: action.payload};
     }
-    case 'DRAW_FULFILLED': {
+    case 'DRAW_FETCH_FULFILLED': {
       return {...state,  fetching: false, fetched: true, draw: action.payload};
     }
+    default:
+      return state;
   }
-  return state;
 }
