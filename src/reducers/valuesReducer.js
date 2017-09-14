@@ -13,7 +13,7 @@ function reducer(state=defaultState, action) {
 }
 
 function addValue(state, action) {
-  return state.concat(action.payload);
+  return state.concat(action.payload.trim());
 }
 
 function removeValue(state, action) {
