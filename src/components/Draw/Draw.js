@@ -24,21 +24,22 @@ class Draw extends Component {
       return <div>{error.message}</div>
     }
 
-    if (fetched) {
-      if (!draw) {
-        return <div>Not found!</div>
-      }
-      return <ul>
-        {draw.values.map(value => <li>{value}</li>)}
-      </ul>
+    if (!draw) {
+      return <div>Tirage inconnu !</div>
     }
 
-    return (
-      <div>
-        wtf
-      </div>
-    );
+    return <ul>
+      {displayValues(draw)}
+    </ul>
   }
 }
 
 export default connect(mapStoreToProps)(Draw);
+
+function displayValues(draw) {
+  return draw.values.map(value => {
+    return <li style={draw.drawnValue === value ? {fontWeight: 'bold'} : {}}>
+        {value}
+    </li>;
+  });
+}
