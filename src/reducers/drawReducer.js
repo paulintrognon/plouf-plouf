@@ -15,7 +15,7 @@ function reducer(state=defaultState, action) {
       return {...state, fetching: false, error: action.payload};
     }
     case 'DRAW_FETCH_FULFILLED': {
-      return {...state,  fetching: false, draw: action.payload};
+      return {...state, fetching: false, draw: action.payload};
     }
     default:
       return state;

@@ -37,8 +37,8 @@ class Draw extends Component {
 export default connect(mapStoreToProps)(Draw);
 
 function displayValues(draw) {
-  return draw.values.map(value => {
-    return <li style={draw.drawnValue === value ? {fontWeight: 'bold'} : {}}>
+  return draw.values.map((value, i) => {
+    return <li key={i} style={draw.drawnValue === value ? {fontWeight: 'bold'} : {}}>
         {value}
     </li>;
   });

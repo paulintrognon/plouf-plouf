@@ -12,3 +12,16 @@ export function fetch(slug) {
       });
   }
 }
+
+export function draw(values) {
+  return (dispatch) => {
+    dispatch({type: 'DRAW_FETCH'});
+
+    axios.post('http://localhost:3001/api/draw', { values })
+      .then(res => {
+        dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
+      }, err => {
+        dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
+      });
+  };
+}
