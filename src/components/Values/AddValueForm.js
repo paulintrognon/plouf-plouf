@@ -36,7 +36,7 @@ class AddValueForm extends React.Component {
     return (
       <div className="create-draw">
         <p className="explanations">
-          Liste les éléments à tirer au sort, séparés d'une virgule
+          Liste les éléments à tirer au sort...
         </p>
         <p className="input-container">
           <input type="text"
