@@ -18,7 +18,7 @@ class AddValueForm extends React.Component {
 
     const i = value.indexOf(',');
     if(i !== -1) {
-      this.props.dispatch(addValue(value.slice(0, i)));
+      this.sendValue(value.slice(0, i));
       newValue = '';
     }
 
@@ -27,9 +27,17 @@ class AddValueForm extends React.Component {
 
   handleKeyPress(event) {
     if (event.key === 'Enter') {
-      this.props.dispatch(addValue(event.target.value));
+      this.sendValue(event.target.value);
       this.setState({ text: '' });
     }
+  }
+
+  sendValue(value) {
+    const trimedValue = value.trim();
+    if (!trimedValue.length) {
+      return;
+    }
+    this.props.dispatch(addValue(trimedValue));
   }
 
   render() {
