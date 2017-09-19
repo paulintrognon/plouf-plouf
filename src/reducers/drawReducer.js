@@ -2,7 +2,7 @@ export default reducer;
 
 const defaultState = {
   draw: null,
-  fetching: true,
+  fetching: false,
   error: null,
 };
 

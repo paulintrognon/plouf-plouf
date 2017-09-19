@@ -14,7 +14,7 @@ class Draw extends Component {
   }
 
   render() {
-    const { draw, fetching, fetched, error } = this.props.draw;
+    const { draw, fetching, error } = this.props.draw;
 
     if (fetching) {
       return <div>Chargement...</div>;

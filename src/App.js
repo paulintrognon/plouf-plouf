@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 
 import Layout from './components/Layout/Layout.js';
@@ -8,16 +9,18 @@ import Draw from './components/Draw/Draw';
 
 import store from './store.js';
 
+import history from './history';
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <ConnectedRouter history={history}>
           <Layout>
-            <Route path="/" exact={true} component={Home}></Route>
-            <Route path="/d/:slug" component={Draw}></Route>
+              <Route path="/" exact={true} component={Home}></Route>
+              <Route path="/d/:slug" component={Draw}></Route>
           </Layout>
-        </Router>
+        </ConnectedRouter>
       </Provider>
     );
   }
