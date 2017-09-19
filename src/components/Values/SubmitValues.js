@@ -20,18 +20,20 @@ class SubmitValues extends React.Component {
   render() {
     const values = this.props.values;
 
+    let btnText = 'Valider !';
     if (this.props.draw.fetching) {
-      return (
-        <p>
-          Fetching...
-        </p>
-      );
+      btnText = <i className="fa fa-spinner" aria-hidden="true"></i>;
     }
 
     return (
       <p className="submit-container">
-        <button className="submit-button" type="button" disabled={values.length < 2} onClick={this.handleSubmit.bind(this)}>
-          Valide !
+        <button
+          className="submit-button"
+          type="button"
+          disabled={values.length < 2 || this.props.draw.fetching}
+          onClick={this.handleSubmit.bind(this)}
+          >
+            {btnText}
         </button>
       </p>
     );

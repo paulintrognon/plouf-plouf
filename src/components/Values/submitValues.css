@@ -15,15 +15,18 @@
   padding: calc(0.375em - 1px) 0.75em;
   text-align: center;
   transition: opacity 500ms, transform 300ms;
+  width: 150px;
 }
 
 .submit-container .submit-button:disabled {
-  opacity: 0;
-  transition: opacity 500ms;
+  background-color: #666;
+  cursor: default;
+  opacity: 0.2;
+  transition: opacity 500ms, background-color 500ms;
 }
 
-.submit-container .submit-button:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+.submit-container .submit-button:not(:disabled):hover {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes shake {
