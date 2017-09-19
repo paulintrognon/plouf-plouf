@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { draw } from '../../actions/drawActions';
 
 import './submitValues.css';
@@ -16,12 +15,6 @@ class SubmitValues extends React.Component {
 
   handleSubmit() {
     this.props.dispatch(draw(this.props.values));
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.draw.draw) {
-      this.props.dispatch(push('/d/'+nextProps.draw.draw.slug));
-    }
   }
 
   render() {

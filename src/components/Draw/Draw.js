@@ -10,7 +10,7 @@ function mapStoreToProps(store) {
 
 class Draw extends Component {
   componentWillMount() {
-    if (!this.props.draw) {
+    if (!this.props.draw.draw) {
       this.props.dispatch(fetch(this.props.match.params.slug));
     }
   }

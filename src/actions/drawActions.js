@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { push } from 'react-router-redux';
+
 export function fetch(slug) {
   return (dispatch) => {
     dispatch({type: 'DRAW_FETCH'});
@@ -20,6 +22,7 @@ export function draw(values) {
     axios.post('http://localhost:3001/api/draw', { values })
       .then(res => {
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
+        dispatch(push('/d/'+res.data.draw.slug));
       }, err => {
         dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
       });
