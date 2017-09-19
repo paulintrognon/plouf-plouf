@@ -12,6 +12,12 @@ const Draw = sequelize.define('draw', {
     type: Sequelize.TEXT,
     allowNull: false,
     notEmpty: true,
+    get: function (values) {
+      return JSON.parse(this.getDataValue(values));
+    },
+    set: function (values) {
+      this.setDataValue('values', JSON.stringify(values));
+    },
   },
   drawnValue: {
     type: Sequelize.STRING,

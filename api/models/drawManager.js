@@ -12,17 +12,13 @@ module.exports = {
 function create(data) {
   return Draw.create({
     slug: generateSlug(),
-    values: JSON.stringify(data.values),
+    values: data.values,
     drawnValue: _.sample(data.values),
   });
 }
 
 function get(slug) {
-  return Draw.findOne({ where: { slug }})
-    .then(draw => {
-      draw.values = JSON.parse(draw.values);
-      return draw;
-    });
+  return Draw.findOne({ where: { slug }});
 }
 
 function generateSlug() {
