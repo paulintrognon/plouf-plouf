@@ -32,11 +32,14 @@ class Draw extends Component {
       return <div>Tirage inconnu !</div>
     }
 
+    let plouf1 = 'plouf ';
+    let plouf2 = 'plouf ';
+
     return (
       <div className="container">
         <p className="ploufs">
-          <span className="plouf-1">Plouf, </span>
-          <span className="plouf-2">Plouf !</span>
+          <span className={plouf1}>Plouf, </span>
+          <span className={plouf2}>Plouf !</span>
         </p>
       </div>
     );
