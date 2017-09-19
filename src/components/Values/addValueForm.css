@@ -1,14 +1,15 @@
 .create-draw {
-  margin: 50px 15% 20px 15%;
   text-align: center;
 }
 
 .create-draw .explanations {
   font-size: 1.1rem;
+  margin-top: 50px;
 }
 
 .create-draw .input-container {
   font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 .create-draw .input-container input {

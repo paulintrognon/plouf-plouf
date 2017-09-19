@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetch } from '../../actions/drawActions';
 
+import './draw.css';
+
 function mapStoreToProps(store) {
   return {
     draw: store.draw,
@@ -29,6 +31,15 @@ class Draw extends Component {
     if (!draw) {
       return <div>Tirage inconnu !</div>
     }
+
+    return (
+      <div className="container">
+        <p className="ploufs">
+          <span className="plouf-1">Plouf, </span>
+          <span className="plouf-2">Plouf !</span>
+        </p>
+      </div>
+    );
 
     return <ul>
       {displayValues(draw)}
