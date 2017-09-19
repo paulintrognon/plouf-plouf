@@ -21,6 +21,7 @@ export function draw(values) {
 
     axios.post('http://localhost:3001/api/draw', { values })
       .then(res => {
+        dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
         dispatch(push('/d/'+res.data.draw.slug));
       }, err => {

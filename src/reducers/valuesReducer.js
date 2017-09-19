@@ -9,6 +9,9 @@ function reducer(state=defaultState, action) {
   if (action.type === 'REMOVE_VALUE') {
     return removeValue(state, action);
   }
+  if (action.type === 'CLEAR_VALUES') {
+    return [];
+  }
   return state;
 }
 
