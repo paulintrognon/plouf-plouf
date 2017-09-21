@@ -43,11 +43,9 @@ export function startAnimation(draw) {
         return bluebird.delay(500);
       })
       .then(() => {
-        return bluebird.each(_.range(7), n => {
-          let i = (n+drawnValueIndex-6)%nbValues;
-          if (i < 0) {
-            i = i + nbValues;
-          }
+        const nbOfIterations = nbValues + drawnValueIndex;
+        return bluebird.each(_.range(nbOfIterations), n => {
+          let i = n % nbValues;
           dispatch({type: 'ANIMATION_VALUE', payload: i});
           return bluebird.delay(300);
         });
