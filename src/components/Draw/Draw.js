@@ -46,7 +46,12 @@ class Draw extends Component {
     const { animation, draw, fetching, error } = props.draw;
 
     if (fetching) {
-      return 'Chargement...';
+      return (
+        <p>
+          <i className='fa fa-spinner' aria-hidden="true"></i>
+          Tirage au sort...
+        </p>
+      );
     }
 
     if (error) {
