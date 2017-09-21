@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import { push } from 'react-router-redux';
 
-export function fetch(slug) {
+export function fetchAction(slug) {
   return (dispatch) => {
     dispatch({type: 'DRAW_FETCH'});
 
@@ -17,7 +17,7 @@ export function fetch(slug) {
   }
 }
 
-export function draw(values) {
+export function drawAction(values) {
   return (dispatch) => {
     dispatch({type: 'DRAW_FETCH'});
 
@@ -32,13 +32,13 @@ export function draw(values) {
   };
 }
 
-export function restart() {
+export function restartAction() {
   return dispatch => {
     dispatch(push('/'));
   };
 }
 
-export function startAnimation(draw) {
+export function startAnimationAction(draw) {
   const nbValues = draw.values.length;
   const drawnValueIndex = draw.values.indexOf(draw.drawnValue);
   return dispatch => {

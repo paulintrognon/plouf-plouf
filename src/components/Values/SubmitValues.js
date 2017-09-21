@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { draw } from '../../actions/drawActions';
+import { drawAction } from '../../actions/drawActions';
 
 import './submitValues.css';
 
@@ -14,7 +14,7 @@ function mapStoreToProps(store) {
 class SubmitValues extends React.Component {
 
   handleSubmit() {
-    this.props.dispatch(draw(this.props.values));
+    this.props.dispatch(drawAction(this.props.values));
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetch, restart, startAnimation } from '../../actions/drawActions';
+import { fetchAction, drawAction, restartAction, startAnimationAction } from '../../actions/drawActions';
 
 import './draw.css';
 
@@ -13,7 +13,7 @@ function mapStoreToProps(store) {
 class Draw extends Component {
   componentWillMount() {
     if (!this.props.draw.draw) {
-      this.props.dispatch(fetch(this.props.match.params.slug));
+      this.props.dispatch(fetchAction(this.props.match.params.slug));
     }
   }
 
@@ -27,7 +27,7 @@ class Draw extends Component {
 
   startAnimation() {
     if (this.props.draw.draw && !this.props.draw.animation.started && !this.props.draw.animation.finished) {
-      this.props.dispatch(startAnimation(this.props.draw.draw));
+      this.props.dispatch(startAnimationAction(this.props.draw.draw));
     }
   }
 
@@ -63,7 +63,11 @@ class Draw extends Component {
   }
 
   restart() {
-    this.props.dispatch(restart());
+    this.props.dispatch(restartAction());
+  }
+
+  redraw() {
+    this.props.dispatch(drawAction(this.props.draw.draw.values));
   }
 
   renderResult(props) {
@@ -81,8 +85,8 @@ class Draw extends Component {
           <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
-          <button className="button" type="button" onClick={this.restart.bind(this)}>Recommencer</button>
-          <button className="button" type="button">Nouveau</button>
+          <button className="button" type="button" onClick={this.redraw.bind(this)}>Autre résultat</button>
+          <button className="button" type="button" onClick={this.restart.bind(this)}>Nouveau</button>
         </p>
       </div>
     );
