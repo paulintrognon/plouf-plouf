@@ -32,6 +32,12 @@ export function draw(values) {
   };
 }
 
+export function restart() {
+  return dispatch => {
+    dispatch(push('/'));
+  };
+}
+
 export function startAnimation(draw) {
   const nbValues = draw.values.length;
   const drawnValueIndex = draw.values.indexOf(draw.drawnValue);

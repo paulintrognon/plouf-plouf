@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetch, startAnimation } from '../../actions/drawActions';
+import { fetch, restart, startAnimation } from '../../actions/drawActions';
 
 import './draw.css';
 
@@ -62,6 +62,10 @@ class Draw extends Component {
     event.target.select();
   }
 
+  restart() {
+    this.props.dispatch(restart());
+  }
+
   renderResult(props) {
     if (!props.draw.animation.finished) {
       return;
@@ -77,8 +81,8 @@ class Draw extends Component {
           <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
-          <button type="button">Recommencer</button>
-          <button type="button">Nouveau</button>
+          <button className="button" type="button" onClick={this.restart.bind(this)}>Recommencer</button>
+          <button className="button" type="button">Nouveau</button>
         </p>
       </div>
     );
