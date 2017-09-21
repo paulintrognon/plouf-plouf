@@ -14,3 +14,36 @@
   margin: 1rem;
   min-width: 60px;
 }
+
+.draw .result {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}
+
+.draw .result .share {
+  margin: 30px;
+}
+
+.draw .result button {
+  background-color: #4CB4FF;
+  border: 1px solid #4CB4FF;
+  color: #fff;
+  padding: 15px;
+  margin: 0 5px;
+  font-size: 1.5rem;
+  width: 300px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+.draw .result button:hover {
+  background-color: #3CA4EF;
+}
+
+.draw .result input {
+  width: 350px;
+  height: 40px;
+  margin: 10px 30px;
+  font-size: 1.5rem;
+}

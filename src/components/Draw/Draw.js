@@ -69,16 +69,16 @@ class Draw extends Component {
     const draw = props.draw.draw;
     return (
       <div className="result">
-        <p>
+        <p className="select-phrase">
           <b>{draw.drawnValue}</b> a été sélectionné !
+        </p>
+        <p className="share">
+          Partager:
+          <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
           <button type="button">Recommencer</button>
           <button type="button">Nouveau</button>
-        </p>
-        <p>
-          Partager:
-          <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
       </div>
     );
