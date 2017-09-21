@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetch } from '../../actions/drawActions';
+import { fetch, startAnimation } from '../../actions/drawActions';
 
 import './draw.css';
 
@@ -14,6 +14,12 @@ class Draw extends Component {
   componentWillMount() {
     if (!this.props.draw.draw) {
       this.props.dispatch(fetch(this.props.match.params.slug));
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.draw.draw && !this.props.draw.animation.started && !this.props.draw.animation.finished) {
+      this.props.dispatch(startAnimation());
     }
   }
 
@@ -31,18 +37,6 @@ class Draw extends Component {
     if (!draw) {
       return <div>Tirage inconnu !</div>
     }
-
-    let plouf1 = 'plouf ';
-    let plouf2 = 'plouf ';
-
-    return (
-      <div className="container">
-        <p className="ploufs">
-          <span className={plouf1}>Plouf, </span>
-          <span className={plouf2}>Plouf !</span>
-        </p>
-      </div>
-    );
 
     return <ul>
       {displayValues(draw)}

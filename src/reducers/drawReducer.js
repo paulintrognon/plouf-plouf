@@ -4,6 +4,12 @@ const defaultState = {
   draw: null,
   fetching: false,
   error: null,
+  animation: {
+    plouf1: false,
+    plouf2: false,
+    started: false,
+    finished: false,
+  },
 };
 
 function reducer(state=defaultState, action) {
@@ -17,6 +23,33 @@ function reducer(state=defaultState, action) {
     case 'DRAW_FETCH_FULFILLED': {
       return {...state, fetching: false, draw: action.payload};
     }
+
+    case 'ANIMATION_PLOUF_1': {
+      return {...state, animation: {
+        ...state.animation,
+        started: true,
+        finished: false,
+        plouf1: true,
+        plouf2: false,
+      }};
+    }
+    case 'ANIMATION_PLOUF_2': {
+      return {...state, animation: {
+        ...state.animation,
+        started: true,
+        finished: false,
+        plouf1: false,
+        plouf2: true,
+      }};
+    }
+    case 'ANIMATION_END': {
+      return {...state, animation: {
+        ...state.animation,
+        started: false,
+        finished: true,
+      }};
+    }
+
     default:
       return state;
   }

@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios from 'axios';
+import bluebird from 'bluebird';
 
 import { push } from 'react-router-redux';
 
@@ -28,4 +29,14 @@ export function draw(values) {
         dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
       });
   };
+}
+
+export function startAnimation() {
+  return dispatch => {
+    dispatch({type: 'ANIMATION_PLOUF_1'});
+    bluebird.delay(300)
+      .then(() => {
+        dispatch({type: 'ANIMATION_PLOUF_2'});
+      });
+  }
 }
