@@ -79,10 +79,10 @@ class Draw extends Component {
     return (
       <div className="result">
         <p className="select-phrase">
-          <b>{draw.drawnValue}</b> a été sélectionné !
+          <b>{draw.drawnValue}</b> a été tiré au sort !
         </p>
         <p className="share">
-          Partager:
+          Partager le résultat :
           <input autoFocus type="text" defaultValue={`${config.baseUrl}/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>

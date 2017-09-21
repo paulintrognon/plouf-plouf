@@ -3,12 +3,6 @@
   text-align: center;
 }
 
-.ploufs {
-  color: #4CB4FF;
-  font-family: 'Pacifico', cursive;
-  font-size: 5rem;
-}
-
 .draw .value {
   font-size: 3rem;
   margin: 1rem;
@@ -52,6 +46,6 @@
 .draw .result .share input {
   width: 400px;
   height: 40px;
-  margin: 10px 30px;
+  margin: 10px 10px;
   font-size: 1.5rem;
 }
