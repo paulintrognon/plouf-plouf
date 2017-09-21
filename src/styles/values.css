@@ -4,10 +4,13 @@
   font-size: 1.3rem;
   margin: 30px 10px;
   padding: 10px 15px 10px 15px;
+  background-color: #fff;
+  transition: background-color 500ms;
 }
 
 .value .text {
   color: #555;
+  transition: color 500ms;
 }
 
 .value .cross {
@@ -19,5 +22,10 @@
 }
 
 .value.selected {
-  border: 2px black solid;
+  border: 1px #00E661 solid;
+  background-color: #00E661;
+}
+
+.value.selected .text {
+  color: #fff;
 }

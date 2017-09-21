@@ -24,29 +24,33 @@ class Draw extends Component {
   }
 
   render() {
-    const { animation, draw, fetching, error } = this.props.draw;
-
-    if (fetching) {
-      return <div className="container">Chargement...</div>;
-    }
-
-    if (error) {
-      return <div className="container">{error.message}</div>
-    }
-
-    if (!draw) {
-      return <div className="container">Tirage inconnu !</div>
-    }
-
     return (
-      <div className="container">
-        {displayValues(draw, animation)}
+      <div className="container draw">
+        {renderContent(this.props)}
       </div>
     )
   }
 }
 
 export default connect(mapStoreToProps)(Draw);
+
+function renderContent(props) {
+  const { animation, draw, fetching, error } = props.draw;
+
+  if (fetching) {
+    return 'Chargement...';
+  }
+
+  if (error) {
+    return error.message;
+  }
+
+  if (!draw) {
+    return 'Tirage inconnu !';
+  }
+
+  return displayValues(draw, animation);
+}
 
 function displayValues(draw, animation) {
   return draw.values.map((value, i) => {
