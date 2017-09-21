@@ -12,4 +12,5 @@
 .draw .value {
   font-size: 3rem;
   margin: 1rem;
+  min-width: 60px;
 }

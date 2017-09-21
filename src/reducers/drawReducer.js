@@ -1,22 +1,24 @@
 export default reducer;
 
-const defaultState = {
-  draw: null,
-  fetching: false,
-  error: null,
-  animation: {
+const defaultAnimation = {
     plouf1: false,
     plouf2: false,
     started: false,
     finished: false,
     values: [],
-  },
+}
+
+const defaultState = {
+  draw: null,
+  fetching: false,
+  error: null,
+  animation: defaultAnimation,
 };
 
 function reducer(state=defaultState, action) {
   switch (action.type) {
     case 'DRAW_FETCH': {
-      return {...state, fetching: true, draw: null, error: null};
+      return {...state, fetching: true, draw: null, error: null, animation: defaultAnimation};
     }
     case 'DRAW_FETCH_REJECTED': {
       return {...state, fetching: false, error: action.payload};

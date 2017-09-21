@@ -17,7 +17,15 @@ class Draw extends Component {
     }
   }
 
+  componentDidMount() {
+    this.startAnimation();
+  }
+
   componentDidUpdate() {
+    this.startAnimation();
+  }
+
+  startAnimation() {
     if (this.props.draw.draw && !this.props.draw.animation.started && !this.props.draw.animation.finished) {
       this.props.dispatch(startAnimation(this.props.draw.draw));
     }
