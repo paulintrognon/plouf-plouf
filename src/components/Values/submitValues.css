@@ -15,7 +15,7 @@
   padding: calc(0.375em - 1px) 0.75em;
   text-align: center;
   transition: opacity 500ms, transform 300ms;
-  width: 150px;
+  width: 250px;
 }
 
 .submit-container .submit-button:disabled {
