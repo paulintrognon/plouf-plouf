@@ -14,8 +14,8 @@ function mapStoreToProps(store) {
 
 class Header extends Component {
   render() {
-    let plouf1 = 'plouf '+(this.props.animation.plouf1 ? 'active' : '');
-    let plouf2 = 'plouf '+(this.props.animation.plouf2 ? 'active' : '');
+    let plouf1 = this.props.animation.plouf1 ? 'drop' : '';
+    let plouf2 = this.props.animation.plouf2 ? 'drop' : '';
 
     return (
       <header className="main-header">
