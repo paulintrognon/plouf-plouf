@@ -8,7 +8,6 @@
 
 .value .text {
   color: #555;
-  padding-right: 15px;
 }
 
 .value .cross {
@@ -16,4 +15,9 @@
   cursor: pointer;
   font-size: 1rem;
   line-height: 1.3rem;
+  padding-left: 15px;
+}
+
+.value.selected {
+  border: 2px black solid;
 }

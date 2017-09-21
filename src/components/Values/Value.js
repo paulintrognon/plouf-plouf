@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeValue } from '../../actions/valuesActions';
 
-import './value.css';
+import '../../styles/values.css';
 
 class Value extends React.Component {
   handleRemove() {

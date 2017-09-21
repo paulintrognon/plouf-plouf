@@ -19,37 +19,47 @@ class Draw extends Component {
 
   componentDidUpdate() {
     if (this.props.draw.draw && !this.props.draw.animation.started && !this.props.draw.animation.finished) {
-      this.props.dispatch(startAnimation());
+      this.props.dispatch(startAnimation(this.props.draw.draw));
     }
   }
 
   render() {
-    const { draw, fetching, error } = this.props.draw;
+    const { animation, draw, fetching, error } = this.props.draw;
 
     if (fetching) {
-      return <div>Chargement...</div>;
+      return <div className="container">Chargement...</div>;
     }
 
     if (error) {
-      return <div>{error.message}</div>
+      return <div className="container">{error.message}</div>
     }
 
     if (!draw) {
-      return <div>Tirage inconnu !</div>
+      return <div className="container">Tirage inconnu !</div>
     }
 
-    return <ul>
-      {displayValues(draw)}
-    </ul>
+    return (
+      <div className="container">
+        {displayValues(draw, animation)}
+      </div>
+    )
   }
 }
 
 export default connect(mapStoreToProps)(Draw);
 
-function displayValues(draw) {
+function displayValues(draw, animation) {
   return draw.values.map((value, i) => {
-    return <li key={i} style={draw.drawnValue === value ? {fontWeight: 'bold'} : {}}>
-        {value}
-    </li>;
+    let classes = 'value ' + (animation.values[i] ? 'drop ' : '');
+    if (draw.drawnValue === value && animation.finished) {
+      classes += ' selected';
+    }
+    return  (
+      <div key={i} className={classes}>
+        <span className="text">
+          {value}
+        </span>
+      </div>
+    );
   });
 }

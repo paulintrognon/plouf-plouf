@@ -1,5 +1,6 @@
 import axios from 'axios';
 import bluebird from 'bluebird';
+import _ from 'lodash';
 
 import { push } from 'react-router-redux';
 
@@ -31,12 +32,28 @@ export function draw(values) {
   };
 }
 
-export function startAnimation() {
+export function startAnimation(draw) {
+  const nbValues = draw.values.length;
+  const drawnValueIndex = draw.values.indexOf(draw.drawnValue);
   return dispatch => {
     dispatch({type: 'ANIMATION_PLOUF_1'});
     bluebird.delay(300)
       .then(() => {
         dispatch({type: 'ANIMATION_PLOUF_2'});
+        return bluebird.delay(500);
+      })
+      .then(() => {
+        return bluebird.each(_.range(7), n => {
+          let i = (n+drawnValueIndex-6)%nbValues;
+          if (i < 0) {
+            i = i + nbValues;
+          }
+          dispatch({type: 'ANIMATION_VALUE', payload: i});
+          return bluebird.delay(300);
+        });
+      })
+      .then(() => {
+        dispatch({type: 'ANIMATION_END'});
       });
   }
 }

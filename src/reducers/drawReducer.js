@@ -9,6 +9,7 @@ const defaultState = {
     plouf2: false,
     started: false,
     finished: false,
+    values: [],
   },
 };
 
@@ -40,6 +41,16 @@ function reducer(state=defaultState, action) {
         finished: false,
         plouf1: false,
         plouf2: true,
+      }};
+    }
+    case 'ANIMATION_VALUE': {
+      return {...state, animation: {
+        ...state.animation,
+        started: true,
+        finished: false,
+        plouf1: false,
+        plouf2: false,
+        values: state.draw.values.map((value, i) => i === action.payload),
       }};
     }
     case 'ANIMATION_END': {
