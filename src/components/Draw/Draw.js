@@ -85,8 +85,14 @@ class Draw extends Component {
           <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
-          <button className="button" type="button" onClick={this.redraw.bind(this)}>Autre résultat</button>
-          <button className="button" type="button" onClick={this.restart.bind(this)}>Nouveau</button>
+          <button className="button" type="button" onClick={this.redraw.bind(this)}>
+            <i className="icon fa fa-random" aria-hidden="true"></i>
+            Autre résultat
+          </button>
+          <button className="button" type="button" onClick={this.restart.bind(this)}>
+            <i className="icon fa fa-plus" aria-hidden="true"></i>
+            Nouveau
+          </button>
         </p>
       </div>
     );

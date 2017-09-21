@@ -35,6 +35,14 @@
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 200ms;
+  line-height: 30px;
+}
+
+.draw .result button .icon {
+  float: left;
+  line-height: 30px;
+  position: relative;
+  left: 5px;
 }
 
 .draw .result button:hover {

@@ -49,7 +49,10 @@ export function startAnimationAction(draw) {
         return bluebird.delay(500);
       })
       .then(() => {
-        const nbOfIterations = nbValues + drawnValueIndex + 1;
+        let nbOfIterations = nbValues + drawnValueIndex + 1;
+        if (nbValues < 4) {
+          nbOfIterations += nbValues;
+        }
         return bluebird.each(_.range(nbOfIterations), n => {
           let i = n % nbValues;
           dispatch({type: 'ANIMATION_VALUE', payload: i});
