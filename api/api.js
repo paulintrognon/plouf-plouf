@@ -5,7 +5,7 @@
  */
 const path = require('path');
 const fs = require('fs');
-const configPath = path.join(__dirname, './config.json');
+const configPath = path.join(__dirname, '../config.json');
 if (!fs.existsSync(configPath)) {
   throw new Error('You need to create the config.json file from config.json.example');
 }
@@ -14,7 +14,7 @@ if (!fs.existsSync(configPath)) {
  * Loading dependencies
  */
 const bodyParser = require('body-parser');
-const config = require('./config');
+const config = require('../config');
 const cors = require('cors');
 const db = require('./db');
 const express = require('express');

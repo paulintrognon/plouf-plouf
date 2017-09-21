@@ -1,7 +1,7 @@
 'use strict';
 
 const winston = require('winston');
-const config = require('./config').logger;
+const config = require('../config').logger;
 
 const transports = [];
 

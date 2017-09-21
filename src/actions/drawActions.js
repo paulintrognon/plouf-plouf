@@ -50,7 +50,7 @@ export function startAnimationAction(draw) {
       })
       .then(() => {
         let nbOfIterations = nbValues + drawnValueIndex + 1;
-        if (nbValues < 4) {
+        if (nbValues < 3) {
           nbOfIterations += nbValues;
         }
         return bluebird.each(_.range(nbOfIterations), n => {

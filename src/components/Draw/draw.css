@@ -49,8 +49,8 @@
   background-color: #3CA4EF;
 }
 
-.draw .result input {
-  width: 350px;
+.draw .result .share input {
+  width: 400px;
   height: 40px;
   margin: 10px 30px;
   font-size: 1.5rem;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAction, drawAction, restartAction, startAnimationAction } from '../../actions/drawActions';
+import config from '../../config.json';
 
 import './draw.css';
 
@@ -82,7 +83,7 @@ class Draw extends Component {
         </p>
         <p className="share">
           Partager:
-          <input autoFocus type="text" defaultValue={`http://plouf-plouf/d/${draw.slug}`} onFocus={this.handleFocus} />
+          <input autoFocus type="text" defaultValue={`${config.baseUrl}/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
           <button className="button" type="button" onClick={this.redraw.bind(this)}>

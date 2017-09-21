@@ -1,4 +1,5 @@
 {
+  "baseUrl": "localhost",
   "database": {
     "host": "localhost",
     "database": "plouf-plouf",
