@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './header.css';
-import '../../styles/plouf-plouf.css';
+import '../../styles/drop.css';
 
 function mapStoreToProps(store) {
   return {
