@@ -3,19 +3,19 @@
 }
 
 .create-draw .explanations {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-top: 50px;
 }
 
 .create-draw .input-container {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 15px;
 }
 
 .create-draw .input-container input {
   border: 1px solid #AAA;
   box-sizing: border-box;
-  height: 30px;
+  height: 40px;
   padding: 5px 10px;
   width: 250px;
 }
