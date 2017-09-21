@@ -14,11 +14,16 @@
   font-size: 1.5rem;
 }
 
-.draw .result .share {
-  margin: 30px;
+.draw .buttons {
+  margin-top: 15vh;
 }
 
-.draw .result button {
+.draw .buttons .share {
+  margin: 30px;
+  font-size: 1.5rem;
+}
+
+.draw .buttons button {
   background-color: #4CB4FF;
   border: 1px solid #4CB4FF;
   color: #fff;
@@ -32,18 +37,18 @@
   line-height: 30px;
 }
 
-.draw .result button .icon {
+.draw .buttons button .icon {
   float: left;
   line-height: 30px;
   position: relative;
   left: 5px;
 }
 
-.draw .result button:hover {
+.draw .buttons button:hover {
   background-color: #3CA4EF;
 }
 
-.draw .result .share input {
+.draw .buttons .share input {
   width: 400px;
   height: 40px;
   margin: 10px 10px;

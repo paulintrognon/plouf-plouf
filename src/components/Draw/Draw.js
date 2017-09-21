@@ -37,6 +37,7 @@ class Draw extends Component {
       <div className="container draw">
         {this.renderContent(this.props)}
         {this.renderResult(this.props)}
+        {this.renderButtons(this.props)}
       </div>
     )
   }
@@ -72,15 +73,28 @@ class Draw extends Component {
   }
 
   renderResult(props) {
-    if (!props.draw.animation.finished) {
+    const draw = props.draw.draw;
+    if (!draw) {
       return;
     }
-    const draw = props.draw.draw;
+    const visibilityClass = props.draw.animation.selectWinner ? 'visible' : 'hidden';
     return (
-      <div className="result">
+      <div className={'result '+visibilityClass}>
         <p className="select-phrase">
           <b>{draw.drawnValue}</b> a été tiré au sort !
         </p>
+      </div>
+    );
+  }
+
+  renderButtons(props) {
+    const draw = props.draw.draw;
+    if (!draw) {
+      return;
+    }
+    const visibilityClass = props.draw.animation.finished ? 'visible' : 'hidden';
+    return (
+      <div className={'buttons '+visibilityClass}>
         <p className="share">
           Partager le résultat :
           <input autoFocus type="text" defaultValue={`${config.baseUrl}/d/${draw.slug}`} onFocus={this.handleFocus} />
@@ -105,8 +119,8 @@ export default connect(mapStoreToProps)(Draw);
 function displayValues(draw, animation) {
   return draw.values.map((value, i) => {
     let classes = 'value ' + (animation.values[i] ? 'drop ' : '');
-    if (draw.drawnValue === value && animation.finished) {
-      classes += ' selected';
+    if (draw.drawnValue === value && animation.selectWinner) {
+      classes += ' drop selected';
     }
     return  (
       <div key={i} className={classes}>

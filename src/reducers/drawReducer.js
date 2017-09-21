@@ -4,6 +4,7 @@ const defaultAnimation = {
     plouf1: false,
     plouf2: false,
     started: false,
+    selectWinner: false,
     finished: false,
     values: [],
 }
@@ -53,6 +54,13 @@ function reducer(state=defaultState, action) {
         plouf1: false,
         plouf2: false,
         values: state.draw.values.map((value, i) => i === action.payload),
+      }};
+    }
+    case 'ANIMATION_SELECT_WINNER': {
+      return {...state, animation: {
+        ...state.animation,
+        values: [],
+        selectWinner: true,
       }};
     }
     case 'ANIMATION_END': {
