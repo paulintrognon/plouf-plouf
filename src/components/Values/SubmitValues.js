@@ -14,7 +14,7 @@ function mapStoreToProps(store) {
 class SubmitValues extends React.Component {
 
   handleSubmit() {
-    this.props.dispatch(drawAction(this.props.values));
+    this.props.dispatch(drawAction());
   }
 
   render() {

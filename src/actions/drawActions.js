@@ -17,11 +17,12 @@ export function fetchAction(slug) {
   }
 }
 
-export function drawAction(values) {
-  return (dispatch) => {
+export function drawAction() {
+  return (dispatch, getState) => {
     dispatch({type: 'DRAW_FETCH'});
 
-    axios.post('http://localhost:3001/api/draw', { values })
+    const state = getState();
+    axios.post('http://localhost:3001/api/draw', { values: state.values })
       .then(res => {
         dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});

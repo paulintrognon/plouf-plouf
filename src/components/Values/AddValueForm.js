@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addValue } from '../../actions/valuesActions';
+import { drawAction } from '../../actions/drawActions';
 
 import './addValueForm.css';
 
@@ -26,10 +27,15 @@ class AddValueForm extends React.Component {
   }
 
   handleKeyPress(event) {
-    if (event.key === 'Enter') {
-      this.sendValue(event.target.value);
-      this.setState({ text: '' });
+    if (event.key !== 'Enter') {
+      return;
     }
+    if (!this.state.text) {
+      this.props.dispatch(drawAction());
+      return;
+    }
+    this.sendValue(event.target.value);
+    this.setState({ text: '' });
   }
 
   sendValue(value) {
