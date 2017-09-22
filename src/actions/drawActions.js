@@ -19,10 +19,15 @@ export function fetchAction(slug) {
 
 export function drawAction() {
   return (dispatch, getState) => {
+    const state = getState();
+    const values = state.values;
+    if (values.length < 2) {
+      return;
+    }
+
     dispatch({type: 'DRAW_FETCH'});
 
-    const state = getState();
-    axios.post('http://localhost:3001/api/draw', { values: state.values })
+    axios.post('http://localhost:3001/api/draw', { values })
       .then(res => {
         dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
