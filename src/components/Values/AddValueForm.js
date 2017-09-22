@@ -48,6 +48,7 @@ class AddValueForm extends React.Component {
         </p>
         <p className="input-container">
           <input type="text"
+            autoFocus
             placeholder="Ex: Pomme, Poire"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
