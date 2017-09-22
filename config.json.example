@@ -1,5 +1,9 @@
 {
-  "baseUrl": "localhost",
+  "baseUrl": "http://localhost",
+  "api": {
+    "baseUrl": "http://localhost",
+    "port": 3001
+  }
   "database": {
     "host": "localhost",
     "database": "plouf-plouf",

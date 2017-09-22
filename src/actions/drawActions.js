@@ -1,6 +1,7 @@
 import axios from 'axios';
 import bluebird from 'bluebird';
 import _ from 'lodash';
+import config from '../../config.json';
 
 import { push } from 'react-router-redux';
 
@@ -8,7 +9,7 @@ export function fetchAction(slug) {
   return (dispatch) => {
     dispatch({type: 'DRAW_FETCH'});
 
-    axios.get('http://localhost:3001/api/draw/'+slug)
+    axios.get(`${config.api.baseUrl}:${config.api.port}/api/draw/${slug}`)
       .then(res => {
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
       }, err => {
@@ -27,7 +28,7 @@ export function drawAction() {
 
     dispatch({type: 'DRAW_FETCH'});
 
-    axios.post('http://localhost:3001/api/draw', { values })
+    axios.post(`${config.api.baseUrl}:${config.api.port}/api/draw`, { values })
       .then(res => {
         dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
