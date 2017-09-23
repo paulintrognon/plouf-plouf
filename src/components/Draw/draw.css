@@ -52,4 +52,16 @@
   .list-values {
     margin: 20px 0;
   }
+
+  .draw .result {
+    margin-top: 15px;
+  }
+
+  .draw .buttons {
+    margin-top: 50px;
+  }
+
+  .draw .buttons button {
+    margin-bottom: 10px;
+  }
 }
