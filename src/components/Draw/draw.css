@@ -2,13 +2,13 @@
   margin-top: 50px;
   text-align: center;
 }
-
+/*
 .draw .value {
   font-size: 2rem;
   margin: 1rem;
   min-width: 60px;
 }
-
+*/
 .draw .result {
   margin-top: 30px;
   font-size: 1.5rem;
@@ -53,4 +53,10 @@
   height: 40px;
   margin: 10px 10px;
   font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+  .list-values {
+    margin: 20px 0;
+  }
 }

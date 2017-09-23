@@ -3,3 +3,9 @@
   text-align: center;
   margin: 40px 0;
 }
+
+@media (max-width: 767px) {
+  .list-values {
+    margin: 20px 0;
+  }
+}

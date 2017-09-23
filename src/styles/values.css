@@ -6,6 +6,7 @@
   padding: 10px 15px;
   background-color: #fff;
   transition: background-color 500ms;
+  min-width: 60px;
 }
 
 .value .text {
@@ -28,4 +29,12 @@
 
 .value.selected .text {
   color: #fff;
+}
+
+@media (max-width: 767px) {
+  .value {
+    font-size: 1.1rem;
+    padding: 8px 10px;
+    margin: 7px;
+  }
 }
