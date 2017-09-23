@@ -67,7 +67,7 @@ export function startAnimationAction(draw) {
       })
       .then(() => {
         dispatch({type: 'ANIMATION_SELECT_WINNER'});
-        return bluebird.delay(1500);
+        return bluebird.delay(500);
       })
       .then(() => {
         dispatch({type: 'ANIMATION_END'});
