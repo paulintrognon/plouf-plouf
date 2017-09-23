@@ -26,23 +26,23 @@
 }
 
 .submit-container .submit-button:not(:disabled):hover {
-  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes shake {
   10%, 90% {
-    transform: rotate(3deg);;
+    transform: rotate(1deg);
   }
 
   20%, 80% {
-    transform: rotate(-3deg);;
+    transform: rotate(-1deg);
   }
 
   30%, 50%, 70% {
-    transform: rotate(6deg);;
+    transform: rotate(3deg);
   }
 
   40%, 60% {
-    transform: rotate(-6deg);;
+    transform: rotate(-3deg);
   }
 }
