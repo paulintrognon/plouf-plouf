@@ -9,7 +9,7 @@ export function fetchAction(slug) {
   return (dispatch) => {
     dispatch({type: 'DRAW_FETCH'});
 
-    api.get(`${config.api.baseUrl}:${config.api.port}/api/draw/${slug}`)
+    api.get(`/draw/${slug}`)
       .then(res => {
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
       }, err => {
@@ -28,7 +28,7 @@ export function drawAction(values) {
 
     dispatch({type: 'DRAW_FETCH'});
 
-    api.post(`${config.api.baseUrl}:${config.api.port}/api/draw`, { values })
+    api.post(`/draw`, { values })
       .then(res => {
         dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
