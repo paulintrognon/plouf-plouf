@@ -18,10 +18,10 @@ export function fetchAction(slug) {
   }
 }
 
-export function drawAction() {
+export function drawAction(values) {
   return (dispatch, getState) => {
     const state = getState();
-    const values = state.values;
+    values = values || state.values;
     if (values.length < 2) {
       return;
     }
