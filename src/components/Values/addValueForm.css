@@ -11,12 +11,29 @@
   margin-top: 15px;
 }
 
-.create-draw .input-container input {
+.create-draw .input-container .text-input {
   border: 1px solid #AAA;
   box-sizing: border-box;
   height: 40px;
   padding: 5px 10px;
   width: 250px;
+}
+
+.create-draw .input-container .add-input {
+  border: 1px solid #00E661;
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  background-color: #00E661;
+  color: #FFF;
+  box-sizing: border-box;
+  transition: background-color 200ms;
+}
+
+.create-draw .input-container .add-input:hover {
+  background-color: #00D651;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

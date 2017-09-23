@@ -38,6 +38,11 @@ class AddValueForm extends React.Component {
     this.setState({ text: '' });
   }
 
+  handleAdd() {
+    this.sendValue(this.state.text);
+    this.setState({ text: '' });
+  }
+
   sendValue(value) {
     const trimedValue = value.trim();
     if (!trimedValue.length) {
@@ -54,12 +59,16 @@ class AddValueForm extends React.Component {
         </p>
         <p className="input-container">
           <input type="text"
+            className="text-input"
             autoFocus
             placeholder="Ex: Pomme, Poire"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
             value={this.state.text}
             />
+          <button className="add-input" onClick={this.handleAdd.bind(this)}>
+            <i className="fa fa-plus" aria-hidden="true"></i>
+          </button>
         </p>
       </div>
     );
