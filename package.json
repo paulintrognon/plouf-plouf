@@ -26,6 +26,7 @@
     "winston": "^2.3.1"
   },
   "scripts": {
+    "postinstall": "ln -s ../config node_modules/config",
     "start": "react-scripts start",
     "api": "node api/api.js",
     "build": "react-scripts build",
