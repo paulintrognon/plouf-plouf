@@ -3,6 +3,6 @@
   - clone
   - `npm install`
   - setup database
-  - write database credentials in config.json, created from config.json.example
+  - write database credentials in config/index.js, created from config/index.js.example
   - `npm run api`
   - `npm start`
