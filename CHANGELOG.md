@@ -1,3 +1,8 @@
+## v1.2.0 (2017-09-24)
+
+  - Add "add value" button
+  - Add more explanations
+
 ### v1.1.1 (2017-09-23)
 
   - Fix footer floating in the middle of the page
