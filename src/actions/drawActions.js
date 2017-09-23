@@ -1,7 +1,7 @@
 import axios from 'axios';
 import bluebird from 'bluebird';
 import _ from 'lodash';
-import config from '../config.json';
+import config from 'config';
 
 import { push } from 'react-router-redux';
 
