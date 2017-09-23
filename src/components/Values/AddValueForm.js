@@ -41,6 +41,7 @@ class AddValueForm extends React.Component {
   handleAdd() {
     this.sendValue(this.state.text);
     this.setState({ text: '' });
+    this.textInput.focus();
   }
 
   sendValue(value) {
@@ -61,6 +62,7 @@ class AddValueForm extends React.Component {
           <input type="text"
             className="text-input"
             autoFocus
+            ref={(input) => { this.textInput = input; }}
             placeholder="Ex: Pomme [enter] Poire [enter]"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
