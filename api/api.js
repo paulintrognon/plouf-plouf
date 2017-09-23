@@ -25,8 +25,13 @@ const logger = require('./logger');
  * Creating the app
  */
 const app = express();
-app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
+
+const corsOptions = {
+  origin: config.host,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions));
 
 /**
  * Configuring the app
