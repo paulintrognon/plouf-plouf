@@ -4,7 +4,6 @@
 
 .create-draw .explanations {
   font-size: 1.3rem;
-  margin-top: 50px;
 }
 
 .create-draw .input-container {
@@ -18,4 +17,10 @@
   height: 40px;
   padding: 5px 10px;
   width: 250px;
+}
+
+@media (max-width: 767px) {
+  .create-draw .explanations {
+    font-size: 1rem;
+  }
 }
