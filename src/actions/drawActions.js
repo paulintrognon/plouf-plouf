@@ -1,7 +1,6 @@
 import api from '../services/api';
 import bluebird from 'bluebird';
 import _ from 'lodash';
-import config from 'config';
 
 import { push } from 'react-router-redux';
 
