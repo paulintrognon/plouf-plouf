@@ -1,5 +1,5 @@
 .list-values {
-  height: 50px;
+  min-height: 50px;
   text-align: center;
-  margin: 50px 0;
+  margin: 40px 0;
 }

@@ -19,3 +19,10 @@
   padding: 5px 10px;
   width: 250px;
 }
+
+@media (max-width: 767px) {
+  .create-draw .explanations {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+}
