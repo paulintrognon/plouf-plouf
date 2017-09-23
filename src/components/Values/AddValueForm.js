@@ -55,15 +55,18 @@ class AddValueForm extends React.Component {
   render() {
     return (
       <div className="create-draw">
-        <p className="explanations">
-          Liste les éléments à tirer au sort...
+        <p className="explanations-1">
+          Lister les éléments à tirer au sort.
+        </p>
+        <p className="explanations-2">
+          (appuyer sur le bouton [+] ou sur la touche Entrée pour valider un élément)
         </p>
         <p className="input-container">
           <input type="text"
             className="text-input"
             autoFocus
             ref={(input) => { this.textInput = input; }}
-            placeholder="Ex: Pomme [enter] Poire [enter]"
+            placeholder="Ex: Pomme [↵] Poire [↵]"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
             value={this.state.text}

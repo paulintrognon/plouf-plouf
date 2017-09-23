@@ -2,8 +2,13 @@
   text-align: center;
 }
 
-.create-draw .explanations {
+.create-draw .explanations-1 {
   font-size: 1.3rem;
+}
+
+.create-draw .explanations-2 {
+  font-size: 1rem;
+  color: #AAA;
 }
 
 .create-draw .input-container {
@@ -41,7 +46,10 @@
 }
 
 @media (max-width: 767px) {
-  .create-draw .explanations {
-    font-size: 1rem;
+  .create-draw .explanations-1 {
+    font-size: 1.1rem;
+  }
+  .create-draw .explanations-2 {
+    display: none;
   }
 }
