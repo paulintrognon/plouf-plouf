@@ -1,6 +1,6 @@
 {
   "name": "plouf-plouf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "axios": "^0.16.2",
     "bluebird": "^3.5.0",
