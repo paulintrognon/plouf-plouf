@@ -18,3 +18,7 @@
   line-height: 100px;
   text-decoration: none;
 }
+
+.main-header .main-nav h1 {
+  font-weight: normal;
+}

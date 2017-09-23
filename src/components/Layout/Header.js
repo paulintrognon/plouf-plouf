@@ -20,10 +20,12 @@ class Header extends Component {
     return (
       <header className="main-header">
         <nav className="main-nav">
-          <Link to={'/'} className="main-nav-brand">
-            <span className={plouf1}>Plouf, </span>
-            <span className={plouf2}>Plouf !</span>
-          </Link>
+          <h1>
+            <Link to={'/'} className="main-nav-brand">
+              <span className={plouf1}>Plouf, </span>
+              <span className={plouf2}>Plouf !</span>
+            </Link>
+          </h1>
         </nav>
       </header>
     )
