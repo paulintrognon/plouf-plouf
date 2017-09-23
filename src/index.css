@@ -1,10 +1,14 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   color: #333;
   font-family: 'Lato', sans-serif;
   margin: 0;
-  min-height: 700px;
+  min-height: 500px;
   padding: 0;
-  position: relative;
 }
 
 p {
