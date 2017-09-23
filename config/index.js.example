@@ -1,18 +1,18 @@
-{
-  "baseUrl": "http://localhost",
-  "api": {
-    "baseUrl": "http://localhost",
-    "port": 3001
+module.exports = {
+  baseUrl: "http://localhost",
+  api: {
+    baseUrl: "http://localhost",
+    port: 3001,
   }
-  "database": {
-    "host": "localhost",
-    "database": "plouf-plouf",
-    "user": "plouf-plouf",
-    "password": "change-me"
+  database: {
+    host: "localhost",
+    database: "plouf-plouf",
+    user: "plouf-plouf",
+    password: "change-me",
   },
-  "logger": {
-    "console": {
-      "level": "debug"
+  logger: {
+    console: {
+      level: "debug",
     }
   }
 }
