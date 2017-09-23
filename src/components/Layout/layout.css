@@ -1,4 +1,11 @@
 .content-container {
   max-width: 1500px;
   margin: auto;
+  padding-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .content-container {
+    padding-top: 30px;
+  }
 }
