@@ -27,7 +27,7 @@ export function drawAction(values) {
 
     dispatch({type: 'DRAW_FETCH'});
 
-    api.post(`/draw`, { values })
+    api.post(`/draw/create`, { values })
       .then(res => {
         dispatch({type: 'CLEAR_VALUES'});
         dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});

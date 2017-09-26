@@ -56,10 +56,7 @@ class AddValueForm extends React.Component {
     return (
       <div className="create-draw">
         <p className="explanations-1">
-          Lister les éléments à tirer au sort.
-        </p>
-        <p className="explanations-2">
-          (appuyer sur le bouton [+] ou sur la touche Entrée pour valider un élément)
+          1. Ajouter les éléments à tirer au sort.
         </p>
         <p className="input-container">
           <input type="text"
@@ -74,6 +71,9 @@ class AddValueForm extends React.Component {
           <button className="add-input" onClick={this.handleAdd.bind(this)}>
             <i className="fa fa-plus" aria-hidden="true"></i>
           </button>
+        </p>
+        <p className="explanations-2">
+          (appuyer sur le bouton [+] ou sur la touche Entrée pour ajouter un élément)
         </p>
       </div>
     );
