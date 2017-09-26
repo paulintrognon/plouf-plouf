@@ -21,7 +21,7 @@ function responseMiddleware(promise, req, res, next) {
     .catch(next);
 
   function handleSuccess(result) {
-    logger.info(`${req.method} ${req.originalUrl}`);
+    logger.info(`${req.method} ${req.originalUrl}`, req.params, req.body);
     res.status(200).send(result);
   }
 
