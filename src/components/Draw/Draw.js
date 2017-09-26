@@ -102,7 +102,7 @@ class Draw extends Component {
       <div className={'buttons '+visibilityClass}>
         <p className="share">
           Partager le résultat :
-          <input autoFocus type="text" defaultValue={`${config.host}/d/${draw.slug}`} onFocus={this.handleFocus} />
+          <input type="text" defaultValue={`${config.host}/d/${draw.slug}`} onFocus={this.handleFocus} />
         </p>
         <p>
           <button className="button" type="button" onClick={this.redraw.bind(this)}>
