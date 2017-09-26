@@ -2,7 +2,7 @@
 
 const bluebird = require('bluebird');
 const config = require('config').database;
-const logger = require('./logger.js');
+const logger = require('../logger');
 const Sequelize = require('sequelize');
 
 module.exports = createDb();
