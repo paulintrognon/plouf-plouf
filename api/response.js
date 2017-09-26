@@ -21,11 +21,12 @@ function responseMiddleware(promise, req, res, next) {
     .catch(next);
 
   function handleSuccess(result) {
+    logger.info(`${req.method} ${req.originalUrl}`);
     res.status(200).send(result);
   }
 
   function handleError(error) {
-    logger.error(error);
+    logger.error(`${req.method} ${req.originalUrl}`, error);
     res.status(error.status || 400).send({
       error: true,
       status: error.status,
