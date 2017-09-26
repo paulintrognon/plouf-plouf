@@ -2,6 +2,8 @@
 
   - Redesign of home page
   - Add bugs link in footer
+  - Change interal api code structure
+  - Add response service in api which logs all requests and errors
 
 ### v1.2.1 (2017-09-26)
 
