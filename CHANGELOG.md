@@ -1,3 +1,8 @@
+## v1.3.0 (2017-09-26)
+
+  - Redesign of home page
+  - Add bugs link in footer
+
 ### v1.2.1 (2017-09-26)
 
   - Fix example config
