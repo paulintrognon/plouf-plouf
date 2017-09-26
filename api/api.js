@@ -27,6 +27,9 @@ const logger = require('./logger');
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
+/**
+ * CORS options
+ */
 const corsOptions = {
   origin: config.host,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -50,6 +53,12 @@ db.connect()
      */
     const routes = require('./routes');
     app.use('/api', routes);
+
+    /**
+     * Adding the response middleware
+     */
+    const response = require('./response');
+    app.use(response);
 
     /**
      * Starting the app

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../db.js').sequelize;
+const sequelize = require('../db').sequelize;
 
 const Draw = sequelize.define('draw', {
   slug: {
