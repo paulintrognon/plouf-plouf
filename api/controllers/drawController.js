@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const drawManager = require('./models/drawManager');
+const drawManager = require('../models/drawManager');
 
 module.exports = {
   create,
