@@ -55,6 +55,12 @@ db.connect()
     app.use('/api', routes);
 
     /**
+     * Adding the response middleware
+     */
+    const response = require('./response');
+    app.use(response);
+
+    /**
      * Starting the app
      */
     const server = http.createServer(app);
