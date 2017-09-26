@@ -1,3 +1,8 @@
+### v1.2.1 (2017-09-26)
+
+  - Fix example config
+  - Remove autoFocus on share input after draw
+
 ## v1.2.0 (2017-09-24)
 
   - Add "add value" button
