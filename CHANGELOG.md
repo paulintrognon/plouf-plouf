@@ -1,3 +1,7 @@
+## v1.3.1 (2017-09-27)
+
+  - Now able to use different port for API hosting on server and API calling from client
+
 ## v1.3.0 (2017-09-26)
 
   - Redesign of home page
