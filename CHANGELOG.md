@@ -1,4 +1,9 @@
-## v1.3.1 (2017-09-27)
+## v1.4.0 (2017-09-28)
+
+  - Change woring
+  - Change meta description
+
+### v1.3.1 (2017-09-27)
 
   - Now able to use different port for API hosting on server and API calling from client
 
