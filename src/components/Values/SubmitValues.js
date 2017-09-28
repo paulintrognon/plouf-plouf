@@ -20,7 +20,7 @@ class SubmitValues extends React.Component {
   render() {
     const values = this.props.values;
 
-    let btnText = '2. Tirer au sort';
+    let btnText = 'Tirer au sort';
     if (this.props.draw.fetching) {
       btnText = <i className="fa fa-spinner" aria-hidden="true"></i>;
     }
