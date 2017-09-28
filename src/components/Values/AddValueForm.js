@@ -56,14 +56,14 @@ class AddValueForm extends React.Component {
     return (
       <div className="create-draw">
         <p className="explanations-1">
-          1. Ajouter les éléments à tirer au sort.
+          Ajouter plusieurs éléments à tirer au sort, puis cliquez sur "Tirer au sort"..
         </p>
         <p className="input-container">
           <input type="text"
             className="text-input"
             autoFocus
             ref={(input) => { this.textInput = input; }}
-            placeholder="Ex: Pomme [↵] Poire [↵]"
+            placeholder="Ex: Pierre, Paul, Jacques [↵]"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
             value={this.state.text}
@@ -73,7 +73,7 @@ class AddValueForm extends React.Component {
           </button>
         </p>
         <p className="explanations-2">
-          (appuyer sur le bouton [+] ou sur la touche Entrée pour ajouter un élément)
+          (pour ajouter un élément, inscrivez le puis appuyer sur le bouton [+] ou sur la touche Entrée)
         </p>
       </div>
     );
