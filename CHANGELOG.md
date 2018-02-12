@@ -1,6 +1,11 @@
+## v1.5.0 (2018-02-12)
+
+  - Move sensible db credential information to a seperate js file
+  - Fix grammar
+
 ## v1.4.0 (2017-09-28)
 
-  - Change woring
+  - Change wording
   - Change meta description
 
 ### v1.3.1 (2017-09-27)

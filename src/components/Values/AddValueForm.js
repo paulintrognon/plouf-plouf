@@ -56,7 +56,7 @@ class AddValueForm extends React.Component {
     return (
       <div className="create-draw">
         <p className="explanations-1">
-          Ajouter plusieurs éléments à tirer au sort, puis cliquez sur "Tirer au sort"..
+          Ajoutez plusieurs éléments à tirer au sort, puis cliquez sur "Tirer au sort"..
         </p>
         <p className="input-container">
           <input type="text"
