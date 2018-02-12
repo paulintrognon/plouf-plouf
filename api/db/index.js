@@ -1,7 +1,7 @@
 'use strict';
 
 const bluebird = require('bluebird');
-const config = require('config').database;
+const config = require('config/api').database;
 const logger = require('../logger');
 const Sequelize = require('sequelize');
 

@@ -5,10 +5,13 @@
  */
 const path = require('path');
 const fs = require('fs');
-const configPath = path.join(__dirname, '../config/index.js');
-if (!fs.existsSync(configPath)) {
-  throw new Error('You need to create the config/index.js file from index.js.example');
-}
+const configFiles = ['api.js', 'index.js'];
+configFiles.forEach(configFile => {
+  const configPath = path.join(__dirname, `../config/${configFile}`);
+  if (!fs.existsSync(configPath)) {
+    throw new Error(`You need to create the config/${configFile} file from ${configFile}.example`);
+  }
+});
 
 /**
  * Loading dependencies
