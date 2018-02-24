@@ -1,4 +1,5 @@
 import api from '../services/api';
+import drawService from '../services/draw';
 import bluebird from 'bluebird';
 import _ from 'lodash';
 
@@ -6,14 +7,11 @@ import { push } from 'react-router-redux';
 
 export function fetchAction(slug) {
   return (dispatch) => {
-    dispatch({type: 'DRAW_FETCH'});
+    const draw = drawService.unserialize(slug);
+    draw.slug = slug;
+    dispatch({type: 'NEW_DRAW', payload: draw});
 
-    api.get(`/draw/${slug}`)
-      .then(res => {
-        dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
-      }, err => {
-        dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
-      });
+    logDraw(draw);
   }
 }
 
@@ -25,16 +23,14 @@ export function drawAction(values) {
       return;
     }
 
-    dispatch({type: 'DRAW_FETCH'});
+    const draw = drawService.draw(values);
+    draw.slug = drawService.serialize(draw);
 
-    api.post(`/draw/create`, { values })
-      .then(res => {
-        dispatch({type: 'CLEAR_VALUES'});
-        dispatch({type: 'DRAW_FETCH_FULFILLED', payload: res.data.draw});
-        dispatch(push('/d/'+res.data.draw.slug));
-      }, err => {
-        dispatch({type: 'DRAW_FETCH_REJECTED', payload: err});
-      });
+    dispatch({type: 'CLEAR_VALUES'});
+    dispatch({type: 'NEW_DRAW', payload: draw});
+    dispatch(push('/d/'+draw.slug));
+
+    logDraw(draw);
   };
 }
 
@@ -46,7 +42,6 @@ export function restartAction() {
 
 export function startAnimationAction(draw) {
   const nbValues = draw.values.length;
-  const drawnValueIndex = draw.values.indexOf(draw.drawnValue);
   return dispatch => {
     dispatch({type: 'ANIMATION_PLOUF_1'});
     bluebird.delay(300)
@@ -55,7 +50,7 @@ export function startAnimationAction(draw) {
         return bluebird.delay(500);
       })
       .then(() => {
-        let nbOfIterations = nbValues + drawnValueIndex;
+        let nbOfIterations = nbValues + draw.drawnIndex;
         if (nbValues < 3) {
           nbOfIterations += nbValues;
         }
@@ -73,4 +68,8 @@ export function startAnimationAction(draw) {
         dispatch({type: 'ANIMATION_END'});
       });
   }
+}
+
+function logDraw(draw) {
+  api.get(`/log/${draw.values.join(';')}/${draw.values[draw.drawnIndex]}`);
 }
