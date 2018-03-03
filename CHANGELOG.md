@@ -1,3 +1,12 @@
+# v2.0.0 (2018-03-03)
+
+**Improuved PWA experience:**
+
+  - App now words 100% offline: draws are made locally
+  - Remove Controllers/Models/Routes as they are now useless
+  - Remove database code as now useless
+  - Small updates and fixes
+
 ## v1.5.0 (2018-02-12)
 
   - Move sensible db credential information to a seperate js file
