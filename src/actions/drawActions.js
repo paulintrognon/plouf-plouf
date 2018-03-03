@@ -71,5 +71,9 @@ export function startAnimationAction(draw) {
 }
 
 function logDraw(draw) {
-  api.get(`/log/${draw.values.join(';')}/${draw.values[draw.drawnIndex]}`);
+  api.post('/log', {
+    values: draw.values,
+    result: draw.values[draw.drawnIndex],
+    slug: draw.slug,
+  });
 }
