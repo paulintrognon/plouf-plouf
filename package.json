@@ -1,6 +1,6 @@
 {
   "name": "plouf-plouf",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "dependencies": {
     "axios": "^0.16.2",
     "bluebird": "^3.5.0",
@@ -9,8 +9,6 @@
     "express": "^4.15.4",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
-    "mysql2": "^1.4.2",
-    "randomstring": "^1.1.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -22,7 +20,6 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0",
-    "sequelize": "^4.8.3",
     "winston": "^2.3.1"
   },
   "scripts": {

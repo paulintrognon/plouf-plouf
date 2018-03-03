@@ -21,16 +21,13 @@ class SubmitValues extends React.Component {
     const values = this.props.values;
 
     let btnText = 'Tirer au sort';
-    if (this.props.draw.fetching) {
-      btnText = <i className="fa fa-spinner" aria-hidden="true"></i>;
-    }
 
     return (
       <p className="submit-container">
         <button
           className="submit-button"
           type="button"
-          disabled={values.length < 2 || this.props.draw.fetching}
+          disabled={values.length < 2}
           onClick={this.handleSubmit.bind(this)}
           >
             {btnText}
