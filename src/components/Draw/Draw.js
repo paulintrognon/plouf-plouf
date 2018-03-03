@@ -43,20 +43,7 @@ class Draw extends Component {
   }
 
   renderContent(props) {
-    const { animation, draw, fetching, error } = props.draw;
-
-    if (fetching) {
-      return (
-        <p>
-          <i className='fa fa-spinner' aria-hidden="true"></i>
-          Tirage au sort...
-        </p>
-      );
-    }
-
-    if (error) {
-      return error.message;
-    }
+    const { animation, draw } = props.draw;
 
     if (!draw) {
       return 'Tirage inconnu !';
@@ -86,7 +73,7 @@ class Draw extends Component {
     return (
       <div className={'result '+visibilityClass}>
         <p className="select-phrase">
-          <b>{draw.drawnValue}</b> a été tiré au sort !
+          <b>{draw.values[draw.drawnIndex]}</b> a été tiré au sort !
         </p>
       </div>
     );
@@ -124,7 +111,7 @@ export default connect(mapStoreToProps)(Draw);
 function displayValues(draw, animation) {
   return draw.values.map((value, i) => {
     let classes = 'value ' + (animation.values[i] ? 'drop ' : '');
-    if (draw.drawnValue === value && animation.selectWinner) {
+    if (draw.drawnIndex === i && animation.selectWinner) {
       classes += ' drop selected';
     }
     return  (

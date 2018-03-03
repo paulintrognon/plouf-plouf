@@ -1,6 +1,6 @@
 {
-  "short_name": "Plouf, Plouf !",
-  "name": "Plouf plouf ! Pic nic douille c'est toi l'andouille...",
+  "short_name": "Plouf Plouf",
+  "name": "Plouf, plouf ! Tirage au sort",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#4cb4ff",
   "background_color": "#ffffff"
 }
