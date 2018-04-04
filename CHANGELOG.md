@@ -1,3 +1,7 @@
+## v2.1.0 (2018-04-04)
+
+  - Google Analytics added
+
 # v2.0.0 (2018-03-03)
 
 **Improuved PWA experience:**
