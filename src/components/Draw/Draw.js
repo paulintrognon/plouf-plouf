@@ -73,7 +73,7 @@ class Draw extends Component {
     return (
       <div className={'result '+visibilityClass}>
         <p className="select-phrase">
-          <b>{draw.values[draw.drawnIndex]}</b> a été tiré au sort !
+          <b>{draw.values[draw.drawnIndex]}</b> a été tiré(e) au sort !
         </p>
       </div>
     );
