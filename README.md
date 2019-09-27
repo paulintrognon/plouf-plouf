@@ -6,6 +6,5 @@ Site de tirage au sort en ligne.
 
   ```shell
   $ npm install
-  $ npm run api
   $ npm start
   ```

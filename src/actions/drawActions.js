@@ -1,4 +1,3 @@
-import api from '../services/api';
 import drawService from '../services/draw';
 import bluebird from 'bluebird';
 import _ from 'lodash';
@@ -10,8 +9,6 @@ export function fetchAction(slug) {
     const draw = drawService.unserialize(slug);
     draw.slug = slug;
     dispatch({type: 'NEW_DRAW', payload: draw});
-
-    logDraw(draw);
   }
 }
 
@@ -29,8 +26,6 @@ export function drawAction(values) {
     dispatch({type: 'CLEAR_VALUES'});
     dispatch({type: 'NEW_DRAW', payload: draw});
     dispatch(push('/d/'+draw.slug));
-
-    logDraw(draw);
   };
 }
 
@@ -68,12 +63,4 @@ export function startAnimationAction(draw) {
         dispatch({type: 'ANIMATION_END'});
       });
   }
-}
-
-function logDraw(draw) {
-  api.post('/log', {
-    values: draw.values,
-    result: draw.values[draw.drawnIndex],
-    slug: draw.slug,
-  });
 }
