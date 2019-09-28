@@ -16,7 +16,7 @@ export default function () {
       {' '}-{' '}
       <a href="https://github.com/paulintrognon/plouf-plouf/issues" target="_blank" rel="noopener noreferrer">
         <i className="fa fa-bug" aria-hidden="true"></i>
-        &nbsp;Soumettre des bugs &amp; suggestions
+        &nbsp;Bugs &amp; suggestions
       </a>
     </footer>
   )

@@ -1,8 +1,7 @@
 {
   "name": "plouf-plouf",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "dependencies": {
-    "axios": "^0.16.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.18.0",
     "cors": "^2.8.4",
