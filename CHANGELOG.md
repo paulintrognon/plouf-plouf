@@ -1,3 +1,12 @@
+# v3.0.0 (2019-09-28)
+
+**No tracking**
+
+  - Remove API
+  - Remove Google Analytics
+  - Gender neutral wording for draws
+  - Better readme
+
 ## v2.1.0 (2018-04-04)
 
   - Google Analytics added
@@ -6,7 +15,7 @@
 
 **Improuved PWA experience:**
 
-  - App now words 100% offline: draws are made locally
+  - App now works 100% offline: draws are made locally
   - Remove Controllers/Models/Routes as they are now useless
   - Remove database code as now useless
   - Small updates and fixes
