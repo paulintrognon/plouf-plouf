@@ -3,6 +3,7 @@
 **No tracking**
 
   - Remove API
+  - Upgrade dependencies
   - Remove Google Analytics
   - Gender neutral wording for draws
   - Better readme
