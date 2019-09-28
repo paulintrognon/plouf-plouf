@@ -1,6 +1,6 @@
 import drawService from '../services/draw';
 import bluebird from 'bluebird';
-import _ from 'lodash';
+import range from 'lodash.range';
 
 import { push } from 'react-router-redux';
 
@@ -49,7 +49,7 @@ export function startAnimationAction(draw) {
         if (nbValues < 3) {
           nbOfIterations += nbValues;
         }
-        return bluebird.each(_.range(nbOfIterations), n => {
+        return bluebird.each(range(nbOfIterations), n => {
           let i = n % nbValues;
           dispatch({type: 'ANIMATION_VALUE', payload: i});
           return bluebird.delay(300);

@@ -3,11 +3,8 @@
   "version": "3.0.0",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "body-parser": "^1.18.0",
-    "cors": "^2.8.4",
-    "express": "^4.15.4",
     "history": "^4.7.2",
-    "lodash": "^4.17.4",
+    "lodash.range": "^3.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -18,8 +15,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0",
-    "winston": "^2.3.1"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "postinstall": "ln -s ../config node_modules/config",
