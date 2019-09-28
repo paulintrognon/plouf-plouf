@@ -6,5 +6,6 @@ Site de tirage au sort en ligne.
 
   ```shell
   $ npm install
+  $ ln -s ../config node_modules/config
   $ npm start
   ```
