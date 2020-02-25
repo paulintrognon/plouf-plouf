@@ -1,0 +1,48 @@
+.container {
+  text-align: center;
+}
+
+.button {
+  background-color: #00e661;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 2.25em;
+  line-height: 1.5;
+  opacity: 1;
+  padding: calc(0.375em - 1px) 0.75em;
+  text-align: center;
+  transition: opacity 500ms, transform 300ms;
+  width: 250px;
+}
+
+.button:disabled {
+  background-color: #666;
+  cursor: default;
+  opacity: 0.2;
+  transition: opacity 500ms, background-color 500ms;
+}
+
+.button:not(:disabled):hover {
+  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: rotate(1deg);
+  }
+
+  20%, 80% {
+    transform: rotate(-1deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(3deg);
+  }
+
+  40%, 60% {
+    transform: rotate(-3deg);
+  }
+}
