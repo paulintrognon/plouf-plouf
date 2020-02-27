@@ -4,24 +4,23 @@ import styles from './Value.module.css'
 type Props = {
   value: string
   index: number
-  onRemove: (index: number) => void
+  onRemove?: (index: number) => void
 }
 
-class Value extends React.Component<Props> {
-  handleRemove = (): void => {
-    this.props.onRemove(this.props.index)
+const Value: React.FunctionComponent<Props> = ({ value, index, onRemove }) => {
+  const handleRemove = () => {
+    onRemove(index)
   }
 
-  render(): React.ReactNode {
-    return (
-      <div className={styles.value}>
-        <span className={styles.text}>{this.props.value}</span>
-        <span className={styles.cross} onClick={this.handleRemove}>
+  return (
+    <div className={styles.value}>
+      <span className={styles.text}>{value}</span>
+      {onRemove && (
+        <span className={styles.cross} onClick={handleRemove}>
           <i className="fa fa-times" aria-hidden="true"></i>
         </span>
-      </div>
-    )
-  }
+      )}
+    </div>
+  )
 }
-
 export default Value

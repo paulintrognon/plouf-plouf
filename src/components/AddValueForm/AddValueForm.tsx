@@ -78,7 +78,8 @@ class AddValueForm extends React.Component<Props, State> {
           </button>
         </p>
         <p className={styles.explanations2}>
-          (pour ajouter un élément, inscrivez le puis cliquez sur le bouton [+] ou sur la touche Entrée)
+          (pour ajouter un élément, inscrivez le puis cliquez sur le bouton [+] ou sur la touche
+          Entrée)
         </p>
       </div>
     )

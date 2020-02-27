@@ -29,7 +29,10 @@ export default class Layout extends React.Component<Props> {
             name="description"
             content="Plouf plouf est un outil de tirage au sort en ligne avec partage du résultat. Tirage aléatoire parmi une liste de mots."
           />
-          <meta name="keywords" content="plouf plouf, tirage au sort, tirer au sort, tirer au hasard,en ligne" />
+          <meta
+            name="keywords"
+            content="plouf plouf, tirage au sort, tirer au sort, tirer au hasard,en ligne"
+          />
           <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"

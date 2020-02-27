@@ -1,10 +1,10 @@
 import { StateType } from 'typesafe-actions'
 import { combineReducers } from 'redux'
-// import draw from './drawReducer';
+import drawReducer from './drawReducer'
 import valuesReducer from './valuesReducer'
 
 const rootReducer = combineReducers({
-  // draw,
+  draw: drawReducer,
   values: valuesReducer,
 })
 

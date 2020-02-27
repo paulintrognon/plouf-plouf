@@ -2,7 +2,7 @@ import React from 'react'
 import Values from '../../models/Values'
 import styles from './SubmitValues.module.css'
 
-type Props = {
+interface Props {
   values: Values
   onSubmit: () => void
 }
@@ -16,7 +16,12 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
 
   return (
     <p className={styles.container}>
-      <button className={styles.button} type="button" disabled={values.length < 2} onClick={handleSubmit}>
+      <button
+        className={styles.button}
+        type="button"
+        disabled={values.length < 2}
+        onClick={handleSubmit}
+      >
         Tirer au sort
       </button>
     </p>

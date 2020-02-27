@@ -6,11 +6,11 @@ const Header: React.FunctionComponent = () => (
   <header className={styles.main}>
     <nav className={styles.nav}>
       <h1 className={styles.brand}>
-        <Link href={'/'}>
-          <React.Fragment>
+        <Link href="/">
+          <a>
             <span>Plouf, </span>
             <span>Plouf !</span>
-          </React.Fragment>
+          </a>
         </Link>
       </h1>
     </nav>

@@ -15,6 +15,16 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        trailingComma: 'all',
+        singleQuote: true,
+        printWidth: 100,
+        tabWidth: 2,
+      }
+    ],
     "@typescript-eslint/explicit-function-return-type": 'off',
     'react/prop-types': 'off',
   }
