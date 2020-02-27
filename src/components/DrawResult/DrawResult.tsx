@@ -13,17 +13,17 @@ export interface Props {
 
 export const DrawResult: React.FunctionComponent<Props> = ({
   draw,
-  animation,
-  handleStartAnimation,
+  // animation,
+  // handleStartAnimation,
   handleLoadFromSlug,
   slug,
 }) => {
   if (slug && !draw.values.length) {
     handleLoadFromSlug(slug)
   }
-  if (draw.values && draw.values.length && !animation.started) {
-    handleStartAnimation()
-  }
+  // if (draw.values && draw.values.length && !animation.started) {
+  //   handleStartAnimation()
+  // }
   return (
     <div>
       {draw.values &&

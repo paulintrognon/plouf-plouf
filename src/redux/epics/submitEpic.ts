@@ -3,15 +3,16 @@ import { map, mergeMap, filter, ignoreElements } from 'rxjs/operators'
 import { isActionOf } from 'typesafe-actions'
 import { Epic } from 'redux-observable'
 import Router from 'next/router'
+import { RootState } from '../rootReducer'
+import { RootAction } from '../rootAction'
+import { drawValue } from '../features/draw/actions'
+import { drawToSlug } from '../features/draw/service'
 
-import * as drawServie from '../../services/draw'
-import { submit } from '../actions/valuesActions'
-
-const submitEpic: Epic = (action$, state$) =>
+const submitEpic: Epic<RootAction, RootAction, RootState> = (action$, store) =>
   action$.pipe(
-    filter(isActionOf(submit)),
-    map(() => drawServie.draw(state$.value.values)),
-    mergeMap(draw => from(Router.push('/d/[slug]', `/d/${draw.slug}`))),
+    filter(isActionOf(drawValue)),
+    map(() => drawToSlug(store.value.draw)),
+    mergeMap(slug => from(Router.push('/d/[slug]', `/d/${slug}`))),
     ignoreElements(),
   )
 
