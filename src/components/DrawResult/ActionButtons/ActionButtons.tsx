@@ -6,12 +6,13 @@ import globalStyles from '../../styles.module.css'
 interface Props {
   slug: string
   hidden: boolean
+  handleOtherResult: () => {}
 }
 
-const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden }) => {
+const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden, handleOtherResult }) => {
   return (
     <div className={classnames(styles.main, hidden ? globalStyles.hidden : globalStyles.visible)}>
-      <label className="share">
+      <label className={styles.share}>
         Partager le résultat :
         <input
           type="text"
@@ -20,12 +21,12 @@ const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden }) => {
           onFocus={e => e.target.select()}
         />
       </label>
-      <p className={styles.share}>
+      <p className={styles.buttons}>
         <button className={styles.button} type="button">
           <i className={classnames('fa fa-long-arrow-left', styles.icon)} aria-hidden="true"></i>
           Modifier
         </button>
-        <button className={styles.button} type="button">
+        <button className={styles.button} type="button" onClick={handleOtherResult}>
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Autre résultat
         </button>

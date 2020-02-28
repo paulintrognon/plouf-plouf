@@ -1,10 +1,43 @@
 .main {
   margin-top: 15vh;
 }
+@media (max-width: 767px) {
+  .main {
+    margin-top: 5vh;
+  }
+}
 
 .share {
   margin: 20px;
   font-size: 1.2rem;
+}
+@media (max-width: 767px) {
+  .share {
+    margin: 10px;
+    font-size: 0.8rem;
+  }
+}
+
+.shareInput {
+  width: 300px;
+  max-width: 80%;
+  height: 40px;
+  margin: 10px 10px;
+}
+@media (max-width: 767px) {
+  .shareInput {
+    margin: 10px 0;
+    font-size: 0.8rem;
+  }
+}
+
+.buttons {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .buttons {
+    margin-top: 0;
+  }
 }
 
 .button {
@@ -20,6 +53,11 @@
   line-height: 50px;
   height: 50px;
 }
+@media (max-width: 1000px) {
+  .button {
+    margin-bottom: 10px;
+  }
+}
 
 .icon {
   float: left;
@@ -30,11 +68,4 @@
 
 .button:hover {
   background-color: #3CA4EF;
-}
-
-.shareInput {
-  width: 300px;
-  height: 40px;
-  margin: 10px 10px;
-  font-size: 1.2rem;
 }

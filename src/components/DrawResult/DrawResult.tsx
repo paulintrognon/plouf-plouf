@@ -4,7 +4,7 @@ import Draw from '../../redux/features/draw/models/Draw'
 import Animation from '../../redux/features/animation/models/Animation'
 import styles from './DrawResult.module.css'
 import ResultPhrase from './ResultPhrase/ResultPhrase'
-import ActionButtons from './ActionButtons/ActionButtons'
+import ActionButtons from './ActionButtons/ActionButtons.connect'
 
 export interface Props {
   draw: Draw
