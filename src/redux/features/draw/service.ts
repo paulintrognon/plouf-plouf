@@ -1,14 +1,10 @@
 import Draw from './models/Draw'
 
 export function slugToDraw(slug: string): Draw {
-  const str = Buffer.from(slug, 'base64').toString()
-  const split = str.split('=>')
-  const values = split[0].split(',')
-  const drawnIndex = parseInt(split[1], 10)
-  return {
-    values,
-    drawnIndex,
+  if (slug.slice(-3) === '-v2') {
+    return decode(slug.slice(0, -3))
   }
+  return oldDecode(slug)
 }
 
 export function drawIndex(values: Array<string>): number {
@@ -16,6 +12,33 @@ export function drawIndex(values: Array<string>): number {
 }
 
 export function drawToSlug(draw: Draw): string {
-  const str = draw.values.join(',') + '=>' + draw.drawnIndex
-  return Buffer.from(str).toString('base64')
+  return encode(draw)
+}
+
+function encode(draw: Draw): string {
+  const encodedValues = draw.values.map(value => encodeURIComponent(value)).join(',')
+  const finalValue = `${encodedValues}=>${draw.drawnIndex}`
+  const inBase64 = Buffer.from(finalValue).toString('base64')
+  return `${encodeURIComponent(inBase64)}-v2`
+}
+
+function decode(slug: string): Draw {
+  const str = Buffer.from(slug, 'base64').toString()
+  const split = str.split('=>')
+  const values = split[0].split(',').map(value => decodeURIComponent(value))
+  const drawnIndex = parseInt(split[1], 10)
+  return {
+    values,
+    drawnIndex,
+  }
+}
+
+function oldDecode(b64: string): Draw {
+  const str = atob(b64)
+  const split = str.split('=>')
+  const values = split[0].split(',')
+  return {
+    values,
+    drawnIndex: parseInt(split[1], 10),
+  }
 }

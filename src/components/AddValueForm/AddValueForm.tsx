@@ -19,15 +19,7 @@ class AddValueForm extends React.Component<Props, State> {
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = event.target.value
-    let nextValue: string = value
-
-    const i = value.indexOf(',')
-    if (i !== -1) {
-      this.sendValue(value.slice(0, i))
-      nextValue = ''
-    }
-
-    this.setState({ text: nextValue })
+    this.setState({ text: value })
   }
 
   handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -68,7 +60,7 @@ class AddValueForm extends React.Component<Props, State> {
             className={styles.textInput}
             autoFocus
             ref={this.textInput}
-            placeholder="Ex: Pierre, Paul, Jacques [↵]"
+            placeholder="Ex: Pierre [↵] Paul [↵]"
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
             value={this.state.text}
@@ -78,8 +70,8 @@ class AddValueForm extends React.Component<Props, State> {
           </button>
         </p>
         <p className={styles.explanations2}>
-          (pour ajouter un élément, inscrivez le puis cliquez sur le bouton [+] ou sur la touche
-          Entrée)
+          (pour ajouter un élément, inscrivez le ci-dessus puis cliquez sur le bouton [+] ou sur la
+          touche Entrée)
         </p>
       </div>
     )
