@@ -1,0 +1,21 @@
+.main {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .list-values {
+    margin: 20px 0;
+  }
+
+   .result {
+    margin-top: 15px;
+  }
+
+   .buttons {
+    margin-top: 50px;
+  }
+
+   .buttons button {
+    margin-bottom: 10px;
+  }
+}

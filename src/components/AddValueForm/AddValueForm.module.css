@@ -1,0 +1,56 @@
+.main {
+  text-align: center;
+}
+
+.explanations1 {
+  font-size: 1.3rem;
+}
+
+.explanations2 {
+  font-size: 0.95rem;
+  color: #AAA;
+  margin-top: 1rem;
+}
+
+.inputContainer {
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+}
+
+.textInput {
+  border: 1px solid #AAA;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 5px 10px;
+  width: 250px;
+}
+
+.addInput {
+  border: 1px solid #4CB4FF;
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 3px;
+  background-color: #4CB4FF;
+  color: #FFF;
+  box-sizing: border-box;
+  transition: background-color 200ms;
+}
+
+.addInput:hover {
+  background-color: #3CA4EF;
+  cursor: pointer;
+}
+
+.addInput::-moz-focus-inner {
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .explanations1 {
+    font-size: 1.1rem;
+  }
+  .explanations2 {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+.main {
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #4CB4FF;
+    bottom: 0;
+    color: #fff;
+    font-size: 0.9rem;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  

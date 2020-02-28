@@ -1,0 +1,11 @@
+.list {
+  min-height: 50px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+@media (max-width: 767px) {
+  .list {
+    margin: 20px 0;
+  }
+}

@@ -1,3 +1,17 @@
+# v4.0.0 (2020-02-28)
+
+**New features**
+
+  - Can now edit values
+  - On navigator native "back" action, keeps the values
+  - When > 10 values, don't go through all values (fixes #12)
+
+**Complete rewrite**
+
+  - Full rewrite in TypeScript
+  - Use Next.js framework for server side rendering & code splitting
+  - Add dockerfile
+
 # v3.0.0 (2019-09-28)
 
 **No tracking**

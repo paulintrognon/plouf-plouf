@@ -1,0 +1,39 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    min-width: 320px;
+    min-height: 500px;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/fonts/Pacifico-Regular.woff2') format('woff2'),
+        url('/fonts/Pacifico-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato-Regular.woff2') format('woff2'),
+        url('/fonts/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
