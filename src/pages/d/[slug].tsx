@@ -9,7 +9,6 @@ const DrawPage = () => {
   return (
     <Layout>
       <DrawResult slug={slug} />
-      coucou: {slug}
     </Layout>
   )
 }

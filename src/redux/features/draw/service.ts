@@ -1,4 +1,4 @@
-import Draw from './models/draw'
+import Draw from './models/Draw'
 
 export function slugToDraw(slug: string): Draw {
   const str = Buffer.from(slug, 'base64').toString()

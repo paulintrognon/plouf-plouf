@@ -1,51 +1,5 @@
-.container {
+.main {
   text-align: center;
-}
-
-.result {
-  margin-top: 30px;
-  font-size: 1.5rem;
-}
-
-.buttons {
-  margin-top: 15vh;
-}
-
-.buttons .share {
-  margin: 20px;
-  font-size: 1.2rem;
-}
-
-.buttons button {
-  background-color: #4CB4FF;
-  border: 1px solid #4CB4FF;
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.3rem;
-  width: 250px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 200ms;
-  line-height: 50px;
-  height: 50px;
-}
-
-.buttons button .icon {
-  float: left;
-  line-height: 50px;
-  position: relative;
-  left: 5px;
-}
-
-.buttons button:hover {
-  background-color: #3CA4EF;
-}
-
-.buttons .share input {
-  width: 300px;
-  height: 40px;
-  margin: 10px 10px;
-  font-size: 1.2rem;
 }
 
 @media (max-width: 767px) {

@@ -1,13 +1,13 @@
 import { applyMiddleware, createStore } from 'redux'
-import { createEpicMiddleware } from 'redux-observable'
+import createSagaMiddleware from 'redux-saga'
 
 import logger from 'redux-logger'
-import rootEpic from './epics'
+import rootSaga from './rootSaga'
 import rootReducer from './rootReducer'
 
-const epicMiddleware = createEpicMiddleware()
+const sagaMiddleware = createSagaMiddleware()
 
-const middlewares = [epicMiddleware]
+const middlewares = [sagaMiddleware]
 
 if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger)
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
 function configureStore() {
   const store = createStore(rootReducer, applyMiddleware(...middlewares))
 
-  epicMiddleware.run(rootEpic)
+  sagaMiddleware.run(rootSaga)
 
   return store
 }

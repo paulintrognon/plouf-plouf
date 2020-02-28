@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import styles from './Layout.module.css'
-import Header from './Header'
+import Header from './Header/Header.connect'
 import Footer from './Footer'
 
 interface Props {

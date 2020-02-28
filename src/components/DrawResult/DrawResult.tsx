@@ -1,11 +1,14 @@
 import React from 'react'
-import Draw from '../../models/Draw'
-import DrawAnimation from '../../models/DrawAnimation'
-import Value from '../Value/Value'
+import AnimatedValues from './AnimatedValues/AnimatedValues'
+import Draw from '../../redux/features/draw/models/Draw'
+import Animation from '../../redux/features/animation/models/Animation'
+import styles from './DrawResult.module.css'
+import ResultPhrase from './ResultPhrase/ResultPhrase'
+import ActionButtons from './ActionButtons/ActionButtons'
 
 export interface Props {
   draw: Draw
-  animation: DrawAnimation
+  animation: Animation
   slug: string
   handleLoadFromSlug: (slug: string) => {}
   handleStartAnimation: () => {}
@@ -13,21 +16,32 @@ export interface Props {
 
 export const DrawResult: React.FunctionComponent<Props> = ({
   draw,
-  // animation,
-  // handleStartAnimation,
+  animation,
+  handleStartAnimation,
   handleLoadFromSlug,
   slug,
 }) => {
-  if (slug && !draw.values.length) {
-    handleLoadFromSlug(slug)
+  // If the draw has not been loaded yet
+  if (!draw.values.length) {
+    // If we have a slug, we trigged the load
+    if (!draw.values.length && slug) {
+      handleLoadFromSlug(slug)
+    }
+    return null
   }
-  // if (draw.values && draw.values.length && !animation.started) {
-  //   handleStartAnimation()
-  // }
+
+  // If the animation has not started yet and has not run yet, we start it
+  if (!animation.started && !animation.ended) {
+    handleStartAnimation()
+  }
+
+  const value = draw.values[draw.drawnIndex]
+
   return (
-    <div>
-      {draw.values &&
-        draw.values.map((value, index) => <Value key={index} value={value} index={index} />)}
+    <div className={styles.main}>
+      <AnimatedValues values={draw.values} animation={animation} />
+      <ResultPhrase value={value} hidden={!animation.selectWinner} />
+      <ActionButtons slug={slug} hidden={!animation.ended} />
     </div>
   )
 }
