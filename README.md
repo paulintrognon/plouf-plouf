@@ -1,10 +1,24 @@
 # Plouf, plouf !
 
-Site de tirage au sort en ligne.
+Site de tirage au sort en ligne avec partage du résultat.
 
-## Installation
+## Développement local
 
   ```shell
  yarn
  yarn dev
   ```
+
+## Production
+
+### Avec Node.js
+
+```
+yarn build && yarn start
+```
+
+### Avec Docker
+
+```
+docker run -d --restart=always -p 3001:3000 paulintrognon/plouf-plouf
+```
