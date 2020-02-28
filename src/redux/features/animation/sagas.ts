@@ -14,26 +14,28 @@ export function* startAnimation() {
   yield delay(300)
   yield put(actions.animatePlouf2())
 
-  let nbIterations = 1
-  if (nbValues < 3) {
-    nbIterations = 2
-  }
-  if (nbValues > 12) {
-    nbIterations = 0
-  }
-
   yield delay(100)
 
-  for (let iteration = 0; iteration < nbIterations; iteration++) {
-    for (let index = 0; index < state.draw.values.length; index++) {
+  if (nbValues <= 10) {
+    const nbIterations = nbValues < 3 ? 2 : 1
+
+    for (let iteration = 0; iteration < nbIterations; iteration++) {
+      for (let index = 0; index < nbValues; index++) {
+        yield delay(300)
+        yield put(actions.animateValue(index))
+      }
+    }
+
+    for (let index = 0; index < state.draw.drawnIndex; index++) {
       yield delay(300)
       yield put(actions.animateValue(index))
     }
-  }
-
-  for (let index = 0; index < state.draw.drawnIndex; index++) {
-    yield delay(300)
-    yield put(actions.animateValue(index))
+  } else {
+    for (let i = 0; i < 10; i++) {
+      const index = Math.floor(Math.random() * nbValues)
+      yield delay(300)
+      yield put(actions.animateValue(index))
+    }
   }
 
   yield delay(300)
