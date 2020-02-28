@@ -1,3 +1,8 @@
+### v4.0.1 (2020-02-28)
+
+  - Add missing robots.txt & sitemap.txt
+  - Add deploy inscructions in readme
+
 # v4.0.0 (2020-02-28)
 
 **New features**
