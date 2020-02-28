@@ -4,6 +4,11 @@
   height: 100px;
   padding: 0 20px;
 }
+@media (max-width: 767px) {
+  .main {
+    height: 70px;
+  }
+}
 
 .nav {
   margin: auto;
@@ -19,13 +24,9 @@
   line-height: 100px;
   margin: 0;
   text-decoration: none;
+  cursor: pointer;
 }
-
 @media (max-width: 767px) {
-  .main {
-    height: 70px;
-  }
-
   .brand {
     font-size: 2rem;
     line-height: 70px;

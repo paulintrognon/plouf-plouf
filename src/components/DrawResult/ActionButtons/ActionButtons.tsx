@@ -7,13 +7,21 @@ interface Props {
   slug: string
   hidden: boolean
   handleOtherResult: () => {}
+  handleReset: () => {}
+  handleBack: () => {}
 }
 
-const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden, handleOtherResult }) => {
+const ActionButtons: React.FunctionComponent<Props> = ({
+  slug,
+  hidden,
+  handleOtherResult,
+  handleReset,
+  handleBack,
+}) => {
   return (
     <div className={classnames(styles.main, hidden ? globalStyles.hidden : globalStyles.visible)}>
       <label className={styles.share}>
-        Partager le résultat :
+        Partager le résultat&nbsp;:
         <input
           type="text"
           className={styles.shareInput}
@@ -22,7 +30,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden, handleOth
         />
       </label>
       <p className={styles.buttons}>
-        <button className={styles.button} type="button">
+        <button className={styles.button} type="button" onClick={handleBack}>
           <i className={classnames('fa fa-long-arrow-left', styles.icon)} aria-hidden="true"></i>
           Modifier
         </button>
@@ -30,7 +38,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({ slug, hidden, handleOth
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Autre résultat
         </button>
-        <button className={styles.button} type="button">
+        <button className={styles.button} type="button" onClick={handleReset}>
           <i className={classnames('fa fa-plus', styles.icon)} aria-hidden="true"></i>
           Nouveau
         </button>
