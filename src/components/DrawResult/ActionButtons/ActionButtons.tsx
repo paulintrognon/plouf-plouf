@@ -25,7 +25,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({
         <input
           type="text"
           className={styles.shareInput}
-          defaultValue={`https://plouf-plouf.fr/d/${slug}`}
+          defaultValue={`https://plouf-plouf.fr/d/${encodeURIComponent(slug)}`}
           onFocus={e => e.target.select()}
         />
       </label>

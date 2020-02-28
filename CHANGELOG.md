@@ -1,3 +1,8 @@
+## v4.1.0 (2020-02-28)
+
+  - Safer values: can now add "=>" and comas in value input
+  - Backward compatibility with old draws (new draws have -v2 suffix)
+
 ### v4.0.1 (2020-02-28)
 
   - Add missing robots.txt & sitemap.txt

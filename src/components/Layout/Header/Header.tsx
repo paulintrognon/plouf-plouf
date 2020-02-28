@@ -11,9 +11,11 @@ interface Props {
 const Header: React.FunctionComponent<Props> = ({ animation, handleReset }) => (
   <header className={styles.main}>
     <nav className={styles.nav}>
-      <h1 className={styles.brand} onClick={handleReset} title="Tout effacer">
-        <span className={classnames({ [styles.drop]: animation.plouf1 })}>Plouf, </span>
-        <span className={classnames({ [styles.drop]: animation.plouf2 })}>Plouf !</span>
+      <h1 className={styles.brand} title="Tout effacer">
+        <a className={styles.brandLink} onClick={handleReset}>
+          <span className={classnames({ [styles.drop]: animation.plouf1 })}>Plouf, </span>
+          <span className={classnames({ [styles.drop]: animation.plouf2 })}>Plouf !</span>
+        </a>
       </h1>
     </nav>
   </header>

@@ -24,13 +24,16 @@
   line-height: 100px;
   margin: 0;
   text-decoration: none;
-  cursor: pointer;
 }
 @media (max-width: 767px) {
   .brand {
     font-size: 2rem;
     line-height: 70px;
   }
+}
+
+.brandLink {
+  cursor: pointer;
 }
 
 .drop {
