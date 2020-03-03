@@ -5,6 +5,7 @@ import Animation from '../../redux/features/animation/models/Animation'
 import styles from './DrawResult.module.css'
 import ResultPhrase from './ResultPhrase/ResultPhrase'
 import ActionButtons from './ActionButtons/ActionButtons.connect'
+import Head from 'next/head'
 
 export interface Props {
   draw: Draw
@@ -39,6 +40,9 @@ export const DrawResult: React.FunctionComponent<Props> = ({
 
   return (
     <div className={styles.main}>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <AnimatedValues values={draw.values} animation={animation} />
       <ResultPhrase value={value} hidden={!animation.selectWinner} />
       <ActionButtons slug={slug} hidden={!animation.ended} />
