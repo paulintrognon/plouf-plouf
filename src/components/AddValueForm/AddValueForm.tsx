@@ -60,7 +60,7 @@ class AddValueForm extends React.Component<Props, State> {
             className={styles.textInput}
             autoFocus
             ref={this.textInput}
-            placeholder="Ex: Pierre [↵] Paul [↵]"
+            placeholder="Ex: Paul [↵] Margot [↵]"
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
             value={this.state.text}
