@@ -1,9 +1,9 @@
 {
   "name": "plouf-plouf.fr",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },

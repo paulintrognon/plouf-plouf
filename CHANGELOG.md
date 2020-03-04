@@ -1,3 +1,9 @@
+## v4.3.0 (2020-03-04)
+
+- Change draw result route from /d/:slug to /r?:slug (to make offline caching simpler)
+- Scroll to top of the page when changing page
+- Scroll to top of the page when starting new draw
+
 ## v4.2.0 (2020-03-03)
 
 - Reintroduce offline fonctionnality with next-offline

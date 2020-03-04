@@ -10,7 +10,7 @@ function* drawValueWorker() {
   const state: RootState = yield select()
   const slug = drawToSlug(state.draw)
   yield put(reset())
-  yield Router.push('/d/[slug]', `/d/${slug}`)
+  yield Router.push('/r', `/r?${slug}`)
 }
 
 export default function* watchDrawValueAction() {
