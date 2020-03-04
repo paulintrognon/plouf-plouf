@@ -22,7 +22,16 @@ app.prepare().then(() => {
     if (pathname === '/service-worker.js') {
       const filePath = join(__dirname, '.next', pathname)
       app.serveStatic(req, res, filePath) 
-    } else {
+    }
+    // We redirect old /d/ requests
+    else if (pathname.slice(0, 3) === '/d/') {
+      res.writeHead(302, {
+        'Location': `/r?${pathname.slice(3)}`
+      });
+      res.end();
+    }
+    // Other
+    else {
       handle(req, res, parsedUrl)
     }
   }).listen(3000, err => {

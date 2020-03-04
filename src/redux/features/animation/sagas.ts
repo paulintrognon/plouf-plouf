@@ -9,6 +9,9 @@ export function* startAnimation() {
   const state: RootState = yield select()
   const nbValues = state.draw.values.length
 
+  // Before starting the animation, we go back to the top of the page
+  window.scrollTo(0, 0)
+
   yield delay(300)
   yield put(actions.animatePlouf1())
   yield delay(300)
