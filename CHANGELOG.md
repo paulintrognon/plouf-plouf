@@ -1,3 +1,7 @@
+### v4.3.1 (2020-03-05)
+
+- Fix offline cache by changing draw result route from /d/:slug to /r#:slug
+
 ## v4.3.0 (2020-03-04)
 
 - Change draw result route from /d/:slug to /r?:slug (to make offline caching simpler)
