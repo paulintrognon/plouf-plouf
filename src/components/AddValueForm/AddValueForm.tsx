@@ -64,13 +64,18 @@ class AddValueForm extends React.Component<Props, State> {
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
             value={this.state.text}
+            title="Entrez ici un mot ou un nom à tirer au sort."
           />
-          <button className={styles.addInput} onClick={this.handleAdd}>
+          <button
+            className={styles.addInput}
+            onClick={this.handleAdd}
+            title="Cliquez ici pour ajouter une valeur à la liste"
+          >
             <i className="fa fa-plus" aria-hidden="true" />
           </button>
         </p>
         <p className={styles.explanations2}>
-          (pour ajouter un élément, inscrivez le ci-dessus puis cliquez sur le bouton [+] ou sur la
+          (pour ajouter un élément, inscrivez-le ci-dessus puis cliquez sur le bouton [+] ou sur la
           touche Entrée)
         </p>
       </div>
