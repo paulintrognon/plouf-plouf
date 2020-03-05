@@ -26,7 +26,7 @@ app.prepare().then(() => {
     // We redirect old /d/ requests
     else if (pathname.slice(0, 3) === '/d/') {
       res.writeHead(302, {
-        'Location': `/r?${pathname.slice(3)}`
+        'Location': `/r#${pathname.slice(3)}`
       });
       res.end();
     }
