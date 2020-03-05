@@ -9,6 +9,7 @@ interface Props {
 
 export const SubmitValues: React.FunctionComponent<Props> = props => {
   const { values, onSubmit } = props
+  const canSubmit = values.length >= 2
 
   const handleSubmit = () => {
     onSubmit()
@@ -19,8 +20,11 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
       <button
         className={styles.button}
         type="button"
-        disabled={values.length < 2}
+        disabled={!canSubmit}
         onClick={handleSubmit}
+        title={
+          !canSubmit && 'Vous devez inscrire au moins deux valeurs avant de pouvoir tirer au sort.'
+        }
       >
         Tirer au sort
       </button>
