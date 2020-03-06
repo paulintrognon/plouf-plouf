@@ -1,3 +1,9 @@
+## v4.4.0
+
+- Add docker-compose
+- Differentiate docker dev & prod
+- Add Copyleft reference in footer
+
 ### v4.3.3
 
 - Fix share link
