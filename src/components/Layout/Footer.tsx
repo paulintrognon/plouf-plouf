@@ -4,8 +4,21 @@ import styles from './Footer.module.css'
 
 const Footer: React.FunctionComponent = () => (
   <footer className={styles.main}>
-    <a href="https://paulintrognon.fr" target="_blank" rel="noopener noreferrer">
-      (ɔ) Paulin Trognon 2020
+    <a
+      href="https://fr.wikipedia.org/wiki/Copyleft"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Copyleft"
+    >
+      (ɔ)
+    </a>{' '}
+    <a
+      href="https://paulintrognon.fr"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Site réalisé par Paulin Trognon"
+    >
+      Paulin Trognon 2020
     </a>{' '}
     -{' '}
     <a
