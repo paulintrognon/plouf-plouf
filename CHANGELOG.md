@@ -1,10 +1,14 @@
+### v4.3.3
+
+- Fix share link
+
 ### v4.3.2
 
 - Add tooltips (as `title=".."` properties) on form inputs to help the user
 
 ### v4.3.1 (2020-03-05)
 
-- Fix offline cache by changing draw result route from /d/:slug to /r#:slug
+- Fix offline cache by changing draw result route from /r?:slug to /r#:slug
 
 ## v4.3.0 (2020-03-04)
 
