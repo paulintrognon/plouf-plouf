@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    dev:
+        container_name: plouf-plouf-dev
+        image: paulintrognon/plouf-plouf-dev
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        environment:
+          - NODE_ENV=development
+        ports:
+            - 3000:3000
+            - 35729:35729
+        volumes:
+          - .:/usr/src/app
+    prod:
+        container_name: plouf-plouf
+        image: paulintrognon/plouf-plouf
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+          - NODE_ENV=production
+        ports:
+            - 80:80
