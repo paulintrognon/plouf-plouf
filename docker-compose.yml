@@ -10,7 +10,7 @@ services:
         environment:
           - NODE_ENV=development
         ports:
-            - 3000:3000
+            - ${DEV_PORT:-3000}:3000
             - 35729:35729
         volumes:
           - .:/usr/src/app
@@ -23,4 +23,4 @@ services:
         environment:
           - NODE_ENV=production
         ports:
-            - 80:3000
+          - ${PORT:-80}:3000

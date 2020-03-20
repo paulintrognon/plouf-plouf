@@ -1,3 +1,7 @@
+### v4.4.1
+
+- Can now change ports thanks to new .env file
+
 ## v4.4.0
 
 - Add docker-compose
