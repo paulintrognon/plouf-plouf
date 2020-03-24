@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout/Layout'
 import DrawResult from '../components/DrawResult/DrawResult.connect'
@@ -9,6 +10,10 @@ const DrawPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>test</title>
+        <meta name="robots" content="noindex" />
+      </Head>
       <DrawResult slug={slug} />
     </Layout>
   )
