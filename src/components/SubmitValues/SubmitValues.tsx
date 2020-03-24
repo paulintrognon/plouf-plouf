@@ -23,7 +23,9 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
         disabled={!canSubmit}
         onClick={handleSubmit}
         title={
-          !canSubmit && 'Vous devez inscrire au moins deux valeurs avant de pouvoir tirer au sort.'
+          !canSubmit
+            ? 'Vous devez inscrire au moins deux valeurs avant de pouvoir tirer au sort.'
+            : 'Lancer le tirage au sort !'
         }
       >
         Tirer au sort
