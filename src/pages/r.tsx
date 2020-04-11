@@ -11,7 +11,7 @@ const DrawPage: React.FunctionComponent = () => {
   return (
     <Layout>
       <Head>
-        <title>test</title>
+        <title>Plouf Plouf : résultat de votre tirage au sort</title>
         <meta name="robots" content="noindex" />
       </Head>
       <DrawResult slug={slug} />
