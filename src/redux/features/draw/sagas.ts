@@ -8,7 +8,7 @@ import { drawToSlug } from './services'
 
 function* drawValueWorker() {
   const state: RootState = yield select()
-  const slug = drawToSlug(state.draw)
+  const slug = drawToSlug(state.draw.draw)
   yield put(reset())
   yield Router.push('/r', `/r#${slug}`)
 }

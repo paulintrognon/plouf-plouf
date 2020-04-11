@@ -4,7 +4,7 @@ import * as valuesActions from '../../redux/features/draw/actions'
 import { RootState } from '../../redux/rootReducer'
 
 const mapStateToProps = (state: RootState) => ({
-  values: state.draw.values,
+  values: state.draw.draw.values,
 })
 
 const dispatchProps = {

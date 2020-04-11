@@ -5,10 +5,16 @@ import Draw from './models/Draw'
 
 export type DrawAction = ActionType<typeof actions>
 
-export type DrawState = Draw
+export type DrawState = {
+  draw: Draw
+  hasError: boolean
+}
 const initialState: DrawState = {
-  values: [],
-  drawnIndex: null,
+  draw: {
+    values: [],
+    drawnIndex: null,
+  },
+  hasError: false,
 }
 
 export default (state: DrawState = initialState, action: DrawAction): DrawState => {
@@ -16,23 +22,43 @@ export default (state: DrawState = initialState, action: DrawAction): DrawState 
     case getType(actions.addValue):
       return {
         ...state,
-        values: [...state.values, action.payload],
+        draw: {
+          ...state.draw,
+          values: [...state.draw.values, action.payload],
+        },
       }
 
     case getType(actions.removeValue):
       return {
         ...state,
-        values: state.values.filter((v, i) => i !== action.payload),
+        draw: {
+          ...state.draw,
+          values: state.draw.values.filter((v, i) => i !== action.payload),
+        },
       }
 
     case getType(actions.drawValue):
       return {
         ...state,
-        drawnIndex: drawIndex(state.values),
+        draw: {
+          ...state.draw,
+          drawnIndex: drawIndex(state.draw.values),
+        },
       }
 
     case getType(actions.loadFromSlug):
-      return slugToDraw(action.payload)
+      try {
+        return {
+          ...state,
+          hasError: false,
+          draw: slugToDraw(action.payload),
+        }
+      } catch (err) {
+        return {
+          ...state,
+          hasError: true,
+        }
+      }
 
     case getType(actions.reset):
       return initialState

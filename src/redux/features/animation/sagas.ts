@@ -7,10 +7,10 @@ const delay = (ms: number): Promise<void> => new Promise(resolve => setTimeout(r
 
 export function* startAnimation(): Generator {
   const state = (yield select()) as RootState
-  const nbValues = state.draw.values.length
+  const nbValues = state.draw.draw.values.length
 
   // If there is no draw, we stop here
-  if (state.draw.drawnIndex === null) {
+  if (state.draw.draw.drawnIndex === null) {
     return
   }
 
@@ -35,7 +35,7 @@ export function* startAnimation(): Generator {
       }
     }
 
-    for (let index = 0; index < state.draw.drawnIndex; index++) {
+    for (let index = 0; index < state.draw.draw.drawnIndex; index++) {
       yield delay(300)
       yield put(actions.animateValue(index))
     }
@@ -50,7 +50,7 @@ export function* startAnimation(): Generator {
   }
 
   yield delay(300)
-  yield put(actions.animateDrawnValue(state.draw.drawnIndex))
+  yield put(actions.animateDrawnValue(state.draw.draw.drawnIndex))
 
   yield delay(500)
   yield put(actions.end())
