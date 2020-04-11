@@ -25,13 +25,8 @@ function encode(draw: Draw): string {
 function decode(slug: string): Draw {
   const str = Buffer.from(decodeURIComponent(slug), 'base64').toString()
   const split = str.split('=>')
-  console.log(split)
   const values = split[0].split(',').map(value => decodeURIComponent(value))
   const drawnIndex = parseInt(split[1], 10)
-  console.log({
-    values,
-    drawnIndex,
-  })
   return {
     values,
     drawnIndex,

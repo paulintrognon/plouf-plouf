@@ -25,8 +25,8 @@ module.exports = {
         tabWidth: 2,
       }
     ],
-    "@typescript-eslint/explicit-function-return-type": 'off',
     "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+    "@typescript-eslint/explicit-function-return-type": 'off',
     'react/prop-types': 'off',
   }
 };

@@ -8,7 +8,7 @@ export type DrawAction = ActionType<typeof actions>
 export type DrawState = Draw
 const initialState: DrawState = {
   values: [],
-  drawnIndex: undefined,
+  drawnIndex: null,
 }
 
 export default (state: DrawState = initialState, action: DrawAction): DrawState => {

@@ -4,7 +4,7 @@ import SubmitValues from '../components/SubmitValues/SubmitValues.connect'
 import AddValueForm from '../components/AddValueForm/AddValueForm.connect'
 import ListValues from '../components/ListValues/ListValues.connect'
 
-const Homepage = () => (
+const Homepage: React.FunctionComponent = () => (
   <Layout>
     <AddValueForm />
     <ListValues />
