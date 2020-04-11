@@ -23,6 +23,10 @@
   max-width: 80%;
   height: 40px;
   margin: 10px 10px;
+  font-size: 1rem;
+  border: 1px solid #cdc7c2;
+  border-radius: 3px;
+  padding-left: 0.5rem;
 }
 @media (max-width: 767px) {
   .shareInput {
