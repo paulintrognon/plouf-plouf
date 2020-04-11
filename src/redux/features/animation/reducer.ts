@@ -14,16 +14,19 @@ const initialState: AnimationState = {
   ended: false,
 }
 
-export default function(state: AnimationState = initialState, action: AnimationAction) {
+export default function(
+  state: AnimationState = initialState,
+  action: AnimationAction,
+): AnimationState {
   switch (action.type) {
     case getType(actions.reset):
       return {
-        initialState,
+        ...initialState,
       }
 
     case getType(actions.start):
       return {
-        initialState,
+        ...initialState,
         started: true,
       }
 

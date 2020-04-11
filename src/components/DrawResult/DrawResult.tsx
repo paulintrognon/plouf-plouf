@@ -11,16 +11,16 @@ export interface Props {
   draw: Draw
   animation: Animation
   slug: string
-  handleLoadFromSlug: (slug: string) => {}
-  handleStartAnimation: () => {}
+  handleLoadFromSlug: (slug: string) => void
+  handleStartAnimation: () => void
 }
 
 export const DrawResult: React.FunctionComponent<Props> = ({
   draw,
   animation,
+  slug,
   handleStartAnimation,
   handleLoadFromSlug,
-  slug,
 }) => {
   // If the draw has not been loaded yet
   if (!draw.values.length) {
@@ -34,6 +34,10 @@ export const DrawResult: React.FunctionComponent<Props> = ({
   // If the animation has not started yet and has not run yet, we start it
   if (!animation.started && !animation.ended) {
     handleStartAnimation()
+  }
+
+  if (draw.drawnIndex === null) {
+    return null
   }
 
   const value = draw.values[draw.drawnIndex]

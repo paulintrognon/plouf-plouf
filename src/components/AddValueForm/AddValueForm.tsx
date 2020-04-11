@@ -37,7 +37,9 @@ class AddValueForm extends React.Component<Props, State> {
   handleAdd = () => {
     this.sendValue(this.state.text)
     this.setState({ text: '' })
-    this.textInput.current.focus()
+    if (this.textInput.current) {
+      this.textInput.current.focus()
+    }
   }
 
   sendValue = (value: string) => {
