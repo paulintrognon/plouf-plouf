@@ -1,6 +1,6 @@
 import { ActionType, getType } from 'typesafe-actions'
 import * as actions from './actions'
-import { slugToDraw, drawIndex } from './service'
+import { slugToDraw, drawIndex } from './services'
 import Draw from './models/Draw'
 
 export type DrawAction = ActionType<typeof actions>
