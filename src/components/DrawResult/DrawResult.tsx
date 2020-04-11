@@ -27,7 +27,7 @@ export const DrawResult: React.FunctionComponent<Props> = ({
     return (
       <div className={styles.error}>
         <p>
-          <img src="/sad-pepe.jpg" />
+          <img src="/sad.jpg" />
         </p>
         <p>Impossible de charger le tirage au sort à partir de cette url...</p>
       </div>
