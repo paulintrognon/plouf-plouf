@@ -1,3 +1,12 @@
+## v4.5.0
+
+- Display an error message if an error is catched when loading from slug
+- New slug format using JSON for futur flexibility
+- Now using TypeScript with strict mode
+- Fix page title for the result page
+- Better looking share input for Chrome
+- Bump next.js to v9.3
+
 ### v4.4.2
 
 - Results pages are now noindex
