@@ -12,7 +12,9 @@ type Props = {
 
 const Value: React.FunctionComponent<Props> = ({ value, index, onRemove, drop, selected }) => {
   const handleRemove = () => {
-    onRemove(index)
+    if (onRemove) {
+      onRemove(index)
+    }
   }
 
   return (

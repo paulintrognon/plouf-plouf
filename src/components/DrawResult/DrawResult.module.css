@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.error {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
+.error img {
+  padding: 2rem 0;
+}
+
 @media (max-width: 767px) {
   .list-values {
     margin: 20px 0;

@@ -4,14 +4,14 @@ import { useRouter } from 'next/router'
 import Layout from '../components/Layout/Layout'
 import DrawResult from '../components/DrawResult/DrawResult.connect'
 
-const DrawPage = () => {
+const DrawPage: React.FunctionComponent = () => {
   const router = useRouter()
   const slug = router.asPath.slice(3)
 
   return (
     <Layout>
       <Head>
-        <title>test</title>
+        <title>Plouf Plouf : résultat de votre tirage au sort</title>
         <meta name="robots" content="noindex" />
       </Head>
       <DrawResult slug={slug} />

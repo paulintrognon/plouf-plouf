@@ -4,11 +4,11 @@ import * as actions from './actions'
 import { reset } from '../animation/actions'
 import Router from 'next/router'
 import { RootState } from '../../rootReducer'
-import { drawToSlug } from './service'
+import { drawToSlug } from './services'
 
 function* drawValueWorker() {
   const state: RootState = yield select()
-  const slug = drawToSlug(state.draw)
+  const slug = drawToSlug(state.draw.draw)
   yield put(reset())
   yield Router.push('/r', `/r#${slug}`)
 }
