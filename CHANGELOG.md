@@ -5,6 +5,7 @@
 - Now using TypeScript with strict mode
 - Fix page title for the result page
 - Better looking share input for Chrome
+- Bump next.js to v9.3
 
 ### v4.4.2
 
