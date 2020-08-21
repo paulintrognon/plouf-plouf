@@ -9,7 +9,19 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless -b chrome",
     "pretest": "rm coverage/test-results/* || true",
-    "test": "start-server-and-test http://localhost:3000 cypress:run"
+    "test": "start-server-and-test http://localhost:3000 cypress:run",
+    "lint:src": "tsc --project tsconfig.json --pretty --noEmit && eslint src --ext ts --ext tsx",
+    "lint:cypress": "eslint cypress --ext js",
+    "lint": "yarn lint:src && yarn lint:cypress",
+    "lint:fix": "yarn lint:src --fix && yarn lint:cypress --fix"
+  },
+  "lint-staged": {
+    "src/**/*.@(ts|tsx)": [
+      "yarn lint:src"
+    ],
+    "cypress/**/*.js": [
+      "yarn lint:cypress"
+    ]
   },
   "dependencies": {
     "@redux-saga/types": "^1.1.0",
@@ -40,6 +52,8 @@
     "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "^1.19.1",
     "start-server-and-test": "^1.11.3"
   }
