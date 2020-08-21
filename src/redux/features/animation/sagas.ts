@@ -4,6 +4,8 @@ import { getType } from 'typesafe-actions'
 import { RootState } from '../../rootReducer'
 
 const delay = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms))
+const DELAY_MS = 300
+const MAX_VALUES_TO_ANIMATE = 6
 
 export function* startAnimation(): Generator {
   const state = (yield select()) as RootState
@@ -18,38 +20,38 @@ export function* startAnimation(): Generator {
   window.scrollTo(0, 0)
 
   // Animate title
-  yield delay(300)
+  yield delay(DELAY_MS)
   yield put(actions.animatePlouf1())
-  yield delay(300)
+  yield delay(DELAY_MS)
   yield put(actions.animatePlouf2())
   yield delay(100)
 
-  // If there is less than 10 values, we animate them all in turn
-  if (nbValues <= 10) {
+  // If there is less than MAX_VALUES_TO_ANIMATE values, we animate them all in turn
+  if (nbValues < MAX_VALUES_TO_ANIMATE) {
     const nbIterations = nbValues < 3 ? 2 : 1
 
     for (let iteration = 0; iteration < nbIterations; iteration++) {
       for (let index = 0; index < nbValues; index++) {
-        yield delay(300)
+        yield delay(DELAY_MS)
         yield put(actions.animateValue(index))
       }
     }
 
     for (let index = 0; index < state.draw.draw.drawnIndex; index++) {
-      yield delay(300)
+      yield delay(DELAY_MS)
       yield put(actions.animateValue(index))
     }
   }
-  // If there is more than 10 values, we animate 10 randomly picked values
+  // If there is more than MAX_VALUES_TO_ANIMATE values, we animate MAX_VALUES_TO_ANIMATE randomly picked values
   else {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < MAX_VALUES_TO_ANIMATE - 1; i++) {
       const index = Math.floor(Math.random() * nbValues)
-      yield delay(300)
+      yield delay(DELAY_MS)
       yield put(actions.animateValue(index))
     }
   }
 
-  yield delay(300)
+  yield delay(DELAY_MS)
   yield put(actions.animateDrawnValue(state.draw.draw.drawnIndex))
 
   yield delay(500)
