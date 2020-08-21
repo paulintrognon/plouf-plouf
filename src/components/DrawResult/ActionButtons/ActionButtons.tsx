@@ -23,6 +23,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({
       <label className={styles.share}>
         Partager le résultat&nbsp;:
         <input
+          data-cy="ActionButtons_shareInput"
           type="text"
           className={styles.shareInput}
           defaultValue={`https://plouf-plouf.fr/r#${slug}`}
@@ -30,15 +31,30 @@ const ActionButtons: React.FunctionComponent<Props> = ({
         />
       </label>
       <p className={styles.buttons}>
-        <button className={styles.button} type="button" onClick={handleBack}>
+        <button
+          data-cy="ActionButtons_modifyButton"
+          className={styles.button}
+          type="button"
+          onClick={handleBack}
+        >
           <i className={classnames('fa fa-long-arrow-left', styles.icon)} aria-hidden="true"></i>
           Modifier
         </button>
-        <button className={styles.button} type="button" onClick={handleOtherResult}>
+        <button
+          data-cy="ActionButtons_restartButton"
+          className={styles.button}
+          type="button"
+          onClick={handleOtherResult}
+        >
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Autre résultat
         </button>
-        <button className={styles.button} type="button" onClick={handleReset}>
+        <button
+          data-cy="ActionButtons_resetButton"
+          className={styles.button}
+          type="button"
+          onClick={handleReset}
+        >
           <i className={classnames('fa fa-plus', styles.icon)} aria-hidden="true"></i>
           Nouveau
         </button>

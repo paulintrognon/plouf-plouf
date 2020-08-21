@@ -18,6 +18,7 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
   return (
     <p className={styles.container}>
       <button
+        data-cy="SubmitValues"
         className={styles.button}
         type="button"
         disabled={!canSubmit}

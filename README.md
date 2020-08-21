@@ -1,32 +1,59 @@
 # Plouf, plouf !
 
+[![Actions Status](https://github.com/paulintrognon/plouf-plouf/workflows/Integration%20Tests/badge.svg)](https://github.com/paulintrognon/plouf-plouf/actions)
+
 Site de tirage au sort en ligne avec partage du résultat.
 
-## Développement local
+# Développement local
 
-
-### Avec Node.js
+## Avec Node.js
 
   ```shell
  yarn
  yarn dev
   ```
 
-### Avec Docker
+## Avec Docker
 
 ```shell
  docker-compose up dev
-  ```
-
-## Builder une image pour la prod
-
-### Avec Node.js
-
-```
-yarn build && yarn start
 ```
 
-### Avec Docker
+# Code Quality
+
+## Eslint
+
+Avant chaque commit est lancé un audit de code avec `husky`. Si l'audit ne passe pas, le commit ne pourra se faire.  
+
+Pour lancer un audit manuellement :
+
+```shell
+yarn lint
+```
+
+Vous pouvez tenter de réparer automatiquement les erreurs avec :
+
+```shell
+yarn lint:fix
+```
+
+## Tests E2E
+
+Lancer les tests E2E avec la commande suivante :
+
+```
+yarn test
+```
+
+# Prod
+
+## Avec Node.js
+
+```
+yarn start
+```
+
+## Avec Docker
 
 ```
 docker-compose up prod
