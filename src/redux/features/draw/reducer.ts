@@ -17,7 +17,7 @@ const initialState: DrawState = {
   hasError: false,
 }
 
-export default (state: DrawState = initialState, action: DrawAction): DrawState => {
+export default function reduce(state: DrawState = initialState, action: DrawAction): DrawState {
   switch (action.type) {
     case getType(actions.addValue):
       return {

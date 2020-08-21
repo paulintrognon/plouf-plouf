@@ -1,3 +1,9 @@
+### v4.5.1
+
+- Fix custom fonts that were loading incorrectly
+- Upgrade dependencies
+- Fix anonymous functions warnings
+
 ## v4.5.0
 
 - Display an error message if an error is catched when loading from slug

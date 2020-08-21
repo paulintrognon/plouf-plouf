@@ -5,7 +5,10 @@ html {
 
 body {
     color: #333;
-    font-family: 'Lato', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 
+        "Segoe UI", "Roboto", "Oxygen", 
+        "Ubuntu", "Cantarell", "Fira Sans", 
+        "Droid Sans", "Helvetica Neue", sans-serif;
     margin: 0;
     min-width: 320px;
     min-height: 500px;
@@ -28,12 +31,3 @@ a {
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {
-    font-family: 'Lato';
-    src: url('/fonts/Lato-Regular.woff2') format('woff2'),
-        url('/fonts/Lato-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
