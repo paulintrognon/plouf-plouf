@@ -18,7 +18,7 @@ const ResultPhrase: React.FunctionComponent<Props> = ({ value, hidden }) => {
       data-cy="ResultPhrase"
     >
       <p className="select-phrase">
-        <b data-cy="ResultPhrase_value">{value}</b> a été tiré(e) au sort !
+        <b data-cy="ResultPhrase_value">{value}</b> a été tiré(e) au sort&nbsp;!
       </p>
     </div>
   )
