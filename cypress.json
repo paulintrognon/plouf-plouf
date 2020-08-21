@@ -1,5 +1,5 @@
 {
   "baseUrl": "http://localhost:3000",
   "testFiles": "**/*_spec.js",
-  "videoUploadOnPasses": false
+  "video": false
 }
