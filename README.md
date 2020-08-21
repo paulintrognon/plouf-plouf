@@ -1,5 +1,7 @@
 # Plouf, plouf !
 
+[![Actions Status](https://github.com/paulintrognon/plouf-plouf/workflows/Integration%20Tests/badge.svg)](https://github.com/paulintrognon/plouf-plouf/actions)
+
 Site de tirage au sort en ligne avec partage du résultat.
 
 # Développement local
