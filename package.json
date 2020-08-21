@@ -2,6 +2,7 @@
   "name": "plouf-plouf.fr",
   "version": "4.6.0",
   "private": false,
+  "license": "MPL-2.0",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
