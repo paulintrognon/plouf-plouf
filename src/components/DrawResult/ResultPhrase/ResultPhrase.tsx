@@ -13,9 +13,12 @@ const ResultPhrase: React.FunctionComponent<Props> = ({ value, hidden }) => {
     return null
   }
   return (
-    <div className={classname(styles.main, hidden ? globalStyles.hidden : globalStyles.visible)}>
+    <div
+      className={classname(styles.main, hidden ? globalStyles.hidden : globalStyles.visible)}
+      data-cy="ResultPhrase"
+    >
       <p className="select-phrase">
-        <b>{value}</b> a été tiré(e) au sort !
+        <b data-cy="ResultPhrase_value">{value}</b> a été tiré(e) au sort !
       </p>
     </div>
   )

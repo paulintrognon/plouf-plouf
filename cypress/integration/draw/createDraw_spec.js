@@ -1,3 +1,5 @@
+const { addValue, removeValue } = require('./_utils')
+
 describe('Create draw', () => {
   it('should add values to the draw', () => {
     cy.visit('/')
@@ -96,12 +98,3 @@ describe('Create draw', () => {
     cy.get(`[data-cy=SubmitValues]`).should('be.disabled')
   })
 })
-
-function addValue(value) {
-  cy.get(`[data-cy=AddValueForm_textInput]`).type(value)
-  cy.get(`[data-cy=AddValueForm_addInput]`).click()
-}
-
-function removeValue(n) {
-  cy.get(`[data-cy=Value]:nth-of-type(${n}) [data-cy=Value_remove]`).click()
-}

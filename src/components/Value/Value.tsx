@@ -20,6 +20,7 @@ const Value: React.FunctionComponent<Props> = ({ value, index, onRemove, drop, s
   return (
     <div
       data-cy="Value"
+      data-cy-selected={selected ? 'Y' : 'N'}
       className={classnames(styles.value, { [styles.drop]: drop, [styles.selected]: selected })}
     >
       <span className={styles.text}>{value}</span>
