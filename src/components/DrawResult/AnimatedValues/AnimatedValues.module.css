@@ -1,0 +1,5 @@
+.main {
+  padding-bottom: 1rem;
+  max-height: 50vh;
+  overflow-y: auto;
+}

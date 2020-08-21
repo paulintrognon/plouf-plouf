@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './Value.module.css'
 import classnames from 'classnames'
 
@@ -8,20 +8,37 @@ type Props = {
   onRemove?: (index: number) => void
   drop?: boolean
   selected?: boolean
+  scrollIntoView?: boolean
 }
 
-const Value: React.FunctionComponent<Props> = ({ value, index, onRemove, drop, selected }) => {
+const Value: React.FunctionComponent<Props> = ({
+  value,
+  index,
+  onRemove,
+  drop,
+  selected,
+  scrollIntoView,
+}) => {
+  const ref = useRef<HTMLDivElement>(null)
   const handleRemove = () => {
     if (onRemove) {
       onRemove(index)
     }
   }
 
+  if (scrollIntoView && drop) {
+    ref.current?.scrollIntoView({ block: 'end' })
+  }
+
   return (
     <div
+      ref={ref}
       data-cy="Value"
       data-cy-selected={selected ? 'Y' : 'N'}
-      className={classnames(styles.value, { [styles.drop]: drop, [styles.selected]: selected })}
+      className={classnames(styles.value, {
+        [styles.drop]: drop,
+        [styles.selected]: selected,
+      })}
     >
       <span className={styles.text}>{value}</span>
       {onRemove && (
