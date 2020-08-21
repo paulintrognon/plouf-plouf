@@ -2,6 +2,13 @@ module.exports = {
   root: true,
   overrides: [
     {
+      files: '*.js',
+      env: {
+        es6: true,
+        node: true
+      },
+    },
+    {
       files: 'src/**/*',
       parser: '@typescript-eslint/parser',
       parserOptions: {

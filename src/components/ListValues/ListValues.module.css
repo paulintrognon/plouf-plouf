@@ -1,5 +1,7 @@
 .list {
   min-height: 50px;
+  max-height: 50vh;
+  overflow-y: auto;
   text-align: center;
   margin: 40px 0;
 }

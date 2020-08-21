@@ -12,10 +12,6 @@
 }
 
 @media (max-width: 767px) {
-  .list-values {
-    margin: 20px 0;
-  }
-
    .result {
     margin-top: 15px;
   }

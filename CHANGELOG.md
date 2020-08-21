@@ -1,3 +1,9 @@
+## v4.7.0
+
+- Max draw animations dropped from 10 to 6 for faster draw times
+- Long list of values now have a max height
+- Browser scroll to selected value on draw
+
 ## v4.6.0
 
 - Add E2E tests
