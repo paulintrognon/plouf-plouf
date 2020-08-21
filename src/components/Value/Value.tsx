@@ -18,7 +18,10 @@ const Value: React.FunctionComponent<Props> = ({ value, index, onRemove, drop, s
   }
 
   return (
-    <div className={classnames(styles.value, { [styles.drop]: drop, [styles.selected]: selected })}>
+    <div
+      data-cy="Value"
+      className={classnames(styles.value, { [styles.drop]: drop, [styles.selected]: selected })}
+    >
       <span className={styles.text}>{value}</span>
       {onRemove && (
         <span
@@ -26,7 +29,7 @@ const Value: React.FunctionComponent<Props> = ({ value, index, onRemove, drop, s
           onClick={handleRemove}
           title="Cliquez ici pour supprimer une valeur"
         >
-          <i className="fa fa-times" aria-hidden="true"></i>
+          <i data-cy="Value_remove" className="fa fa-times" aria-hidden="true"></i>
         </span>
       )}
     </div>
