@@ -43,11 +43,11 @@ class AddValueForm extends React.Component<Props, State> {
   }
 
   sendValue = (value: string) => {
-    const trimedValue = value.trim()
-    if (!trimedValue.length) {
+    const trimmedValue = value.trim()
+    if (!trimmedValue.length) {
       return
     }
-    this.props.onAddValue(trimedValue)
+    this.props.onAddValue(trimmedValue)
   }
 
   render() {
@@ -58,6 +58,7 @@ class AddValueForm extends React.Component<Props, State> {
         </p>
         <p className={styles.inputContainer}>
           <input
+            data-cy="AddValueForm_textInput"
             type="text"
             className={styles.textInput}
             autoFocus
@@ -69,6 +70,7 @@ class AddValueForm extends React.Component<Props, State> {
             title="Entrez ici un mot ou un nom à tirer au sort."
           />
           <button
+            data-cy="AddValueForm_addInput"
             className={styles.addInput}
             onClick={this.handleAdd}
             title="Cliquez ici pour ajouter une valeur à la liste"

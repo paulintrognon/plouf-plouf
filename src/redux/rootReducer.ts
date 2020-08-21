@@ -1,4 +1,3 @@
-import { StateType } from 'typesafe-actions'
 import { combineReducers } from 'redux'
 import drawReducer, { DrawState } from './features/draw/reducer'
 import animationReducer, { AnimationState } from './features/animation/reducer'

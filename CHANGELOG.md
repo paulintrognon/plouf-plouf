@@ -1,3 +1,9 @@
+## v4.6.0
+
+- Add E2E tests
+- Add Husky (pre-commint linting check)
+- Add github action for E2E tests
+
 ### v4.5.1
 
 - Fix custom fonts that were loading incorrectly
