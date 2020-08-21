@@ -38,4 +38,6 @@ app.prepare().then(() => {
     if (err) throw err
     console.log('> Ready on http://localhost:3000')
   })
+}).catch(err => {
+  console.error('Could not start the app.', err.message)
 })
