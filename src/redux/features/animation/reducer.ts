@@ -14,7 +14,7 @@ const initialState: AnimationState = {
   ended: false,
 }
 
-export default function(
+export default function reduce(
   state: AnimationState = initialState,
   action: AnimationAction,
 ): AnimationState {
