@@ -31,7 +31,7 @@ describe('Run draw', () => {
     )
     cy.get('[data-cy=ResultPhrase_value]', { timeout: 10000 }).should('be.visible')
     cy.window().then($window => {
-      expect($window.scrollY).to.be.closeTo(938, 50)
+      expect($window.scrollY).to.be.closeTo(938, 100)
     })
   })
   it('should scroll to selected value', () => {
