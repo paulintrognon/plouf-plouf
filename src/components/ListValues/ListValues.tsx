@@ -6,23 +6,51 @@ import Values from '../../redux/features/draw/models/Values'
 type Props = {
   values: Values
   onRemove: (index: number) => void
+  onReset: () => void
 }
 
-class ListValues extends React.Component<Props, {}> {
-  handleRemove = (i: number): void => {
-    this.props.onRemove(i)
+const ListValues: React.FC<Props> = ({ values, onRemove, onReset }) => {
+  /**
+   * When clicking the red cross on a value, it sends a remove action with the index of clicked value
+   */
+  const handleRemove = (valueClickedIndex: number): void => {
+    onRemove(valueClickedIndex)
   }
 
-  render(): React.ReactNode {
-    const values = this.props.values
-    return (
+  const handleReset = (): void => {
+    if (!confirm('Êtes-vous sûr de vouloir tout supprimer ?')) {
+      return
+    }
+    onReset()
+  }
+
+  /**
+   * If no values have been entered yet, we return an empty div
+   */
+  if (values.length === 0) {
+    return <div className={styles.container} />
+  }
+
+  return (
+    <div className={styles.container}>
+      <div>
+        <button
+          type="button"
+          onClick={handleReset}
+          className={styles.resetButton}
+          data-cy="ListValues_resetButton"
+          title="Cliquer ici pour recommencer un nouveau tirage de zéro."
+        >
+          Tout supprimer
+        </button>
+      </div>
       <div className={styles.list}>
         {values.map((value, index) => (
-          <Value key={index} index={index} value={value} onRemove={this.handleRemove}></Value>
+          <Value key={index} index={index} value={value} onRemove={handleRemove}></Value>
         ))}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default ListValues
