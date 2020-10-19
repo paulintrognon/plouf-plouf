@@ -4,17 +4,24 @@ import Animation from '../../../redux/features/animation/models/Animation'
 import Values from '../../../redux/features/draw/models/Values'
 import styles from './AnimatedValues.module.css'
 
+// from https://stackoverflow.com/a/22480938
+function isScrolledIntoView(el: HTMLElement) {
+  const rect = el.getBoundingClientRect()
+  const elemTop = rect.top
+  const elemBottom = rect.bottom
+  return elemTop >= 0 && elemBottom <= window.innerHeight
+}
+
 interface Props {
   values: Values
   animation: Animation
 }
-
 const AnimatedValues: React.FunctionComponent<Props> = ({ values, animation }) => {
   const ref = useRef<HTMLDivElement>(null)
   if (!values) {
     return <div>Pas de valeurs.</div>
   }
-  const isOverflowing = Boolean(ref.current && ref.current.scrollHeight > ref.current.offsetHeight)
+  const scrollIntoView = Boolean(ref.current && !isScrolledIntoView(ref.current))
   return (
     <div className={styles.main} ref={ref}>
       {values.map((value, index) => {
@@ -27,7 +34,7 @@ const AnimatedValues: React.FunctionComponent<Props> = ({ values, animation }) =
             key={index}
             value={value}
             index={index}
-            scrollIntoView={isOverflowing}
+            scrollIntoView={scrollIntoView}
           />
         )
       })}

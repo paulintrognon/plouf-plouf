@@ -1,13 +1,22 @@
-.list {
-  min-height: 50px;
-  max-height: 50vh;
-  overflow-y: auto;
+.container {
   text-align: center;
   margin: 40px 0;
+}
+
+.list {
+  margin-top: 5px;
 }
 
 @media (max-width: 767px) {
   .list {
     margin: 20px 0;
   }
+}
+
+.resetButton {
+  border: none;
+  background: none;
+  color: #E33;
+  text-decoration: underline;
+  cursor: pointer;
 }

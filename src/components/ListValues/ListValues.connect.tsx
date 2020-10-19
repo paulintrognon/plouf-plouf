@@ -9,6 +9,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const dispatchProps = {
   onRemove: valuesActions.removeValue,
+  onReset: valuesActions.reset,
 }
 
 export default connect(mapStateToProps, dispatchProps)(ListValues)

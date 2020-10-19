@@ -7,7 +7,6 @@ interface Props {
   slug: string
   hidden: boolean
   handleOtherResult: () => {}
-  handleReset: () => {}
   handleBack: () => {}
 }
 
@@ -15,7 +14,6 @@ const ActionButtons: React.FunctionComponent<Props> = ({
   slug,
   hidden,
   handleOtherResult,
-  handleReset,
   handleBack,
 }) => {
   return (
@@ -48,15 +46,6 @@ const ActionButtons: React.FunctionComponent<Props> = ({
         >
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Autre résultat
-        </button>
-        <button
-          data-cy="ActionButtons_resetButton"
-          className={styles.button}
-          type="button"
-          onClick={handleReset}
-        >
-          <i className={classnames('fa fa-plus', styles.icon)} aria-hidden="true"></i>
-          Nouveau
         </button>
       </p>
     </div>
