@@ -27,7 +27,7 @@ const Value: React.FunctionComponent<Props> = ({
   }
 
   if (scrollIntoView && drop) {
-    ref.current?.scrollIntoView({ block: 'end' })
+    ref.current?.scrollIntoView({ block: 'center' })
   }
 
   return (
