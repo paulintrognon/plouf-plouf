@@ -36,6 +36,8 @@
 }
 
 .buttons {
+  max-width: 1000px;
+  margin: auto;
   margin-top: 10px;
 }
 @media (max-width: 767px) {
@@ -49,25 +51,33 @@
   border: 1px solid #4CB4FF;
   color: #fff;
   margin: 0 10px;
+  padding: 10px 20px;
   font-size: 1.3rem;
-  width: 250px;
+  min-height: 50px;
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 200ms;
-  line-height: 50px;
-  height: 50px;
+  margin-bottom: 20px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 719px) {
   .button {
-    margin-bottom: 10px;
+    width: 80vw;
+  }
+  .button:first-child {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1001px) {
+  .button {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 1200px;
+    overflow: hidden;
   }
 }
 
 .icon {
-  float: left;
-  line-height: 50px;
-  position: relative;
-  left: 5px;
+  padding-right: 20px;
 }
 
 .button:hover {
