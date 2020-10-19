@@ -1,3 +1,11 @@
+## v4.8.0
+
+- Remove "New" button (as thought too dangerous)
+- Remove max height on list of values
+- Clicking on site title no longer removes everything
+- Add "Remove all" button on edit screen
+- Add "Redo without selected value" button
+
 ## v4.7.0
 
 - Max draw animations dropped from 10 to 6 for faster draw times
