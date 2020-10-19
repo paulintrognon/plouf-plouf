@@ -2,20 +2,39 @@ import React from 'react'
 import classnames from 'classnames'
 import styles from './ActionButtons.module.css'
 import globalStyles from '../../styles.module.css'
+import { DrawState } from '../../../redux/features/draw/reducer'
 
 interface Props {
   slug: string
   hidden: boolean
-  handleOtherResult: () => {}
-  handleBack: () => {}
+  draw: DrawState
+  handleOtherResult: () => void
+  handleBack: () => void
+  removeValueAction: (index: number) => void
 }
 
 const ActionButtons: React.FunctionComponent<Props> = ({
   slug,
+  draw,
   hidden,
+  removeValueAction,
   handleOtherResult,
   handleBack,
 }) => {
+  if (draw.hasError || !draw.draw.values || draw.draw.drawnIndex === null) {
+    return null
+  }
+
+  const handleRedoWithoutDrawnValue = () => {
+    if (draw.draw.drawnIndex === null) {
+      return
+    }
+    removeValueAction(draw.draw.drawnIndex)
+    handleOtherResult()
+  }
+
+  const value = draw.draw.values[draw.draw.drawnIndex]
+
   return (
     <div className={classnames(styles.main, hidden ? globalStyles.hidden : globalStyles.visible)}>
       <label className={styles.share}>
@@ -47,6 +66,17 @@ const ActionButtons: React.FunctionComponent<Props> = ({
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Autre résultat
         </button>
+        {draw.draw.values.length > 2 ? (
+          <button
+            data-cy="ActionButtons_restartWithoutSelectedValueButton"
+            className={styles.button}
+            type="button"
+            onClick={handleRedoWithoutDrawnValue}
+          >
+            <i className={classnames('fa fa-eraser', styles.icon)} aria-hidden="true"></i>
+            Refaire sans &quot;{value}&quot;
+          </button>
+        ) : null}
       </p>
     </div>
   )
