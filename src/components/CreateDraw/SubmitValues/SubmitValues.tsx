@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './SubmitValues.module.css'
-import Values from '../../redux/features/draw/models/Values'
+import Values from '../../../redux/features/draw/models/Values'
+import Button from '../../Shared/Button/Button'
 
 interface Props {
   values: Values
@@ -11,13 +12,14 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
   const { values, onSubmit } = props
   const canSubmit = values.length >= 2
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     onSubmit()
   }
 
   return (
     <p className={styles.container}>
-      <button
+      <Button
+        color="green"
         data-cy="SubmitValues"
         className={styles.button}
         type="button"
@@ -30,7 +32,7 @@ export const SubmitValues: React.FunctionComponent<Props> = props => {
         }
       >
         Tirer au sort
-      </button>
+      </Button>
     </p>
   )
 }

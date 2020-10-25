@@ -1,4 +1,4 @@
-const { addValue, removeValue } = require('./_utils')
+const { addValue, removeValue } = require('../_utils')
 
 describe('Create draw', () => {
   it('should add values to the draw', () => {

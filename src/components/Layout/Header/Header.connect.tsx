@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { connect } from 'react-redux'
 import Header from './Header'
 import { RootState } from '../../../redux/rootReducer'

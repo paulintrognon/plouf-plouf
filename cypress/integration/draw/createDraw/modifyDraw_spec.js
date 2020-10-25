@@ -1,4 +1,4 @@
-const { addValue, removeValue, draw } = require('./_utils')
+const { addValue, removeValue, draw } = require('../_utils')
 
 describe('Modify draw', () => {
   it('should go back to empty createDraw screen', () => {

@@ -4,11 +4,11 @@ import * as drawActions from '../../features/draw/actions'
 import { reset } from '../actions'
 import Router from 'next/router'
 
-function* resetWorker() {
+function* resetWorker(): Generator {
   yield Router.push('/')
   yield put(drawActions.reset())
 }
 
-export default function* watchResetAction() {
+export default function* watchResetAction(): Generator {
   yield takeEvery(getType(reset), resetWorker)
 }

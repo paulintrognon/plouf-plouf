@@ -25,7 +25,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({
     return null
   }
 
-  const handleRedoWithoutDrawnValue = () => {
+  const handleRedoWithoutDrawnValue = (): void => {
     if (draw.draw.drawnIndex === null) {
       return
     }

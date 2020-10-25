@@ -1,0 +1,32 @@
+.button {
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1.5;
+  text-align: center;
+  transition: background-color 300ms;
+  padding: 0.5rem 1rem;
+}
+
+.button.blue {
+  color: #FFF;
+  background-color: #4CB4FF;
+}
+.button.blue:hover {
+  background-color: #3CA4EF;
+}
+
+.button.green {
+  color: #FFF;
+  background-color: #00e661;
+}
+.button.green:hover {
+  background-color: #00c641;
+}
+
+.button:disabled {
+  background-color: #AAA;
+  cursor: not-allowed;
+}
+.button:disabled:hover {
+  background-color: #AAA;
+}

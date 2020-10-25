@@ -11,7 +11,7 @@ export function slugToDraw(slug: string): Draw {
   return draw
 }
 
-function decode(slug: string) {
+function decode(slug: string): Draw {
   if (slug.slice(-3) === '-v3') {
     return decodeV3(slug.slice(0, -3))
   }

@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
-import Value from '../../Value/Value'
+import Value from '../../Shared/Value/Value'
 import Animation from '../../../redux/features/animation/models/Animation'
 import Values from '../../../redux/features/draw/models/Values'
 import styles from './AnimatedValues.module.css'
 
 // from https://stackoverflow.com/a/22480938
-function isScrolledIntoView(el: HTMLElement) {
+function isScrolledIntoView(el: HTMLElement): boolean {
   const rect = el.getBoundingClientRect()
   const elemTop = rect.top
   const elemBottom = rect.bottom

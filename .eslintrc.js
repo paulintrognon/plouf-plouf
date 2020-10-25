@@ -27,8 +27,17 @@ module.exports = {
       rules: {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
         '@typescript-eslint/no-use-before-define': ['error', { 'functions': false }],
-        '@typescript-eslint/explicit-function-return-type': 'off',
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          {
+            allowExpressions: true,
+            allowTypedFunctionExpressions: true,
+            allowHigherOrderFunctions: true,
+            allowConciseArrowFunctionExpressionsStartingWithVoid: true
+          }
+        ],
         'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
       }
     },
     {

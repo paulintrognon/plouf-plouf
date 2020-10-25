@@ -1,0 +1,25 @@
+.container {
+  text-align: center;
+}
+
+.explanations {
+  margin-bottom: 2rem;
+}
+
+.textarea {
+  width: 85vw;
+  max-width: 50rem;
+  padding: 1rem;
+  min-height: 10rem;
+}
+
+.submitContainer {
+  margin-top: 2rem;
+}
+.submitButton {
+  font-size: 1.2rem;
+}
+
+.cancelContainer {
+  margin-top: 1rem;
+}

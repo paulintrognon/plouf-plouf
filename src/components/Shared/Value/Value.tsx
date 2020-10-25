@@ -20,7 +20,7 @@ const Value: React.FunctionComponent<Props> = ({
   scrollIntoView,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const handleRemove = () => {
+  const handleRemove = (): void => {
     if (onRemove) {
       onRemove(index)
     }

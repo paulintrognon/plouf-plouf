@@ -1,0 +1,23 @@
+.container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.explanations1 {
+  font-size: 1.3rem;
+}
+
+.explanations2 {
+  font-size: 0.95rem;
+  color: #AAA;
+  margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .explanations1 {
+    font-size: 1.1rem;
+  }
+  .explanations2 {
+    display: none;
+  }
+}

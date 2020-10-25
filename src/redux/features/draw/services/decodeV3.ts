@@ -1,6 +1,6 @@
 import Draw from '../models/Draw'
 
-export function encode(draw: Draw) {
+export function encode(draw: Draw): string {
   const jsonString = JSON.stringify({
     v: draw.values,
     i: draw.drawnIndex,

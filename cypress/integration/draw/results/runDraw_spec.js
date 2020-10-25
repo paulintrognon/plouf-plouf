@@ -1,4 +1,4 @@
-const { addValue, draw } = require('./_utils')
+const { addValue, draw } = require('../_utils')
 
 describe('Run draw', () => {
   it('should pick a value', () => {

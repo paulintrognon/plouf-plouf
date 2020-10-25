@@ -1,7 +1,8 @@
 import React from 'react'
-import Value from '../Value/Value'
+import Value from '../../Shared/Value/Value'
 import styles from './ListValues.module.css'
-import Values from '../../redux/features/draw/models/Values'
+import Values from '../../../redux/features/draw/models/Values'
+import SubmitValuesConnect from '../SubmitValues/SubmitValues.connect'
 
 type Props = {
   values: Values
