@@ -1,0 +1,21 @@
+.container {
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.textInput {
+  border: 1px solid #AAA;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 5px 10px;
+  width: 250px;
+}
+
+.addInput {
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+}

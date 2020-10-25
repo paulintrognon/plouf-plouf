@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import SubmitValues from './SubmitValues'
 import { connect } from 'react-redux'
 import * as valuesActions from '../../redux/features/draw/actions'

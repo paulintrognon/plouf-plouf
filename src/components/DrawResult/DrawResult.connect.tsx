@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import DrawResult from './DrawResult'
 import { connect } from 'react-redux'
 import { RootState } from '../../redux/rootReducer'
