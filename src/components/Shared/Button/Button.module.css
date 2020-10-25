@@ -4,6 +4,7 @@
   line-height: 1.5;
   text-align: center;
   transition: background-color 300ms;
+  padding: 0.5rem 1rem;
 }
 
 .button.blue {

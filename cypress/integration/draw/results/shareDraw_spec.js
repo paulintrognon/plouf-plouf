@@ -1,4 +1,4 @@
-const { addValue, draw } = require('./_utils')
+const { addValue, draw } = require('../_utils')
 
 describe('Share draw', () => {
   it('should repeat the same draw from the share URL', () => {

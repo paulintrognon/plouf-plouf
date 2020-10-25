@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import A from '../Shared/A/A'
 import styles from './BulkAddLink.module.css'
 
 const BulkAddLink: React.FC = () => {
@@ -6,9 +6,9 @@ const BulkAddLink: React.FC = () => {
     <div className={styles.container}>
       <p>ou</p>
       <p>
-        <Link href="/import">
-          <a className={styles.link}>Importer une liste</a>
-        </Link>
+        <A href="/import" data-cy="BulkAddLink">
+          Importer une liste
+        </A>
       </p>
     </div>
   )

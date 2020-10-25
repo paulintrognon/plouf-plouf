@@ -3,7 +3,7 @@ import styles from './AddValueForm.module.css'
 
 const AddValueForm: React.FC = () => {
   return (
-    <div className={styles.main}>
+    <div className={styles.container}>
       <p className={styles.explanations1}>
         Ajoutez plusieurs éléments à tirer au sort, puis cliquez sur &quot;Tirer au sort&quot;..
       </p>

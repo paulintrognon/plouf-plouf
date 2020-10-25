@@ -2,6 +2,7 @@ import { ActionType, getType } from 'typesafe-actions'
 import * as actions from './actions'
 import { slugToDraw, drawIndex } from './services'
 import Draw from './models/Draw'
+import { importValuesFromString } from './services/importValuesFromString'
 
 export type DrawAction = ActionType<typeof actions>
 
@@ -24,7 +25,12 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
         ...state,
         draw: {
           ...state.draw,
-          values: [...state.draw.values, action.payload],
+          // If we have more than 100 values, we add the new value at the beginning
+          // so that we can visualize it being added to the list
+          values:
+            state.draw.values.length < 100
+              ? [...state.draw.values, action.payload]
+              : [action.payload, ...state.draw.values],
         },
       }
 
@@ -43,6 +49,15 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
         draw: {
           ...state.draw,
           drawnIndex: drawIndex(state.draw.values),
+        },
+      }
+
+    case getType(actions.importValues):
+      return {
+        ...state,
+        draw: {
+          ...state.draw,
+          values: importValuesFromString(action.payload),
         },
       }
 

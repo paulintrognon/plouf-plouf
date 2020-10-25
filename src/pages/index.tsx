@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Layout from '../components/Layout/Layout'
 import BulkAddLink from '../components/BulkAddLink/BulkAddLink'
-import CreateDrawUI from '../components/CreateDraw/CreateDrawUI'
+import CreateDrawUI from '../components/CreateDraw/CreateDrawUI.connect'
 
 const Homepage: NextPage = () => (
   <Layout>

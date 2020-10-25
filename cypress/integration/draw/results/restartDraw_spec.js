@@ -1,4 +1,4 @@
-const { addValue, draw } = require('./_utils')
+const { addValue, draw } = require('../_utils')
 
 describe('Restart draw', () => {
   it('should restart a new draw with the same values', () => {

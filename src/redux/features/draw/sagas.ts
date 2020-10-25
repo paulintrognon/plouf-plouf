@@ -14,6 +14,11 @@ function* drawValueWorker() {
   yield Router.push('/r', `/r#${slug}`)
 }
 
+function* testWorker() {
+  yield Router.push('/')
+}
+
 export default function* watchDrawValueAction() {
   yield takeEvery(getType(actions.drawValue), drawValueWorker)
+  yield takeEvery(getType(actions.importValues), testWorker)
 }

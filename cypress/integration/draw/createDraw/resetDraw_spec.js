@@ -1,4 +1,4 @@
-const { addValue, removeValue } = require('./_utils')
+const { addValue, removeValue } = require('../_utils')
 
 describe('Reset draw', () => {
   it('should remove all values on click on resetButton', () => {
