@@ -1,3 +1,10 @@
+# v5.0.0
+
+- Add bulk import feature (located under /import)
+- Add "Tirer au sort" button on top if >100 values
+- Update all dependencies to latest version (incl React 17)
+- Refactoring: all components are now FC (no more classes), more organized components folder
+
 ## v4.8.0
 
 - Remove "New" button (as thought too dangerous)
