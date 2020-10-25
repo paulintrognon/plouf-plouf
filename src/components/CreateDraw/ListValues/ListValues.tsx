@@ -1,7 +1,7 @@
 import React from 'react'
-import Value from '../Value/Value'
+import Value from '../../Shared/Value/Value'
 import styles from './ListValues.module.css'
-import Values from '../../redux/features/draw/models/Values'
+import Values from '../../../redux/features/draw/models/Values'
 
 type Props = {
   values: Values

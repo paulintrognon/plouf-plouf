@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SubmitValues.module.css'
-import Values from '../../redux/features/draw/models/Values'
-import Button from '../Shared/Button/Button'
+import Values from '../../../redux/features/draw/models/Values'
+import Button from '../../Shared/Button/Button'
 
 interface Props {
   values: Values

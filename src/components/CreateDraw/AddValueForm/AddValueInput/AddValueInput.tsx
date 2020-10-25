@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import Button from '../../Shared/Button/Button'
+import Button from '../../../Shared/Button/Button'
 import styles from './AddValueInput.module.css'
 
 interface Props {

@@ -1,14 +1,12 @@
-import React from 'react'
+import { NextPage } from 'next'
 import Layout from '../components/Layout/Layout'
-import SubmitValues from '../components/SubmitValues/SubmitValues.connect'
-import AddValueForm from '../components/AddValueForm/AddValueForm'
-import ListValues from '../components/ListValues/ListValues.connect'
+import BulkAddLink from '../components/BulkAddLink/BulkAddLink'
+import CreateDrawUI from '../components/CreateDraw/CreateDrawUI'
 
-const Homepage: React.FunctionComponent = () => (
+const Homepage: NextPage = () => (
   <Layout>
-    <AddValueForm />
-    <ListValues />
-    <SubmitValues />
+    <CreateDrawUI />
+    <BulkAddLink />
   </Layout>
 )
 

@@ -1,6 +1,6 @@
 import AddValueInput from './AddValueInput'
 import { connect } from 'react-redux'
-import * as valuesActions from '../../../redux/features/draw/actions'
+import * as valuesActions from '../../../../redux/features/draw/actions'
 
 const dispatchProps = {
   addValueAction: valuesActions.addValue,
