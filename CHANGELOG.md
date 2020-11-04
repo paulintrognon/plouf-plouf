@@ -1,3 +1,7 @@
+# v5.0.1
+
+- Add restart:always for docker's prod build
+
 # v5.0.0
 
 - Add bulk import feature (located under /import)
