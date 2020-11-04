@@ -11,5 +11,8 @@ RUN yarn install --production
 # Coying the app
 COPY . .
 
+# Prebuilding the app (to prevent downtime)
+RUN yarn build
+
 # Running the app
 CMD [ "npm", "start" ]
