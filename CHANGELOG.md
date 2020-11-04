@@ -1,3 +1,7 @@
+# v5.1.0
+
+- Add Plausible Analytics (https://docs.plausible.io)
+
 # v5.0.2
 
 - Add build stage in Dockerfile to prevent downtime

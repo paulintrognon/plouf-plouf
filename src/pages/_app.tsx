@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Router from 'next/router'
 import { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
@@ -13,6 +14,14 @@ Router.events.on('routeChangeComplete', () => {
 // This default export is required in a new `pages/_app.js` file.
 const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => (
   <Provider store={store}>
+    <Head>
+      <script
+        async
+        defer
+        data-domain="plouf-plouf.fr"
+        src="https://analytics.plouf-plouf.fr/js/plausible.js"
+      ></script>
+    </Head>
     <Component {...pageProps} />
   </Provider>
 )
