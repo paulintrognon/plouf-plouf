@@ -1,3 +1,7 @@
+# v5.0.2
+
+- Add build stage in Dockerfile to prevent downtime
+
 # v5.0.1
 
 - Add restart:always for docker's prod build
