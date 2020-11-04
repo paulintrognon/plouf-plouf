@@ -1,3 +1,8 @@
+# v5.1.0
+
+- Add Plausible Analytics (https://docs.plausible.io)
+- Restrict Docker in 127.0.0.1
+
 # v5.0.2
 
 - Add build stage in Dockerfile to prevent downtime

@@ -24,4 +24,4 @@ services:
     environment:
       - NODE_ENV=production
     ports:
-      - ${PORT:-80}:3000
+      - 127.0.0.1:${PORT:-80}:3000
