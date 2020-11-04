@@ -19,7 +19,7 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => (
         async
         defer
         data-domain="plouf-plouf.fr"
-        src="https://analytics.plouf-plouf.fr/js/plausible.js"
+        src="https://analytiques.paulintrognon.fr/js/plausible.js"
       ></script>
     </Head>
     <Component {...pageProps} />
