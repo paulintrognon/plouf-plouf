@@ -1,3 +1,7 @@
+# v5.2.0
+
+- Remove Plausible Analytics
+
 # v5.1.0
 
 - Add Plausible Analytics (https://docs.plausible.io)
