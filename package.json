@@ -11,18 +11,13 @@
     "cypress:run": "cypress run --headless -b chrome",
     "pretest": "rm coverage/test-results/* || true",
     "test": "start-server-and-test http://localhost:3000 cypress:run",
-    "lint:src": "tsc --project tsconfig.json --pretty --noEmit && eslint src --ext ts --ext tsx",
-    "lint:cypress": "eslint cypress --ext js",
-    "lint": "yarn lint:src && yarn lint:cypress",
-    "lint:fix": "yarn lint:src --fix && yarn lint:cypress --fix"
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext ts --ext tsx"
   },
-  "lint-staged": {
-    "src/**/*.@(ts|tsx)": [
-      "yarn lint:src"
-    ],
-    "cypress/**/*.js": [
-      "yarn lint:cypress"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@redux-saga/types": "^1.1.0",
