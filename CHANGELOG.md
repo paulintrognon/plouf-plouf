@@ -1,3 +1,7 @@
+## v5.4.0
+
+- Add "About" page
+
 ## v5.3.0
 
 - Better linting
