@@ -1,17 +1,23 @@
-# v5.2.0
+## v5.3.0
+
+- Better linting
+- Upgrade dependencies
+- Add CI/CD as github actions
+
+## v5.2.0
 
 - Remove Plausible Analytics
 
-# v5.1.0
+## v5.1.0
 
 - Add Plausible Analytics (https://docs.plausible.io)
 - Restrict Docker in 127.0.0.1
 
-# v5.0.2
+### v5.0.2
 
 - Add build stage in Dockerfile to prevent downtime
 
-# v5.0.1
+### v5.0.1
 
 - Add restart:always for docker's prod build
 
