@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    paths:
+      - '**.ts'
+      - '**.tsx'
+      - '**.js'
+      - '**.json'
+
+jobs:
+  # Lint and TypeScript checks
+  lint:
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: yarn lint .
+    - name: Run TypeScript Checks
+      run: yarn type-check
+
+  # Cypress Integration tests
+  cypress-run:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm start
+          wait-on: http://localhost:3000
