@@ -1,6 +1,6 @@
 {
   "name": "plouf-plouf.fr",
-  "version": "5.2.0",
+  "version": "5.3.0",
   "private": false,
   "license": "MPL-2.0",
   "scripts": {
@@ -11,18 +11,13 @@
     "cypress:run": "cypress run --headless -b chrome",
     "pretest": "rm coverage/test-results/* || true",
     "test": "start-server-and-test http://localhost:3000 cypress:run",
-    "lint:src": "tsc --project tsconfig.json --pretty --noEmit && eslint src --ext ts --ext tsx",
-    "lint:cypress": "eslint cypress --ext js",
-    "lint": "yarn lint:src && yarn lint:cypress",
-    "lint:fix": "yarn lint:src --fix && yarn lint:cypress --fix"
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext ts --ext tsx"
   },
-  "lint-staged": {
-    "src/**/*.@(ts|tsx)": [
-      "yarn lint:src"
-    ],
-    "cypress/**/*.js": [
-      "yarn lint:cypress"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@redux-saga/types": "^1.1.0",
@@ -32,7 +27,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/redux-logger": "^3.0.8",
     "classnames": "^2.2.6",
-    "next": "^9.5.5",
+    "next": "^10.0.5",
     "next-offline": "^5.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

@@ -28,13 +28,13 @@ Avant chaque commit est lancé un audit de code avec `husky`. Si l'audit ne pass
 Pour lancer un audit manuellement :
 
 ```shell
-yarn lint
+yarn lint .
 ```
 
 Vous pouvez tenter de réparer automatiquement les erreurs avec :
 
 ```shell
-yarn lint:fix
+yarn lint . --fix
 ```
 
 ## Tests E2E
