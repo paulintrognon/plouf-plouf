@@ -1,12 +1,22 @@
-.main {
-    box-sizing: border-box;
-    padding: 12px;
-    background-color: #4CB4FF;
-    bottom: 0;
-    color: #fff;
-    font-size: 0.9rem;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
-  
+.container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: #4CB4FF;
+  color: #fff;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  padding-bottom: 7px;
+}
+
+.bottomLinks {
+  font-size: 0.9rem;
+}
