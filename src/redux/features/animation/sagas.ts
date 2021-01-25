@@ -44,10 +44,15 @@ export function* startAnimation(): Generator {
   }
   // If there is more than MAX_VALUES_TO_ANIMATE values, we animate MAX_VALUES_TO_ANIMATE randomly picked values
   else {
+    // We create a list of indices of candidates values to be animated
+    const indices = Object.keys(state.draw.draw.values)
+    indices.splice(state.draw.draw.drawnIndex, 1) // We exclude the result from the candidates
+
     for (let i = 0; i < MAX_VALUES_TO_ANIMATE - 1; i++) {
-      const index = Math.floor(Math.random() * nbValues)
+      const index = Math.floor(Math.random() * indices.length) // We pick a value from the (remaining) candidates
       yield delay(DELAY_MS)
-      yield put(actions.animateValue(index))
+      yield put(actions.animateValue(Number(indices[index])))
+      indices.splice(index, 1) // If a value has been chosen to be animated, we remove it from the candidates
     }
   }
 
