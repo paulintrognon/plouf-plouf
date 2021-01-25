@@ -1,3 +1,8 @@
+### v5.4.1
+
+- Fix visual bug: when a value was animated 2 times in a row, it broke the animation rhythm. Now, a value can be animated only once.
+- Remove autofocus of new value input, because it was annoying for mobile users.
+
 ## v5.4.0
 
 - Add "About" page

@@ -74,7 +74,6 @@ const AddValueInput: React.FC<Props> = ({ startDrawAction, addValueAction }) => 
         data-cy="AddValueForm_textInput"
         type="text"
         className={styles.textInput}
-        autoFocus
         ref={inputElement}
         placeholder="Ex: Paul [↵] Margot [↵]"
         onChange={handleInputChange}
