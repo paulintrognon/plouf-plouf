@@ -25,7 +25,7 @@ const Footer: React.FunctionComponent = () => (
         rel="noopener noreferrer"
         title="Site réalisé par Paulin Trognon"
       >
-        Paulin Trognon 2020
+        Paulin Trognon {new Date().getFullYear()}
       </a>{' '}
       -{' '}
       <a
