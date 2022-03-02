@@ -1,7 +1,6 @@
 # Plouf, plouf !
 
 [![Actions Status](https://github.com/paulintrognon/plouf-plouf/workflows/CI/badge.svg)](https://github.com/paulintrognon/plouf-plouf/actions)
-[![Actions Status](https://github.com/paulintrognon/plouf-plouf/workflows/CD/badge.svg)](https://github.com/paulintrognon/plouf-plouf/actions)
 
 Site de tirage au sort en ligne avec partage du résultat.
 
