@@ -43,7 +43,7 @@ const ActionButtons: React.FunctionComponent<Props> = ({
           data-cy="ActionButtons_shareInput"
           type="text"
           className={styles.shareInput}
-          defaultValue={`https://plouf-plouf.fr/r#${slug}`}
+          defaultValue={`${process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'}/r#${slug}`}
           onFocus={e => e.target.select()}
         />
       </label>
