@@ -6,7 +6,7 @@ const BulkAddLink: React.FC = () => {
     <div className={styles.container}>
       <p>ou</p>
       <p>
-        <A href="/import" data-cy="BulkAddLink">
+        <A href="/import" data-cy="BulkAddLink" style={{ color: 'blue' }}>
           Importer une liste
         </A>
       </p>

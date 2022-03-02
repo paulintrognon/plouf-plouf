@@ -7,7 +7,7 @@ const Layout: React.FC = ({ children }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
-      <meta name="theme-color" content="#4cb4ff" />
+      <meta name="theme-color" content="#e85229" />
       {/* Tell the browser it's a PWA */}
       <meta name="mobile-web-app-capable" content="yes" />
       {/* Tell iOS it's a PWA */}
@@ -16,7 +16,7 @@ const Layout: React.FC = ({ children }) => (
       <link rel="manifest" href="/manifest.webmanifest" />
       <link rel="shortcut icon" href="/favicon.ico" />
 
-      <title>Plouf, plouf ! Tirage au sort en ligne</title>
+      <title>Tirage au sort de canefora</title>
       <meta
         name="description"
         content="Plouf plouf est un outil de tirage au sort en ligne avec partage du résultat. Tirage aléatoire parmi une liste de mots."

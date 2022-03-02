@@ -14,8 +14,7 @@ const Header: React.FunctionComponent<Props> = ({ animation }) => (
       <h1 className={styles.brand}>
         <Link href="/">
           <a className={styles.brandLink}>
-            <span className={classnames({ [styles.drop]: animation.plouf1 })}>Plouf, </span>
-            <span className={classnames({ [styles.drop]: animation.plouf2 })}>Plouf !</span>
+            <span className={classnames({ [styles.drop]: animation.plouf1 })}>Canefora</span>
           </a>
         </Link>
       </h1>
