@@ -3,10 +3,10 @@ import AddValueForm from './AddValueForm/AddValueForm'
 import ListValuesConnect from './ListValues/ListValues.connect'
 import SubmitValuesConnect from './SubmitValues/SubmitValues.connect'
 
-interface Props {
+interface CreateDrawUIProps {
   values: Values
 }
-const CreateDrawUI: React.FC<Props> = ({ values }) => (
+const CreateDrawUI = ({ values }: CreateDrawUIProps) => (
   <>
     <AddValueForm />
     {values.length > 100 ? <SubmitValuesConnect /> : null}

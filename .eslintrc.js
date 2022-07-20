@@ -1,57 +1,86 @@
 module.exports = {
   root: true,
+  env: {
+    es6: true,
+    node: true,
+  },
+  extends: ['eslint:recommended', 'next', 'next/core-web-vitals', 'prettier'],
   overrides: [
-    {
-      files: '*.js',
-      env: {
-        es6: true,
-        node: true
-      },
-    },
     {
       files: 'src/**/*',
       parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        }
+      settings: { react: { version: 'detect' } },
+      env: {
+        browser: true,
+        node: true,
+        es6: true,
       },
       extends: [
         'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
+        'next',
+        'next/core-web-vitals',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        'prettier/@typescript-eslint',
-        'plugin:prettier/recommended'
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier',
       ],
       rules: {
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        '@typescript-eslint/no-use-before-define': ['error', { 'functions': false }],
-        '@typescript-eslint/no-unused-vars': ['error'],
-        "@typescript-eslint/explicit-function-return-type": [
-          "warn",
-          {
-            allowExpressions: true,
-            allowTypedFunctionExpressions: true,
-            allowHigherOrderFunctions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: true
-          }
-        ],
+        // We will use TypeScript's types for component props instead
         'react/prop-types': 'off',
+
+        // No need to import React when using Next.js
         'react/react-in-jsx-scope': 'off',
-      }
+
+        // This rule is not compatible with Next.js's <Link /> components
+        'jsx-a11y/anchor-is-valid': 'off',
+
+        // No need for this rule
+        'react/display-name': 'off',
+
+        // No unused vars
+        '@typescript-eslint/no-unused-vars': ['error'],
+
+        // Require return types on functions where useful
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+        'sort-imports': [
+          'error',
+          {
+            ignoreCase: false,
+            ignoreDeclarationSort: true,
+            ignoreMemberSort: false,
+          },
+        ],
+
+        'import/order': [
+          'warn',
+          {
+            groups: ['builtin', 'external', 'internal'],
+            pathGroups: [
+              {
+                pattern: 'next/**',
+                group: 'external',
+                position: 'before',
+              },
+            ],
+            'newlines-between': 'always',
+            alphabetize: {
+              order: 'asc',
+              caseInsensitive: true,
+            },
+          },
+        ],
+      },
     },
     {
       files: 'cypress/**/*',
-      plugins: ["cypress"],
-      extends: ["eslint:recommended", "plugin:prettier/recommended", "plugin:cypress/recommended"],
+      plugins: ['cypress'],
+      extends: ['eslint:recommended', 'plugin:cypress/recommended'],
       env: {
         es6: true,
-        node: true
+        node: true,
       },
-      rules: {
-        "prettier/prettier": ["error", {}, { usePrettierrc: true }]
-      }
-    }
-  ]
+    },
+  ],
 }

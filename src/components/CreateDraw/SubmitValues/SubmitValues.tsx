@@ -1,14 +1,15 @@
 import React from 'react'
-import styles from './SubmitValues.module.css'
+
 import Values from '../../../redux/features/draw/models/Values'
 import Button from '../../Shared/Button/Button'
+import styles from './SubmitValues.module.css'
 
-interface Props {
+interface SubmitValuesProps {
   values: Values
   onSubmit: () => void
 }
 
-export const SubmitValues: React.FunctionComponent<Props> = props => {
+export const SubmitValues = (props: SubmitValuesProps) => {
   const { values, onSubmit } = props
   const canSubmit = values.length >= 2
 

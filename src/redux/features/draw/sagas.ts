@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { select, takeEvery, put } from 'redux-saga/effects'
-import { getType } from 'typesafe-actions'
-import * as actions from './actions'
-import { reset } from '../animation/actions'
 import Router from 'next/router'
+import { put, select, takeEvery } from 'redux-saga/effects'
+import { getType } from 'typesafe-actions'
+
 import { RootState } from '../../rootReducer'
+import { reset } from '../animation/actions'
+import * as actions from './actions'
 import { drawToSlug } from './services'
 
 function* drawValueWorker() {

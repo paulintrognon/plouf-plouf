@@ -1,10 +1,11 @@
-import React from 'react'
 import classnames from 'classnames'
-import styles from './ActionButtons.module.css'
-import globalStyles from '../../styles.module.css'
-import { DrawState } from '../../../redux/features/draw/reducer'
+import React from 'react'
 
-interface Props {
+import { DrawState } from '../../../redux/features/draw/reducer'
+import globalStyles from '../../styles.module.css'
+import styles from './ActionButtons.module.css'
+
+interface ActionButtonsProps {
   slug: string
   hidden: boolean
   draw: DrawState
@@ -12,15 +13,14 @@ interface Props {
   handleBack: () => void
   removeValueAction: (index: number) => void
 }
-
-const ActionButtons: React.FunctionComponent<Props> = ({
+const ActionButtons = ({
   slug,
   draw,
   hidden,
   removeValueAction,
   handleOtherResult,
   handleBack,
-}) => {
+}: ActionButtonsProps) => {
   if (draw.hasError || !draw.draw.values || draw.draw.drawnIndex === null) {
     return null
   }

@@ -1,14 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
 import classnames from 'classnames'
-import styles from './Header.module.css'
-import Animation from '../../../redux/features/animation/models/Animation'
+import Link from 'next/link'
+import React from 'react'
 
-interface Props {
+import Animation from '../../../redux/features/animation/models/Animation'
+import styles from './Header.module.css'
+
+interface HeaderProps {
   animation: Animation
 }
 
-const Header: React.FunctionComponent<Props> = ({ animation }) => (
+const Header = ({ animation }: HeaderProps) => (
   <header className={styles.main}>
     <nav className={styles.nav}>
       <h1 className={styles.brand}>

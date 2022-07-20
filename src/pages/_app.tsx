@@ -1,6 +1,6 @@
-import React from 'react'
-import Router from 'next/router'
 import { AppProps } from 'next/app'
+import Router from 'next/router'
+import React from 'react'
 import { Provider } from 'react-redux'
 import '../styles.css'
 
@@ -11,7 +11,7 @@ Router.events.on('routeChangeComplete', () => {
 })
 
 // This default export is required in a new `pages/_app.js` file.
-const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => (
+const App = ({ Component, pageProps }: AppProps) => (
   <Provider store={store}>
     <Component {...pageProps} />
   </Provider>

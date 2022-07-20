@@ -1,15 +1,16 @@
 import React from 'react'
+
+import Values from '../../../redux/features/draw/models/Values'
 import Value from '../../Shared/Value/Value'
 import styles from './ListValues.module.css'
-import Values from '../../../redux/features/draw/models/Values'
 
-type Props = {
+type ListValuesProps = {
   values: Values
   onRemove: (index: number) => void
   onReset: () => void
 }
 
-const ListValues: React.FC<Props> = ({ values, onRemove, onReset }) => {
+const ListValues = ({ values, onRemove, onReset }: ListValuesProps) => {
   /**
    * When clicking the red cross on a value, it sends a remove action with the index of clicked value
    */

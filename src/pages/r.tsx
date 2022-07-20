@@ -1,10 +1,11 @@
-import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Layout from '../components/Layout/Layout'
-import DrawResult from '../components/DrawResult/DrawResult.connect'
+import React from 'react'
 
-const DrawPage: React.FunctionComponent = () => {
+import DrawResult from '../components/DrawResult/DrawResult.connect'
+import Layout from '../components/Layout/Layout'
+
+const DrawPage = () => {
   const router = useRouter()
   const slug = router.asPath.slice(3)
 

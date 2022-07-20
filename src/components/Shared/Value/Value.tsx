@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
-import styles from './Value.module.css'
 import classnames from 'classnames'
+import React, { useRef } from 'react'
 
-type Props = {
+import styles from './Value.module.css'
+
+type ValueProps = {
   value: string
   index: number
   onRemove?: (index: number) => void
@@ -11,14 +12,7 @@ type Props = {
   scrollIntoView?: boolean
 }
 
-const Value: React.FunctionComponent<Props> = ({
-  value,
-  index,
-  onRemove,
-  drop,
-  selected,
-  scrollIntoView,
-}) => {
+const Value = ({ value, index, onRemove, drop, selected, scrollIntoView }: ValueProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const handleRemove = (): void => {
     if (onRemove) {
@@ -42,13 +36,13 @@ const Value: React.FunctionComponent<Props> = ({
     >
       <span className={styles.text}>{value}</span>
       {onRemove && (
-        <span
+        <button
           className={styles.cross}
           onClick={handleRemove}
           title="Cliquez ici pour supprimer une valeur"
         >
           <i data-cy="Value_remove" className="fa fa-times" aria-hidden="true"></i>
-        </span>
+        </button>
       )}
     </div>
   )

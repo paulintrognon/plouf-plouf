@@ -1,13 +1,15 @@
-import React from 'react'
-import AnimatedValues from './AnimatedValues/AnimatedValues'
-import { DrawState } from '../../redux/features/draw/reducer'
-import Animation from '../../redux/features/animation/models/Animation'
-import ResultPhrase from './ResultPhrase/ResultPhrase'
-import ActionButtons from './ActionButtons/ActionButtons.connect'
 import Head from 'next/head'
-import styles from './DrawResult.module.css'
+import Image from 'next/image'
+import React from 'react'
 
-export interface Props {
+import Animation from '../../redux/features/animation/models/Animation'
+import { DrawState } from '../../redux/features/draw/reducer'
+import ActionButtons from './ActionButtons/ActionButtons.connect'
+import AnimatedValues from './AnimatedValues/AnimatedValues'
+import styles from './DrawResult.module.css'
+import ResultPhrase from './ResultPhrase/ResultPhrase'
+
+export interface DrawResultProps {
   draw: DrawState
   animation: Animation
   slug: string
@@ -15,19 +17,19 @@ export interface Props {
   handleStartAnimation: () => void
 }
 
-export const DrawResult: React.FunctionComponent<Props> = ({
+export const DrawResult = ({
   draw,
   animation,
   slug,
   handleStartAnimation,
   handleLoadFromSlug,
-}) => {
+}: DrawResultProps) => {
   // If error
   if (draw.hasError) {
     return (
       <div className={styles.error}>
         <p>
-          <img src="/sad.jpg" />
+          <Image src="/sad.jpg" alt="Sad cat drawing" width={250} height={161} />
         </p>
         <p>Impossible de charger le tirage au sort à partir de cette url...</p>
       </div>

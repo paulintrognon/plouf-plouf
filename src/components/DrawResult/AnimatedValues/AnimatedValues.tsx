@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
-import Value from '../../Shared/Value/Value'
+
 import Animation from '../../../redux/features/animation/models/Animation'
 import Values from '../../../redux/features/draw/models/Values'
+import Value from '../../Shared/Value/Value'
 import styles from './AnimatedValues.module.css'
 
 // from https://stackoverflow.com/a/22480938
@@ -12,11 +13,11 @@ function isScrolledIntoView(el: HTMLElement): boolean {
   return elemTop >= 0 && elemBottom <= window.innerHeight
 }
 
-interface Props {
+interface AnimatedValuesProps {
   values: Values
   animation: Animation
 }
-const AnimatedValues: React.FunctionComponent<Props> = ({ values, animation }) => {
+const AnimatedValues = ({ values, animation }: AnimatedValuesProps) => {
   const ref = useRef<HTMLDivElement>(null)
   if (!values) {
     return <div>Pas de valeurs.</div>

@@ -1,8 +1,7 @@
-import { NextPage } from 'next'
-import Layout from '../components/Layout/Layout'
 import ImportValues from '../components/ImportValues/ImportValues.connect'
+import Layout from '../components/Layout/Layout'
 
-const ImportPage: NextPage = () => (
+const ImportPage = () => (
   <Layout>
     <ImportValues />
   </Layout>

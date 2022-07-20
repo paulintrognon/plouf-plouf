@@ -1,9 +1,13 @@
 import Head from 'next/head'
-import styles from './Layout.module.css'
-import Header from './Header/Header.connect'
-import Footer from './Footer'
 
-const Layout: React.FC = ({ children }) => (
+import Footer from './Footer'
+import Header from './Header/Header.connect'
+import styles from './Layout.module.css'
+
+interface LayoutProps {
+  children: React.ReactNode
+}
+const Layout = ({ children }: LayoutProps) => (
   <>
     <Head>
       <meta charSet="utf-8" />

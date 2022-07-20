@@ -1,14 +1,15 @@
-import React from 'react'
 import classname from 'classnames'
-import styles from './ResultPhrase.module.css'
-import globalStyles from '../../styles.module.css'
+import React from 'react'
 
-interface Props {
+import globalStyles from '../../styles.module.css'
+import styles from './ResultPhrase.module.css'
+
+interface ResultPhraseProps {
   value: string
   hidden: boolean
 }
 
-const ResultPhrase: React.FunctionComponent<Props> = ({ value, hidden }) => {
+const ResultPhrase = ({ value, hidden }: ResultPhraseProps) => {
   if (!value) {
     return null
   }

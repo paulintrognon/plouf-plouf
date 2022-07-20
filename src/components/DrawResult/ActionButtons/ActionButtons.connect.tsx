@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { connect } from 'react-redux'
-import ActionButtons from './ActionButtons'
-import { drawValue, removeValue } from '../../../redux/features/draw/actions'
+
 import { backToValuesForm } from '../../../redux/common/actions'
+import { drawValue, removeValue } from '../../../redux/features/draw/actions'
 import { RootState } from '../../../redux/rootReducer'
+import ActionButtons from './ActionButtons'
 
 interface OwnProps {
   hidden: boolean

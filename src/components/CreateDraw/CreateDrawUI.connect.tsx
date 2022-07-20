@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import CreateDrawUI from './CreateDrawUI'
 import { connect } from 'react-redux'
+
 import { RootState } from '../../redux/rootReducer'
+import CreateDrawUI from './CreateDrawUI'
 
 const mapStateToProps = (state: RootState) => ({
   values: state.draw.draw.values,

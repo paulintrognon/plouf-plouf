@@ -1,7 +1,7 @@
-import AddValueInput from './AddValueInput/AddValueInput.connect'
 import styles from './AddValueForm.module.css'
+import AddValueInput from './AddValueInput/AddValueInput.connect'
 
-const AddValueForm: React.FC = () => {
+const AddValueForm = () => {
   return (
     <div className={styles.container}>
       <p className={styles.explanations1}>

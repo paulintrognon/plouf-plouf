@@ -1,9 +1,8 @@
-import { NextPage } from 'next'
-import Layout from '../components/Layout/Layout'
 import BulkAddLink from '../components/BulkAddLink/BulkAddLink'
 import CreateDrawUI from '../components/CreateDraw/CreateDrawUI.connect'
+import Layout from '../components/Layout/Layout'
 
-const Homepage: NextPage = () => (
+const Homepage = () => (
   <Layout>
     <CreateDrawUI />
     <BulkAddLink />

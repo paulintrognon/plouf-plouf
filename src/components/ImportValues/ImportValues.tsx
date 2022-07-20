@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import Button from '../Shared/Button/Button'
-import A from '../Shared/A/A'
-import styles from './ImportValues.module.css'
+
 import Values from '../../redux/features/draw/models/Values'
 import { importValuesFromString } from '../../redux/features/draw/services/importValuesFromString'
+import A from '../Shared/A/A'
+import Button from '../Shared/Button/Button'
+import styles from './ImportValues.module.css'
 
 const placeholder = `Exemple :
 Margot
@@ -11,11 +12,11 @@ Paul
 Richard
 Clémence`
 
-interface Props {
+interface ImportValuesProps {
   values: Values
   importValuesAction: (text: string) => void
 }
-const ImportValues: React.FC<Props> = ({ values, importValuesAction }) => {
+const ImportValues = ({ values, importValuesAction }: ImportValuesProps) => {
   const [importText, setImportText] = useState(values.join('\n'))
 
   const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {

@@ -1,9 +1,9 @@
-import { NextPage } from 'next'
 import Head from 'next/head'
+
 import About from '../components/About/About'
 import Layout from '../components/Layout/Layout'
 
-const ImportPage: NextPage = () => (
+const ImportPage = () => (
   <Layout>
     <Head>
       <title>À Propos - Plouf Plouf, tirage au sort en ligne</title>

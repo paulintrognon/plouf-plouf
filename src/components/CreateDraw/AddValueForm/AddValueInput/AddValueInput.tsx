@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react'
+
 import Button from '../../../Shared/Button/Button'
 import styles from './AddValueInput.module.css'
 
-interface Props {
+interface AddValueInputProps {
   startDrawAction: () => void
   addValueAction: (value: string) => void
 }
-const AddValueInput: React.FC<Props> = ({ startDrawAction, addValueAction }) => {
+const AddValueInput = ({ startDrawAction, addValueAction }: AddValueInputProps) => {
   /**
    * State of new value being entered
    */

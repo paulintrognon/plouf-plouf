@@ -1,7 +1,7 @@
 import A from '../Shared/A/A'
 import styles from './BulkAddLink.module.css'
 
-const BulkAddLink: React.FC = () => {
+const BulkAddLink = () => {
   return (
     <div className={styles.container}>
       <p>ou</p>

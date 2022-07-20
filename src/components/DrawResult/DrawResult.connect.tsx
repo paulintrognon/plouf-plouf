@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-import DrawResult from './DrawResult'
 import { connect } from 'react-redux'
-import { RootState } from '../../redux/rootReducer'
-import * as drawActions from '../../redux/features/draw/actions'
+
 import * as animationActions from '../../redux/features/animation/actions'
+import * as drawActions from '../../redux/features/draw/actions'
+import { RootState } from '../../redux/rootReducer'
+import DrawResult from './DrawResult'
 
 interface OwnProps {
   slug: string
