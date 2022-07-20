@@ -19,9 +19,7 @@ describe('Run draw', () => {
     cy.get('[data-cy=Value][data-cy-selected=Y]')
       .invoke('text')
       .then(text => {
-        cy.get('[data-cy=ResultPhrase_value]')
-          .contains('b', text)
-          .should('exist')
+        cy.get('[data-cy=ResultPhrase_value]').contains('b', text).should('exist')
       })
   })
   it('should scroll to selected value', () => {
@@ -31,7 +29,7 @@ describe('Run draw', () => {
     )
     cy.get('[data-cy=ResultPhrase_value]', { timeout: 10000 }).should('be.visible')
     cy.window().then($window => {
-      expect($window.scrollY).to.be.closeTo(938, 100)
+      expect($window.scrollY).to.be.closeTo(938, 200)
     })
   })
   it('should scroll to selected value', () => {

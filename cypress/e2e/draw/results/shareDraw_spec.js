@@ -30,9 +30,7 @@ describe('Share draw', () => {
             cy.get(`[data-cy=Value]:nth-of-type(2)`).should('contain', value2)
             cy.get(`[data-cy=Value]:nth-of-type(3)`).should('contain', value3)
 
-            cy.get('[data-cy=ResultPhrase_value]')
-              .contains('b', drawnValue)
-              .should('exist')
+            cy.get('[data-cy=ResultPhrase_value]').contains('b', drawnValue).should('exist')
           })
       })
   })

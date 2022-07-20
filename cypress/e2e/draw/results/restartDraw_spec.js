@@ -23,9 +23,7 @@ describe('Restart draw', () => {
     cy.get('[data-cy=Value][data-cy-selected=Y]')
       .invoke('text')
       .then(text => {
-        cy.get('[data-cy=ResultPhrase_value]')
-          .contains('b', text)
-          .should('exist')
+        cy.get('[data-cy=ResultPhrase_value]').contains('b', text).should('exist')
       })
   })
 })
