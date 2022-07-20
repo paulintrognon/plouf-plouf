@@ -7,6 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "yarn build && NODE_ENV=production node server.js",
+    "export": "next build && next export",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless -b chrome",
     "pretest": "rm coverage/test-results/* || true",
