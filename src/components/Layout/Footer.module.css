@@ -3,9 +3,17 @@
   position: absolute;
   bottom: 0;
   text-align: center;
+}
+
+.adBanner {
+  color: #4cb4ff;
+  padding-bottom: 5px;
+}
+
+.blueBackground {
   box-sizing: border-box;
   padding: 12px;
-  background-color: #4CB4FF;
+  background-color: #4cb4ff;
   color: #fff;
 }
 
