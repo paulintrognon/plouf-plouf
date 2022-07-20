@@ -64,7 +64,7 @@ const ActionButtons = ({
           onClick={handleOtherResult}
         >
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
-          Autre résultat
+          Refaire
         </button>
         {draw.draw.values.length > 2 ? (
           <button
