@@ -13,6 +13,7 @@ export type DrawState = {
 const initialState: DrawState = {
   draw: {
     values: [],
+    drawnValues: [],
     drawnIndex: null,
   },
   hasError: false,
@@ -40,6 +41,17 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
         draw: {
           ...state.draw,
           values: state.draw.values.filter((v, i) => i !== action.payload),
+          drawnValues: [...state.draw.drawnValues, state.draw.values[action.payload]],
+        },
+      }
+
+    case getType(actions.reinsertAll):
+      return {
+        ...state,
+        draw: {
+          ...state.draw,
+          values: state.draw.values.concat(state.draw.drawnValues),
+          drawnValues: [] as Array<string>,
         },
       }
 
