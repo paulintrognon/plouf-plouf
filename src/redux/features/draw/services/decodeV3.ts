@@ -15,7 +15,8 @@ export default function decode(slug: string): Draw {
   const draw = JSON.parse(jsonString)
   return {
     values: draw.v,
-    drawnValues: draw.d,
+    // Handle case where slug does not contains drawn values
+    drawnValues: draw.d !== undefined ? draw.d : [],
     drawnIndex: draw.i,
   }
 }
