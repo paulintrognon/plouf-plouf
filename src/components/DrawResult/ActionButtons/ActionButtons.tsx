@@ -57,6 +57,7 @@ const ActionButtons = ({ slug, hidden }: ActionButtonsProps) => {
         </button>
         {draw.draw.previousValues.length > 0 ? (
           <button
+            data-cy="ActionButtons_reinsertButton"
             className={styles.button}
             type="button"
             onClick={() => reinsertValuesAndSave(draw.draw) }
