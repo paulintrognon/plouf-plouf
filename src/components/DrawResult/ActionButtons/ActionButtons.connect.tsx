@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { backToValuesForm } from '../../../redux/common/actions'
-import { drawValue, removeValue } from '../../../redux/features/draw/actions'
+import { drawValue, removeValue, reinsertAll } from '../../../redux/features/draw/actions'
 import { RootState } from '../../../redux/rootReducer'
 import ActionButtons from './ActionButtons'
 
@@ -19,6 +19,7 @@ const dispatchProps = {
   handleOtherResult: drawValue,
   handleBack: backToValuesForm,
   removeValueAction: removeValue,
+  reinsertValuesAction: reinsertAll,
 }
 
 export default connect(mapStateToProps, dispatchProps)(ActionButtons)

@@ -12,12 +12,14 @@ interface ActionButtonsProps {
   handleOtherResult: () => void
   handleBack: () => void
   removeValueAction: (index: number) => void
+  reinsertValuesAction: () => void
 }
 const ActionButtons = ({
   slug,
   draw,
   hidden,
   removeValueAction,
+  reinsertValuesAction,
   handleOtherResult,
   handleBack,
 }: ActionButtonsProps) => {
@@ -31,6 +33,11 @@ const ActionButtons = ({
     }
     removeValueAction(draw.draw.drawnIndex)
     handleOtherResult()
+  }
+
+  const handleReinsertAndBack = (): void => {
+    reinsertValuesAction()
+    handleBack()
   }
 
   const value = draw.draw.values[draw.draw.drawnIndex]
@@ -52,11 +59,22 @@ const ActionButtons = ({
           data-cy="ActionButtons_modifyButton"
           className={styles.button}
           type="button"
-          onClick={handleBack}
+          onClick={handleReinsertAndBack}
         >
           <i className={classnames('fa fa-long-arrow-left', styles.icon)} aria-hidden="true"></i>
           Modifier
         </button>
+        {draw.draw.drawnValues.length > 0 ? (
+          <button
+            data-cy="ActionButtons_reinsertButton"
+            className={styles.button}
+            type="button"
+            onClick={reinsertValuesAction}
+          >
+            <i className={classnames('fa fa-repeat', styles.icon)} aria-hidden="true"></i>
+            Réinsérer toutes
+          </button>
+        ) : null}
         <button
           data-cy="ActionButtons_restartButton"
           className={styles.button}

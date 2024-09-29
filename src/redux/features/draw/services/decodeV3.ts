@@ -3,6 +3,7 @@ import Draw from '../models/Draw'
 export function encode(draw: Draw): string {
   const jsonString = JSON.stringify({
     v: draw.values,
+    d: draw.drawnValues,
     i: draw.drawnIndex,
   })
   const inBase64 = Buffer.from(jsonString).toString('base64')
@@ -14,6 +15,8 @@ export default function decode(slug: string): Draw {
   const draw = JSON.parse(jsonString)
   return {
     values: draw.v,
+    // Handle case where slug does not contains drawn values
+    drawnValues: draw.d !== undefined ? draw.d : [],
     drawnIndex: draw.i,
   }
 }

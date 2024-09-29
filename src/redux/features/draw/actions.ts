@@ -11,3 +11,6 @@ export const drawValue = createAction('draw/DRAW_VALUE')<undefined>()
 export const loadFromSlug = createAction('draw/LOAD_FROM_SLUG')<string>()
 
 export const reset = createAction('draw/RESET')<undefined>()
+
+export const reinsertAll = createAction('draw/REINSERT_ALL')<undefined>()
+  
