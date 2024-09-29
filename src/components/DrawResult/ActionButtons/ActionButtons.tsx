@@ -66,6 +66,7 @@ const ActionButtons = ({
         </button>
         {draw.draw.drawnValues.length > 0 ? (
           <button
+            data-cy="ActionButtons_reinsertButton"
             className={styles.button}
             type="button"
             onClick={reinsertValuesAction}
