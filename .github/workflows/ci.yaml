@@ -1,5 +1,6 @@
 name: CI
 on:
+  pull_request:
   push:
     paths:
       - 'package.json'
@@ -34,6 +35,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          headless: true
           start: npm start
           wait-on: http://localhost:3000
