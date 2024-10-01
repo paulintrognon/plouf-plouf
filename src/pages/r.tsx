@@ -12,7 +12,7 @@ const DrawPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Plouf Plouf : résultat de votre tirage au sort</title>
+        <title>Plouf Plouf&nbsp;: résultat de votre tirage au sort</title>
         <meta name="robots" content="noindex" />
       </Head>
       <DrawResult slug={slug} />
