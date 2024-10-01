@@ -1,13 +1,12 @@
 name: CD
 on:
-  push:
+  workflow_run:
+    workflows: ['CI']
+    types:
+      - completed # Trigger only after CI completes
     branches:
       - main
-    paths:
-      - 'src/**'
-      - 'public/**'
-      - 'package.json'
-      - 'yarn.lock'
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
