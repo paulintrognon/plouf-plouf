@@ -2,30 +2,36 @@ name: CI
 on:
   push:
     paths:
+      - 'package.json'
+      - 'yarn.lock'
       - '**.ts'
       - '**.tsx'
       - '**.js'
       - '**.json'
+      - '**.yaml'
 
 jobs:
   # Lint and TypeScript checks
   lint:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run ESLint
-      run: yarn lint .
-    - name: Run TypeScript Checks
-      run: yarn type-check
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: yarn lint .
+      - name: Run TypeScript Checks
+        run: yarn type-check
 
   # Cypress Integration tests
   cypress-run:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
           headless: true
