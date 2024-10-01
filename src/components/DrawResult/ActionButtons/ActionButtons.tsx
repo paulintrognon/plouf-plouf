@@ -1,26 +1,21 @@
 import classnames from 'classnames'
+import { useRouter } from 'next/router'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-import { DrawState } from '../../../redux/features/draw/reducer'
-import globalStyles from '../../styles.module.css'
 import styles from './ActionButtons.module.css'
+import { drawValueAndStartAnimation } from '../../../store/features/draw/draw.service'
+import { RootState } from '../../../store/store'
+import globalStyles from '../../styles.module.css'
 
 interface ActionButtonsProps {
   slug: string
   hidden: boolean
-  draw: DrawState
-  handleOtherResult: () => void
-  handleBack: () => void
-  removeValueAction: (index: number) => void
 }
-const ActionButtons = ({
-  slug,
-  draw,
-  hidden,
-  removeValueAction,
-  handleOtherResult,
-  handleBack,
-}: ActionButtonsProps) => {
+const ActionButtons = ({ slug, hidden }: ActionButtonsProps) => {
+  const router = useRouter()
+  const draw = useSelector((state: RootState) => state.draw)
+
   if (draw.hasError || !draw.draw.values || draw.draw.drawnIndex === null) {
     return null
   }
@@ -29,8 +24,7 @@ const ActionButtons = ({
     if (draw.draw.drawnIndex === null) {
       return
     }
-    removeValueAction(draw.draw.drawnIndex)
-    handleOtherResult()
+    drawValueAndStartAnimation(draw.draw.values.filter((v, i) => i !== draw.draw.drawnIndex))
   }
 
   const value = draw.draw.values[draw.draw.drawnIndex]
@@ -52,7 +46,7 @@ const ActionButtons = ({
           data-cy="ActionButtons_modifyButton"
           className={styles.button}
           type="button"
-          onClick={handleBack}
+          onClick={() => router.push('/')}
         >
           <i className={classnames('fa fa-long-arrow-left', styles.icon)} aria-hidden="true"></i>
           Modifier
@@ -61,7 +55,7 @@ const ActionButtons = ({
           data-cy="ActionButtons_restartButton"
           className={styles.button}
           type="button"
-          onClick={handleOtherResult}
+          onClick={() => drawValueAndStartAnimation(draw.draw.values)}
         >
           <i className={classnames('fa fa-random', styles.icon)} aria-hidden="true"></i>
           Refaire

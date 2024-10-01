@@ -1,8 +1,8 @@
 import classname from 'classnames'
 import React from 'react'
 
-import globalStyles from '../../styles.module.css'
 import styles from './ResultPhrase.module.css'
+import globalStyles from '../../styles.module.css'
 
 interface ResultPhraseProps {
   value: string

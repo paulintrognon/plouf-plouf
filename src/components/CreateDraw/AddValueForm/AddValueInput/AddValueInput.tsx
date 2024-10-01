@@ -1,13 +1,16 @@
 import { useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Button from '../../../Shared/Button/Button'
 import styles from './AddValueInput.module.css'
+import { drawValueAndStartAnimation } from '../../../../store/features/draw/draw.service'
+import { drawSlice } from '../../../../store/features/draw/draw.slice'
+import { RootState } from '../../../../store/store'
+import Button from '../../../Shared/Button/Button'
 
-interface AddValueInputProps {
-  startDrawAction: () => void
-  addValueAction: (value: string) => void
-}
-const AddValueInput = ({ startDrawAction, addValueAction }: AddValueInputProps) => {
+const AddValueInput = () => {
+  const dispatch = useDispatch()
+  const values = useSelector((state: RootState) => state.draw.draw.values)
+
   /**
    * State of new value being entered
    */
@@ -33,7 +36,7 @@ const AddValueInput = ({ startDrawAction, addValueAction }: AddValueInputProps) 
     if (!trimmedValue.length) {
       return
     }
-    addValueAction(trimmedValue)
+    dispatch(drawSlice.actions.addValue(trimmedValue))
   }
 
   /**
@@ -48,7 +51,7 @@ const AddValueInput = ({ startDrawAction, addValueAction }: AddValueInputProps) 
     }
     // If no value is being entered, starts the draw
     if (!enteredText) {
-      startDrawAction()
+      drawValueAndStartAnimation(values)
       return
     }
     // Else, if a new value is being entered, adds the new value to the draw.

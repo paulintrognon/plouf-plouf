@@ -1,10 +1,10 @@
 import BulkAddLink from '../components/BulkAddLink/BulkAddLink'
-import CreateDrawUI from '../components/CreateDraw/CreateDrawUI.connect'
+import CreateDraw from '../components/CreateDraw/CreateDraw'
 import Layout from '../components/Layout/Layout'
 
 const Homepage = () => (
   <Layout>
-    <CreateDrawUI />
+    <CreateDraw />
     <BulkAddLink />
   </Layout>
 )

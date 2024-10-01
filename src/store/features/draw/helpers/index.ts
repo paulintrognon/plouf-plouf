@@ -1,7 +1,7 @@
-import Draw from '../models/Draw'
 import decodeV1 from './decodeV1'
 import decodeV2 from './decodeV2'
 import decodeV3, { encode } from './decodeV3'
+import Draw from '../types/Draw.type'
 
 export function slugToDraw(slug: string): Draw {
   const draw = decode(slug)

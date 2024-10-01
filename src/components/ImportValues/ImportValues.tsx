@@ -1,10 +1,13 @@
+import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Values from '../../redux/features/draw/models/Values'
-import { importValuesFromString } from '../../redux/features/draw/services/importValuesFromString'
+import styles from './ImportValues.module.css'
+import { drawSlice } from '../../store/features/draw/draw.slice'
+import { importValuesFromString } from '../../store/features/draw/helpers/importValuesFromString'
+import { RootState } from '../../store/store'
 import A from '../Shared/A/A'
 import Button from '../Shared/Button/Button'
-import styles from './ImportValues.module.css'
 
 const placeholder = `Exemple :
 Margot
@@ -12,11 +15,11 @@ Paul
 Richard
 Clémence`
 
-interface ImportValuesProps {
-  values: Values
-  importValuesAction: (text: string) => void
-}
-const ImportValues = ({ values, importValuesAction }: ImportValuesProps) => {
+const ImportValues = () => {
+  const router = useRouter()
+  const values = useSelector((state: RootState) => state.draw.draw.values)
+  const dispatch = useDispatch()
+
   const [importText, setImportText] = useState(values.join('\n'))
 
   const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
@@ -24,8 +27,9 @@ const ImportValues = ({ values, importValuesAction }: ImportValuesProps) => {
   }
 
   const handleSubmit = (): void => {
-    importValuesAction(importText)
+    dispatch(drawSlice.actions.importValues(importText))
     setImportText('')
+    router.push('/')
   }
 
   const nbElements = importValuesFromString(importText).length

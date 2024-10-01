@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import Footer from './Footer'
-import Header from './Header/Header.connect'
+import Header from './Header/Header'
 import styles from './Layout.module.css'
 
 interface LayoutProps {

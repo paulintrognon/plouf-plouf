@@ -1,29 +1,38 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Animation from '../../redux/features/animation/models/Animation'
-import { DrawState } from '../../redux/features/draw/reducer'
-import ActionButtons from './ActionButtons/ActionButtons.connect'
+import ActionButtons from './ActionButtons/ActionButtons'
 import AnimatedValues from './AnimatedValues/AnimatedValues'
 import styles from './DrawResult.module.css'
 import ResultPhrase from './ResultPhrase/ResultPhrase'
+import { startDrawAnimation } from '../../store/features/animation/animation.service'
+import { drawSlice } from '../../store/features/draw/draw.slice'
+import { RootState } from '../../store/store'
 
 export interface DrawResultProps {
-  draw: DrawState
-  animation: Animation
   slug: string
-  handleLoadFromSlug: (slug: string) => void
-  handleStartAnimation: () => void
 }
 
-export const DrawResult = ({
-  draw,
-  animation,
-  slug,
-  handleStartAnimation,
-  handleLoadFromSlug,
-}: DrawResultProps) => {
+export const DrawResult = ({ slug }: DrawResultProps) => {
+  const dispatch = useDispatch()
+  const draw = useSelector((state: RootState) => state.draw)
+  const animation = useSelector((state: RootState) => state.animation)
+
+  useEffect(() => {
+    ;(async () => {
+      // Load draw from slug
+      if (draw.draw.values.length === 0) {
+        dispatch(drawSlice.actions.loadFromSlug(slug))
+      }
+      // If the animation has not started yet and has not run yet, we start it
+      else if (typeof draw.draw.drawnIndex === 'number' && !animation.started && !animation.ended) {
+        await startDrawAnimation(draw.draw)
+      }
+    })()
+  }, [draw, animation, slug, dispatch])
+
   // If error
   if (draw.hasError) {
     return (
@@ -40,16 +49,7 @@ export const DrawResult = ({
 
   // If the draw has not been loaded yet
   if (!values.length) {
-    // If we have a slug, we trigged the load
-    if (!values.length && slug) {
-      handleLoadFromSlug(slug)
-    }
     return null
-  }
-
-  // If the animation has not started yet and has not run yet, we start it
-  if (!animation.started && !animation.ended) {
-    handleStartAnimation()
   }
 
   if (drawnIndex === null) {

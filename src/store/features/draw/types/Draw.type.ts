@@ -1,4 +1,4 @@
-import Values from './Values'
+import Values from './Values.type'
 
 export default interface Draw {
   values: Values

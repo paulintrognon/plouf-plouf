@@ -1,20 +1,18 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-import Values from '../../../redux/features/draw/models/Values'
-import Button from '../../Shared/Button/Button'
 import styles from './SubmitValues.module.css'
+import { drawValueAndStartAnimation } from '../../../store/features/draw/draw.service'
+import { RootState } from '../../../store/store'
+import Button from '../../Shared/Button/Button'
 
-interface SubmitValuesProps {
-  values: Values
-  onSubmit: () => void
-}
+export const SubmitValues = () => {
+  const values = useSelector((state: RootState) => state.draw.draw.values)
 
-export const SubmitValues = (props: SubmitValuesProps) => {
-  const { values, onSubmit } = props
   const canSubmit = values.length >= 2
 
   const handleSubmit = (): void => {
-    onSubmit()
+    drawValueAndStartAnimation(values)
   }
 
   return (

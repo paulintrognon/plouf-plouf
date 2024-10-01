@@ -1,5 +1,5 @@
 import styles from './AddValueForm.module.css'
-import AddValueInput from './AddValueInput/AddValueInput.connect'
+import AddValueInput from './AddValueInput/AddValueInput'
 
 const AddValueForm = () => {
   return (

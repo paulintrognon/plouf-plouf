@@ -4,7 +4,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import '../styles.css'
 
-import store from '../redux/store'
+import { store } from '../store/store'
 
 Router.events.on('routeChangeComplete', () => {
   window.scrollTo(0, 0)

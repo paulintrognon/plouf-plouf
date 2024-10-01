@@ -1,4 +1,4 @@
-import Draw from '../models/Draw'
+import Draw from '../types/Draw.type'
 
 export function encode(draw: Draw): string {
   const encodedValues = draw.values.map(value => encodeURIComponent(value)).join(',')

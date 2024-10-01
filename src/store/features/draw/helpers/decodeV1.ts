@@ -1,4 +1,4 @@
-import Draw from '../models/Draw'
+import Draw from '../types/Draw.type'
 
 export default function decode(b64: string): Draw {
   const str = atob(b64)
