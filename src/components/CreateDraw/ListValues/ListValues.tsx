@@ -1,28 +1,27 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import Values from '../../../redux/features/draw/models/Values'
-import Value from '../../Shared/Value/Value'
 import styles from './ListValues.module.css'
+import { drawSlice } from '../../../store/features/draw/draw.slice'
+import { RootState } from '../../../store/store'
+import Value from '../../Shared/Value/Value'
 
-type ListValuesProps = {
-  values: Values
-  onRemove: (index: number) => void
-  onReset: () => void
-}
+const ListValues = () => {
+  const dispatch = useDispatch()
+  const values = useSelector((rootState: RootState) => rootState.draw.draw.values)
 
-const ListValues = ({ values, onRemove, onReset }: ListValuesProps) => {
   /**
    * When clicking the red cross on a value, it sends a remove action with the index of clicked value
    */
   const handleRemove = (valueClickedIndex: number): void => {
-    onRemove(valueClickedIndex)
+    dispatch(drawSlice.actions.removeValue(valueClickedIndex))
   }
 
   const handleReset = (): void => {
     if (!confirm('Êtes-vous sûr de vouloir tout supprimer ?')) {
       return
     }
-    onReset()
+    dispatch(drawSlice.actions.reset())
   }
 
   /**

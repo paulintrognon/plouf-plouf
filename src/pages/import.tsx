@@ -1,4 +1,4 @@
-import ImportValues from '../components/ImportValues/ImportValues.connect'
+import ImportValues from '../components/ImportValues/ImportValues'
 import Layout from '../components/Layout/Layout'
 
 const ImportPage = () => (

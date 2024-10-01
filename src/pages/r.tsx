@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-import DrawResult from '../components/DrawResult/DrawResult.connect'
+import DrawResult from '../components/DrawResult/DrawResult'
 import Layout from '../components/Layout/Layout'
 
 const DrawPage = () => {

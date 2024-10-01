@@ -1,4 +1,4 @@
-import Values from '../models/Values'
+import Values from '../types/Values.type'
 
 /**
  * Split a given text using '\n' character, trim values

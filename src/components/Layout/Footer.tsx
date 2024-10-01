@@ -5,16 +5,9 @@ import styles from './Footer.module.css'
 
 const Footer = () => (
   <footer className={styles.container}>
-    <div className={styles.adBanner}>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.plouf-plouf.canefora.fr/">
-        ✨ Personnaliser Plouf Plouf pour votre entreprise ✨
-      </a>
-    </div>
     <div className={styles.blueBackground}>
       <nav className={styles.nav}>
-        <Link href="/a-propos">
-          <a>À propos</a>
-        </Link>{' '}
+        <Link href="/a-propos">À propos</Link>{' '}
       </nav>
       <div className={styles.bottomLinks}>
         <a

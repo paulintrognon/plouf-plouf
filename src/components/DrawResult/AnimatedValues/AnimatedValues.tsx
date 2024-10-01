@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 
-import Animation from '../../../redux/features/animation/models/Animation'
-import Values from '../../../redux/features/draw/models/Values'
-import Value from '../../Shared/Value/Value'
 import styles from './AnimatedValues.module.css'
+import Animation from '../../../store/features/animation/types/Animation.type'
+import Values from '../../../store/features/draw/types/Values.type'
+import Value from '../../Shared/Value/Value'
 
 // from https://stackoverflow.com/a/22480938
 function isScrolledIntoView(el: HTMLElement): boolean {

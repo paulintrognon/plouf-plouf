@@ -1,4 +1,4 @@
-import Draw from '../models/Draw'
+import Draw from '../types/Draw.type'
 
 export function encode(draw: Draw): string {
   const jsonString = JSON.stringify({

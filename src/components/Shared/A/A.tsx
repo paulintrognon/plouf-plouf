@@ -9,10 +9,8 @@ interface AProps extends React.ComponentProps<'a'> {
 }
 const A = ({ className, children, href, as, ...props }: AProps) => {
   return (
-    <Link href={href} as={as}>
-      <a className={classnames(styles.link, className)} {...props}>
-        {children}
-      </a>
+    <Link href={href} as={as} className={classnames(styles.link, className)} {...props}>
+      {children}
     </Link>
   )
 }

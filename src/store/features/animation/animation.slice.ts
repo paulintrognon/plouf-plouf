@@ -1,10 +1,9 @@
-import * as actions from './actions'
-import { ActionType, getType } from 'typesafe-actions'
-import Animation from './models/Animation'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-export type AnimationAction = ActionType<typeof actions>
+import Animation from './types/Animation.type'
 
 export type AnimationState = Animation
+
 const initialState: AnimationState = {
   started: false,
   plouf1: false,
@@ -14,57 +13,56 @@ const initialState: AnimationState = {
   ended: false,
 }
 
-export default function reduce(
-  state: AnimationState = initialState,
-  action: AnimationAction,
-): AnimationState {
-  switch (action.type) {
-    case getType(actions.reset):
-      return {
-        ...initialState,
-      }
-
-    case getType(actions.start):
+export const animationSlice = createSlice({
+  name: 'animation',
+  initialState,
+  reducers: {
+    start: () => {
       return {
         ...initialState,
         started: true,
       }
+    },
 
-    case getType(actions.animatePlouf1):
+    animatePlouf1: state => {
       return {
         ...state,
         plouf1: true,
       }
+    },
 
-    case getType(actions.animatePlouf2):
+    animatePlouf2: state => {
       return {
         ...state,
         plouf1: false,
         plouf2: true,
       }
+    },
 
-    case getType(actions.animateValue):
+    animateValue: (state, action: PayloadAction<number>) => {
       return {
         ...state,
         plouf2: false,
         value: action.payload,
       }
+    },
 
-    case getType(actions.animateDrawnValue):
+    animateDrawnValue: (state, action: PayloadAction<number>) => {
       return {
         ...state,
         value: action.payload,
         selectWinner: true,
       }
+    },
 
-    case getType(actions.end):
+    end: state => {
       return {
         ...state,
         started: false,
         ended: true,
       }
+    },
 
-    default:
-      return state
-  }
-}
+    reset: () => ({ ...initialState }),
+  },
+})

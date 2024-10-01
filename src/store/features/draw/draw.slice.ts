@@ -1,10 +1,9 @@
-import { ActionType, getType } from 'typesafe-actions'
-import * as actions from './actions'
-import { slugToDraw, drawIndex } from './services'
-import Draw from './models/Draw'
-import { importValuesFromString } from './services/importValuesFromString'
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
-export type DrawAction = ActionType<typeof actions>
+import { slugToDraw } from './helpers'
+import { importValuesFromString } from './helpers/importValuesFromString'
+import Draw from './types/Draw.type'
 
 export type DrawState = {
   draw: Draw
@@ -18,23 +17,26 @@ const initialState: DrawState = {
   hasError: false,
 }
 
-export default function reduce(state: DrawState = initialState, action: DrawAction): DrawState {
-  switch (action.type) {
-    case getType(actions.addValue):
+export const drawSlice = createSlice({
+  name: 'draw',
+  initialState,
+  reducers: {
+    addValue: (state, action: PayloadAction<string>) => {
       return {
         ...state,
         draw: {
           ...state.draw,
-          // If we have more than 100 values, we add the new value at the beginning
+          // If we have more than 30 values, we add the new value at the beginning
           // so that we can visualize it being added to the list
           values:
-            state.draw.values.length < 100
+            state.draw.values.length < 30
               ? [...state.draw.values, action.payload]
               : [action.payload, ...state.draw.values],
         },
       }
+    },
 
-    case getType(actions.removeValue):
+    removeValue: (state, action: PayloadAction<number>) => {
       return {
         ...state,
         draw: {
@@ -42,17 +44,16 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
           values: state.draw.values.filter((v, i) => i !== action.payload),
         },
       }
+    },
 
-    case getType(actions.drawValue):
+    setDraw: (_, action: PayloadAction<Draw>) => {
       return {
-        ...state,
-        draw: {
-          ...state.draw,
-          drawnIndex: drawIndex(state.draw.values),
-        },
+        draw: action.payload,
+        hasError: false,
       }
+    },
 
-    case getType(actions.importValues):
+    importValues: (state, action: PayloadAction<string>) => {
       return {
         ...state,
         draw: {
@@ -60,8 +61,9 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
           values: importValuesFromString(action.payload),
         },
       }
+    },
 
-    case getType(actions.loadFromSlug):
+    loadFromSlug: (state, action: PayloadAction<string>) => {
       try {
         return {
           ...state,
@@ -74,11 +76,8 @@ export default function reduce(state: DrawState = initialState, action: DrawActi
           hasError: true,
         }
       }
+    },
 
-    case getType(actions.reset):
-      return initialState
-
-    default:
-      return state
-  }
-}
+    reset: () => ({ ...initialState }),
+  },
+})
