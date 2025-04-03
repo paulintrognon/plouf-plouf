@@ -12,6 +12,7 @@ export type DrawState = {
 const initialState: DrawState = {
   draw: {
     values: [],
+    previousValues: [],
     drawnIndex: null,
   },
   hasError: false,
@@ -42,6 +43,7 @@ export const drawSlice = createSlice({
         draw: {
           ...state.draw,
           values: state.draw.values.filter((v, i) => i !== action.payload),
+          previousValues: [...state.draw.previousValues, state.draw.values[action.payload]],
         },
       }
     },

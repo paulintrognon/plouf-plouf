@@ -7,7 +7,12 @@ Site de tirage au sort en ligne avec partage du résultat.
 
 # Développement local
 
-## Avec Node.js
+## Avec Node.js et Yarn
+
+```shell
+# Yarn install
+npm install yarn -g
+```
 
 ```shell
 yarn

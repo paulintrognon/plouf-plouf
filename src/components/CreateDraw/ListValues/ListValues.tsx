@@ -45,7 +45,7 @@ const ListValues = () => {
         </button>
       </div>
       <div className={styles.list}>
-        {values.map((value, index) => (
+        {values.map((value: string, index: number) => (
           <Value key={index} index={index} value={value} onRemove={handleRemove}></Value>
         ))}
       </div>
