@@ -1,9 +1,9 @@
 import Router from 'next/router'
 
-import { store } from '../../store'
-import { animationSlice } from '../animation/animation.slice'
 import { drawSlice } from './draw.slice'
 import { drawIndex, drawToSlug } from './helpers'
+import { store } from '../../store'
+import { animationSlice } from '../animation/animation.slice'
 import Draw from './types/Draw.type'
 import Values from './types/Values.type'
 
@@ -45,7 +45,6 @@ export function reinsertValuesAndBack(draw: Draw) {
   const newDraw = reinsertValues(draw)
 
   store.dispatch(drawSlice.actions.setDraw(newDraw))
-  const slug = drawToSlug(newDraw)
   Router.push('/')
 }
 

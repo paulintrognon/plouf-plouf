@@ -1,10 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import styles from './ListValues.module.css'
 import { drawSlice } from '../../../store/features/draw/draw.slice'
 import { RootState } from '../../../store/store'
 import Value from '../../Shared/Value/Value'
-import styles from './ListValues.module.css'
 
 const ListValues = () => {
   const dispatch = useDispatch()

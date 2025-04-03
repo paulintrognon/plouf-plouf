@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import styles from './AddValueInput.module.css'
 import { drawValueAndStartAnimation } from '../../../../store/features/draw/draw.service'
 import { drawSlice } from '../../../../store/features/draw/draw.slice'
 import { RootState } from '../../../../store/store'
 import Button from '../../../Shared/Button/Button'
-import styles from './AddValueInput.module.css'
 
 const AddValueInput = () => {
   const dispatch = useDispatch()

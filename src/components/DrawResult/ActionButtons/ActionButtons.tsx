@@ -1,19 +1,17 @@
 import classnames from 'classnames'
-import { useRouter } from 'next/router'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import styles from './ActionButtons.module.css'
 import { drawValueAndStartAnimation, reinsertValuesAndBack, reinsertValuesAndSave } from '../../../store/features/draw/draw.service'
 import { RootState } from '../../../store/store'
 import globalStyles from '../../styles.module.css'
-import styles from './ActionButtons.module.css'
 
 interface ActionButtonsProps {
   slug: string
   hidden: boolean
 }
 const ActionButtons = ({ slug, hidden }: ActionButtonsProps) => {
-  const router = useRouter()
   const draw = useSelector((state: RootState) => state.draw)
 
   if (draw.hasError || !draw.draw.values || draw.draw.drawnIndex === null) {

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import styles from './SubmitValues.module.css'
 import { drawValueAndStartAnimation } from '../../../store/features/draw/draw.service'
 import { RootState } from '../../../store/store'
 import Button from '../../Shared/Button/Button'
-import styles from './SubmitValues.module.css'
 
 export const SubmitValues = () => {
   const values = useSelector((state: RootState) => state.draw.draw.values)
