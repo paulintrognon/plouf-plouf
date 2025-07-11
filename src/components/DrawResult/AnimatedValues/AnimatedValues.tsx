@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import styles from './AnimatedValues.module.css'
 import Animation from '../../../store/features/animation/types/Animation.type'
@@ -17,10 +18,14 @@ interface AnimatedValuesProps {
   values: Values
   animation: Animation
 }
-const AnimatedValues = ({ values, animation }: AnimatedValuesProps) => {
+const AnimatedValues: React.FC<WithTranslation & AnimatedValuesProps> = ({
+  t,
+  values,
+  animation,
+}) => {
   const ref = useRef<HTMLDivElement>(null)
   if (!values) {
-    return <div>Pas de valeurs.</div>
+    return <div>{t('result.animated_values.no_values')}</div>
   }
   const scrollIntoView = Boolean(ref.current && !isScrolledIntoView(ref.current))
   return (
@@ -42,4 +47,4 @@ const AnimatedValues = ({ values, animation }: AnimatedValuesProps) => {
     </div>
   )
 }
-export default AnimatedValues
+export default withTranslation()(AnimatedValues)

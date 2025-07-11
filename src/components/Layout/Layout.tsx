@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import Footer from './Footer'
 import Header from './Header/Header'
@@ -7,7 +8,7 @@ import styles from './Layout.module.css'
 interface LayoutProps {
   children: React.ReactNode
 }
-const Layout = ({ children }: LayoutProps) => (
+const Layout: React.FC<WithTranslation & LayoutProps> = ({ children, t }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
@@ -20,15 +21,9 @@ const Layout = ({ children }: LayoutProps) => (
       <link rel="manifest" href="/manifest.webmanifest" />
       <link rel="shortcut icon" href="/favicon.ico" />
 
-      <title>Plouf, plouf ! Tirage au sort en ligne</title>
-      <meta
-        name="description"
-        content="Plouf plouf est un outil de tirage au sort en ligne avec partage du résultat. Tirage aléatoire parmi une liste de mots."
-      />
-      <meta
-        name="keywords"
-        content="plouf plouf, tirage au sort, tirer au sort, tirer au hasard,en ligne"
-      />
+      <title>{t('application.title')}</title>
+      <meta name="description" content={t('application.description')} />
+      <meta name="keywords" content={t('application.keywords')} />
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -43,4 +38,4 @@ const Layout = ({ children }: LayoutProps) => (
     </div>
   </>
 )
-export default Layout
+export default withTranslation()(Layout)

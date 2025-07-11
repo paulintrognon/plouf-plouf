@@ -1,0 +1,144 @@
+fr:
+  application:
+    title: 'Plouf Plouf'
+    description: 'Plouf plouf est un outil de tirage au sort en ligne avec partage du résultat. Tirage aléatoire parmi une liste de mots.'
+    keywords: 'plouf plouf, tirage au sort, tirer au sort, tirer au hasard,en ligne'
+  about:
+    title: 'À Propos - Plouf Plouf, tirage au sort en ligne'
+    description: 'À propos de plouf-plouf: tirage au sort en ligne 100% gratuit, sans pub, dans le respect total des données personnelles.'
+    content_html: |
+      <Heading>À propos</Heading>
+      <Paragraph>
+        <Bold>http://plouf-plouf.fr</Bold> est un site entièrement gratuit, sans aucune pub ni aucun
+        tracking des utilisateurs. Les données du tirage au sort ne sont à aucun moment stockées sur
+        le serveur. En effet, lors du partage d'un tirage au sort, les données du tirage sont
+        stockées directement et uniquement dans l'URL générée.
+      </Paragraph>
+      <Paragraph>
+        <Bold>
+          Les données des tirages sont strictement confidentielles: ni les auteurs du site, ni
+          les hébergeurs du site n'y ont accès.
+        </Bold>
+      </Paragraph>
+      <Paragraph>
+        <Bold>
+          Si vous partagez le résultat d'un tirage au sort, alors toutes les personnes ayant
+          accès à l'URL du tirage auront accès à toutes les données du tirage.
+        </Bold>
+      </Paragraph>
+      <Paragraph>
+        Le site a entièrement été réalisé de manière bénévole par
+        <Link href='https://paulintrognon.fr'>Paulin Trognon</Link>.
+        Le code source du site est consultable à cette adresse:
+
+        <Link href='https://github.com/paulintrognon/plouf-plouf'>github.com/paulintrognon/plouf-plouf</Link>.
+      </Paragraph>
+      <Heading>Comment ça marche ?</Heading>
+      <Paragraph>
+        Les tirages sont effectuées en local, directement par le navigateur, à l'aide de la
+        méthode <Code>Math.random()</Code>.
+      </Paragraph>
+      <Paragraph>
+        Afin de pouvoir partager le tirage et son résultat, une URL est générée contenant les mots
+        ainsi que le résultat au format json, encodé en base 64.
+      </Paragraph>
+      <Paragraph>
+        Par exemple, pour l'URL
+        https://plouf-plouf.fr/r#eyJ2IjpbIlBhdWwiLCJNYXJnb3QiXSwiaSI6MX0=-v3, le tirage est encodé
+        dans <Code>eyJ2IjpbIlBhdWwiLCJNYXJnb3QiXSwiaSI6MX0=</Code>, qui une fois décodé donne:
+        <Code>{"v":["Paul","Margot"],"i":1}</Code>
+      </Paragraph>
+      <Heading>Conditions Générales d'Utilisation</Heading>
+      <Paragraph>
+        L'utilisation du site plouf-plouf.fr implique l'acceptation des conditions
+        générales d'utilisation (CGU) suivantes (CGU et mentions légales susceptibles de
+        modification à tout moment, les utilisateurs sont invités à les consulter à chaque
+        utilisation du site).
+      </Paragraph>
+      <Paragraph>
+        Le site plouf-plouf.fr est supposé accessible en tout instant, pour tous les utilisateurs
+        connectés au serveur, néanmoins des interruptions (volontaires : mise à jour, maintenance
+        technique, etc.) ou involontaires (problèmes hébergeurs, bugs, etc.) peuvent néanmoins
+        survenir.
+      </Paragraph>
+      <Paragraph>
+        Le site plouf-plouf.fr est un site composé d'un formulaire ayant pour but de générer un
+        tirage au sort. Toutefois, les auteurs ne pourront être tenus responsables
+        d'éventuelles omissions ou inexactitudes dans les résultats et informations fournis.
+        Les données et informations qui peuvent êtres consultées sur le site plouf-plouf.fr évoluent
+        régulièrement et ne peuvent être considérées comme fiables dans le temps.
+      </Paragraph>
+      <Paragraph>
+        Le site plouf-plouf.fr utilise des technologies web standard (HTML, CSS, JavaScript) et ne
+        pourra être tenu responsable de dommages directs ou indirects liés à l'usage du site.
+        L'utilisateur s'engage à utiliser le site plouf-plouf.fr uniquement avec un
+        matériel récent et des logiciels mis à jour et non modifiés (piratage, virus, etc.). En
+        utilisant le site plouf-plouf.fr, l'hébergeur a l'obligation de recueillir
+        certaines données comme l'adresse IP de l'utilisateur. Noter qu'aucune
+        requête directe demandant nom, prénom, adresse, ou autres données personnelles identifiantes
+        ne sera réalisée sur le site plouf-plouf.fr. Néanmoins, pour certains services proposés par
+        plouf-plouf.fr, l'utilisateur doit rester attentif à ne pas fournir ce type
+        d'informations notamment lorsqu'il procède par lui-même à leur saisie. Le site
+        plouf-plouf.fr propose des liens vers d'autres sites mais n'a pas la capacité de
+        vérifier les contenus mis à jour des sites ainsi visités, et ne pourra être tenu responsable
+        de leur contenu.
+      </Paragraph>
+  home:
+    import_values:
+      explanations: |
+        <Heading>
+          Entrez les éléments à tirer au sort, séparés par des sauts à la ligne.
+        </Heading>
+        <Paragraph>
+          Si vous importez depuis LibreOffice, OpenOffice ou Excel, copiez la colonne entière depuis
+          le tableur, et collez la ci-dessous.
+        </Paragraph>
+      placeholder: |
+        Exemple :
+        Margot
+        Paul
+        Richard
+        Clémence
+      submit_button: 'Importer'
+      cancel_button: 'Annuler'
+      detected_elements_one: '{{count}} élément détecté'
+      detected_elements_other: '{{count}} éléments détectés'
+    form:
+      add_element:
+        placeholder: 'Ex: Paul [↵] Margot [↵]'
+        title: 'Entrez ici un mot ou un nom à tirer au sort.'
+        button_title: 'Cliquez ici pour ajouter une valeur à la liste'
+        help_text: 'Ajoutez plusieurs éléments à tirer au sort, puis cliquez sur "Tirer au sort".'
+        button_help_text: 'Pour ajouter un élément, inscrivez-le ci-dessus puis cliquez sur le bouton [+] ou sur la touche Entrée'
+      reset_button:
+        title: 'Cliquer ici pour recommencer un nouveau tirage de zéro.'
+        text: 'Tout supprimer'
+        confirm: 'Êtes-vous sûr de vouloir tout supprimer ?'
+      submit_button:
+        error_message: 'Vous devez inscrire au moins deux valeurs avant de pouvoir tirer au sort.'
+        success_message: 'Lancer le tirage au sort !'
+        text: 'Tirer au sort'
+    or: 'ou'
+    bulk_add_link: |
+      Importer une liste
+
+  result:
+    title: 'Plouf Plouf: résultat de votre tirage au sort'
+    description: 'Résultat de votre tirage au sort sur plouf-plouf.fr'
+    action_buttons:
+      share: 'Partager le résultat:'
+      modify: 'Modifier'
+      redo: 'Refaire'
+      redo_without_value: 'Refaire sans "{{value}}"'
+    selected_value: 'a été tiré(e) au sort'
+    animated_values:
+      no_values: 'Pas de valeurs.'
+    loading_error: 'Impossible de charger le tirage au sort à partir de cette url...'
+
+  footer:
+    about: 'À propos'
+    made_by: 'Site réalisé par Paulin Trognon'
+    made_by_name: 'Paulin Trognon'
+    code_source: 'Code source'
+    bugs_and_suggestions: 'Bugs & suggestions'
+    copyleft: 'Copyleft'

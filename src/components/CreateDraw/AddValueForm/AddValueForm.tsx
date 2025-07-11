@@ -1,18 +1,15 @@
+import { WithTranslation, withTranslation } from 'react-i18next'
+
 import styles from './AddValueForm.module.css'
 import AddValueInput from './AddValueInput/AddValueInput'
 
-const AddValueForm = () => {
+const AddValueForm: React.FC<WithTranslation> = ({ t }) => {
   return (
     <div className={styles.container}>
-      <p className={styles.explanations1}>
-        Ajoutez plusieurs éléments à tirer au sort, puis cliquez sur &quot;Tirer au sort&quot;..
-      </p>
+      <p className={styles.explanations1}>{t('home.form.add_element.help_text')}</p>
       <AddValueInput />
-      <p className={styles.explanations2}>
-        (pour ajouter un élément, inscrivez-le ci-dessus puis cliquez sur le bouton [+] ou sur la
-        touche Entrée)
-      </p>
+      <p className={styles.explanations2}>{t('home.form.add_element.button_help_text')}</p>
     </div>
   )
 }
-export default AddValueForm
+export default withTranslation()(AddValueForm)

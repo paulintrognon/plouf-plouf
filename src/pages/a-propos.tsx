@@ -1,19 +1,17 @@
 import Head from 'next/head'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import About from '../components/About/About'
 import Layout from '../components/Layout/Layout'
 
-const ImportPage = () => (
+const ImportPage: React.FC<WithTranslation> = ({ t }) => (
   <Layout>
     <Head>
-      <title>À Propos - Plouf Plouf, tirage au sort en ligne</title>
-      <meta
-        name="description"
-        content="À propos de plouf-plouf : tirage au sort en ligne 100% gratuit, sans pub, dans le respect total des données personnelles."
-      />
+      <title>{t('about.title')}</title>
+      <meta name="description" content={t('about.description')} />
     </Head>
     <About />
   </Layout>
 )
 
-export default ImportPage
+export default withTranslation()(ImportPage)

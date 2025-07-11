@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import styles from './Footer.module.css'
 
-const Footer = () => (
+const Footer: React.FC<WithTranslation> = ({ t }) => (
   <footer className={styles.container}>
     <div className={styles.blueBackground}>
       <nav className={styles.nav}>
-        <Link href="/a-propos">À propos</Link>{' '}
+        <Link href="/a-propos">{t('footer.about')}</Link>{' '}
       </nav>
       <div className={styles.bottomLinks}>
         <a
@@ -22,9 +23,9 @@ const Footer = () => (
           href="https://paulintrognon.fr"
           target="_blank"
           rel="noopener noreferrer"
-          title="Site réalisé par Paulin Trognon"
+          title={t('footer.made_by')}
         >
-          Paulin Trognon {new Date().getFullYear()}
+          {t('footer.made_by_name')} {new Date().getFullYear()}
         </a>{' '}
         -{' '}
         <a
@@ -33,7 +34,7 @@ const Footer = () => (
           rel="noopener noreferrer"
         >
           <i className="fa fa-github" aria-hidden="true"></i>
-          &nbsp;Code source
+          &nbsp;{t('footer.code_source')}
         </a>{' '}
         -{' '}
         <a
@@ -42,10 +43,10 @@ const Footer = () => (
           rel="noopener noreferrer"
         >
           <i className="fa fa-bug" aria-hidden="true"></i>
-          &nbsp;Bugs &amp; suggestions
+          &nbsp;{t('footer.bugs_and_suggestions')}
         </a>
       </div>
     </div>
   </footer>
 )
-export default Footer
+export default withTranslation()(Footer)
