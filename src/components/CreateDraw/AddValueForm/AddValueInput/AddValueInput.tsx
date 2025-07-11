@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { WithTranslation, withTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import styles from './AddValueInput.module.css'
@@ -7,7 +8,7 @@ import { drawSlice } from '../../../../store/features/draw/draw.slice'
 import { RootState } from '../../../../store/store'
 import Button from '../../../Shared/Button/Button'
 
-const AddValueInput = () => {
+const AddValueInput: React.FC<WithTranslation> = ({ t }) => {
   const dispatch = useDispatch()
   const values = useSelector((state: RootState) => state.draw.draw.values)
 
@@ -79,22 +80,22 @@ const AddValueInput = () => {
         type="text"
         className={styles.textInput}
         ref={inputElement}
-        placeholder="Ex: Paul [↵] Margot [↵]"
+        placeholder={t('home.form.add_element.placeholder')}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
         value={enteredText}
-        title="Entrez ici un mot ou un nom à tirer au sort."
+        title={t('home.form.add_element.title')}
       />
       <Button
         color="blue"
         data-cy="AddValueForm_addInput"
         className={styles.addInput}
         onClick={handleAdd}
-        title="Cliquez ici pour ajouter une valeur à la liste"
+        title={t('home.form.add_element.button_title')}
       >
         <i className="fa fa-plus" aria-hidden="true" />
       </Button>
     </p>
   )
 }
-export default AddValueInput
+export default withTranslation()(AddValueInput)

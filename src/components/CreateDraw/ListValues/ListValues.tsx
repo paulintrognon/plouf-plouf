@@ -1,4 +1,5 @@
 import React from 'react'
+import { WithTranslation, withTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import styles from './ListValues.module.css'
@@ -6,7 +7,7 @@ import { drawSlice } from '../../../store/features/draw/draw.slice'
 import { RootState } from '../../../store/store'
 import Value from '../../Shared/Value/Value'
 
-const ListValues = () => {
+const ListValues: React.FC<WithTranslation> = ({ t }) => {
   const dispatch = useDispatch()
   const values = useSelector((rootState: RootState) => rootState.draw.draw.values)
 
@@ -18,7 +19,7 @@ const ListValues = () => {
   }
 
   const handleReset = (): void => {
-    if (!confirm('Êtes-vous sûr de vouloir tout supprimer ?')) {
+    if (!confirm(t('home.form.reset_button.confirm'))) {
       return
     }
     dispatch(drawSlice.actions.reset())
@@ -39,9 +40,9 @@ const ListValues = () => {
           onClick={handleReset}
           className={styles.resetButton}
           data-cy="ListValues_resetButton"
-          title="Cliquer ici pour recommencer un nouveau tirage de zéro."
+          title={t('home.form.reset_button.title')}
         >
-          Tout supprimer
+          {t('home.form.reset_button.text')}
         </button>
       </div>
       <div className={styles.list}>
@@ -53,4 +54,4 @@ const ListValues = () => {
   )
 }
 
-export default ListValues
+export default withTranslation()(ListValues)

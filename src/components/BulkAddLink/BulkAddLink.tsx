@@ -1,16 +1,18 @@
+import { WithTranslation, withTranslation } from 'react-i18next'
+
 import styles from './BulkAddLink.module.css'
 import A from '../Shared/A/A'
 
-const BulkAddLink = () => {
+const BulkAddLink: React.FC<WithTranslation> = ({ t }) => {
   return (
     <div className={styles.container}>
       <p>ou</p>
       <p>
         <A href="/import" data-cy="BulkAddLink">
-          Importer une liste
+          {t('home.bulk_add_link')}
         </A>
       </p>
     </div>
   )
 }
-export default BulkAddLink
+export default withTranslation()(BulkAddLink)

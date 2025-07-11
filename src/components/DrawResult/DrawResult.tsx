@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
+import { WithTranslation, withTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import ActionButtons from './ActionButtons/ActionButtons'
@@ -15,13 +16,14 @@ export interface DrawResultProps {
   slug: string
 }
 
-export const DrawResult = ({ slug }: DrawResultProps) => {
+export const DrawResult: React.FC<WithTranslation & DrawResultProps> = ({ t, slug }) => {
   const dispatch = useDispatch()
   const draw = useSelector((state: RootState) => state.draw)
   const animation = useSelector((state: RootState) => state.animation)
 
   useEffect(() => {
     ;(async () => {
+      if (draw.hasError) return
       // Load draw from slug
       if (draw.draw.values.length === 0) {
         dispatch(drawSlice.actions.loadFromSlug(slug))
@@ -40,7 +42,7 @@ export const DrawResult = ({ slug }: DrawResultProps) => {
         <p>
           <Image src="/sad.jpg" alt="Sad cat drawing" width={250} height={161} />
         </p>
-        <p>Impossible de charger le tirage au sort à partir de cette url...</p>
+        <p>{t('result.loading_error')}</p>
       </div>
     )
   }
@@ -70,4 +72,4 @@ export const DrawResult = ({ slug }: DrawResultProps) => {
   )
 }
 
-export default DrawResult
+export default withTranslation()(DrawResult)
