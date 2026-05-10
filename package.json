@@ -13,7 +13,8 @@
     "pretest": "rm coverage/test-results/* || true",
     "test": "start-server-and-test http://localhost:3000 cypress:run",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "2.2.7",
