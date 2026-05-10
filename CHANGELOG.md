@@ -1,3 +1,9 @@
+## v5.5.0
+
+- New Docker image in 2 steps
+- Replace yarn by pnpm
+- Upgrade Next.js to patch CVE
+
 ### v5.4.1
 
 - Fix visual bug: when a value was animated 2 times in a row, it broke the animation rhythm. Now, a value can be animated only once.
