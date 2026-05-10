@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "yarn build && NODE_ENV=production node server.js",
+    "start": "pnpm build && NODE_ENV=production node server.js",
     "export": "next build && next export",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless -b chrome",
@@ -22,7 +22,7 @@
     "@types/react": "18.3.10",
     "@types/redux-logger": "3.0.13",
     "classnames": "2.5.1",
-    "next": "14.2.13",
+    "next": "14.2.35",
     "next-offline": "5.0.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -46,5 +46,6 @@
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",
     "start-server-and-test": "2.0.8"
-  }
+  },
+  "packageManager": "pnpm@11.0.9"
 }

@@ -5,8 +5,8 @@ Site de tirage au sort en ligne avec partage du résultat.
 # Développement local
 
 ```shell
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 
@@ -19,13 +19,13 @@ Avant chaque commit est lancé un audit de code avec `husky`. Si l'audit ne pass
 Pour lancer un audit manuellement :
 
 ```shell
-yarn lint .
+pnpm lint .
 ```
 
 Vous pouvez tenter de réparer automatiquement les erreurs avec :
 
 ```shell
-yarn lint . --fix
+pnpm lint . --fix
 ```
 
 ## Tests E2E
@@ -33,11 +33,11 @@ yarn lint . --fix
 Lancer les tests E2E avec la commande suivante :
 
 ```
-yarn test
+pnpm test
 ```
 
 # Prod
 
 ```
-yarn start
+pnpm start
 ```
