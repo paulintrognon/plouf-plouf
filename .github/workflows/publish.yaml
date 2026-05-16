@@ -16,7 +16,11 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yaml
+
   build-and-push:
+    needs: ci
     runs-on: ubuntu-22.04
     permissions:
       contents: read
