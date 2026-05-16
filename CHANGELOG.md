@@ -1,3 +1,7 @@
+## v5.6.0
+
+- Add `/api/health` endpoint for Kubernetes liveness/readiness probes
+
 ## v5.5.0
 
 - New Docker image in 2 steps
