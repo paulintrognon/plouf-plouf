@@ -25,6 +25,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -58,3 +60,67 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  bump-infra:
+    needs: build-and-push
+
+    # No GITHUB_TOKEN permissions needed — this job authenticates
+    # entirely as the paulin-infra-bot GitHub App, via the installation
+    # token minted in the first step.
+    permissions: {}
+
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          app-id: ${{ vars.INFRA_BOT_APP_ID }}
+          private-key: ${{ secrets.INFRA_BOT_PRIVATE_KEY }}
+          owner: paulintrognon
+          repositories: infra
+
+      - uses: actions/checkout@v5
+        with:
+          repository: paulintrognon/infra
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false #  Don't write the App installation token into the cloned repo's .git/config. Anything that needs to push/fetch later receives the token explicitly.
+
+      - name: Bump plouf-plouf image tag
+        env:
+          # Pass workflow expressions in via env: rather than inline
+          # ${{ }} interpolation into the shell. The interpolated form
+          # would splice the value directly into the rendered script,
+          # so a value containing shell metacharacters could be
+          # executed as code. env: makes the shell treat them as plain
+          # values. (GH's documented hardening pattern.)
+          VERSION: ${{ needs.build-and-push.outputs.version }}
+          FILE: k8s/apps/plouf-plouf/deployment.yaml
+          IMAGE: ghcr.io/paulintrognon/plouf-plouf
+        run: |
+          sed -i "s|image: ${IMAGE}:.*|image: ${IMAGE}:${VERSION}|" "${FILE}"
+          # Fail loudly if the edit didn't actually land — a silent
+          # no-match would otherwise produce an empty PR downstream.
+          grep -q "image: ${IMAGE}:${VERSION}" "${FILE}" \
+            || { echo "::error::Did not find expected image line in ${FILE} after sed"; exit 1; }
+
+      - name: Open PR in paulin/infra
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: bump/plouf-plouf-${{ needs.build-and-push.outputs.version }}
+          base: main
+          commit-message: "chore(plouf-plouf): bump image to ${{ needs.build-and-push.outputs.version }}"
+          title: "chore(plouf-plouf): bump image to ${{ needs.build-and-push.outputs.version }}"
+          body: |
+            Automated image bump from plouf-plouf CI.
+
+            New image: `ghcr.io/paulintrognon/plouf-plouf:${{ needs.build-and-push.outputs.version }}`
+
+            Triggered by: `${{ github.event_name }}` on `${{ github.ref_name }}`
+            Source workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          # After the PR is merged or closed, delete the bump branch.
+          delete-branch: true
+          # Create the commit via the GitHub API rather than locally,
+          # so it shows up as "Verified" and is properly attributed to
+          # the paulin-infra-bot identity.
+          sign-commits: true
