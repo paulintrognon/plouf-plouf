@@ -37,7 +37,7 @@ const About = () => {
       </p>
       <h2>Comment ça marche&nbsp;?</h2>
       <p>
-        Les tirages sont effectuées en local, directement par le navigateur, à l&apos;aide de la
+        Les tirages sont effectués en local, directement par le navigateur, à l&apos;aide de la
         méthode <code>Math.random()</code>.
       </p>
       <p>
@@ -59,15 +59,14 @@ const About = () => {
       </p>
       <p>
         Le site plouf-plouf.fr est supposé accessible en tout instant, pour tous les utilisateurs
-        connectés au serveur, néanmoins des interruptions (volontaires : mise à jour, maintenance
-        technique, etc.) ou involontaires (problèmes hébergeurs, bugs, etc.) peuvent néanmoins
-        survenir.
+        connectés au serveur, des interruptions (volontaires : mise à jour, maintenance technique,
+        etc.) ou involontaires (problèmes hébergeurs, bugs, etc.) peuvent néanmoins survenir.
       </p>
       <p>
         Le site plouf-plouf.fr est un site composé d&apos;un formulaire ayant pour but de générer un
         tirage au sort. Toutefois, les auteurs ne pourront être tenus responsables
         d&apos;éventuelles omissions ou inexactitudes dans les résultats et informations fournis.
-        Les données et informations qui peuvent êtres consultées sur le site plouf-plouf.fr évoluent
+        Les données et informations qui peuvent être consultées sur le site plouf-plouf.fr évoluent
         régulièrement et ne peuvent être considérées comme fiables dans le temps.
       </p>
       <p>

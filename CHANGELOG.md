@@ -1,3 +1,7 @@
+### v5.6.1
+
+- Fix About.tsx typos
+
 ## v5.6.0
 
 - Add `/api/health` endpoint for Kubernetes liveness/readiness probes
